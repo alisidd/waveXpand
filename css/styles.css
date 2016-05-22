@@ -15,15 +15,15 @@ header
 
     width: 10rem;
     height: auto;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 2.5rem;
+    margin: 1rem 3rem 1rem 2.5rem;
 }
 
 ul.menu-options
 {
+    font-family: Arial;
+
     position: absolute;
-    top: 1.8em;
+    top: 3rem;
 
     display: inline-block;
 
@@ -34,13 +34,22 @@ ul.menu-options
 
 li
 {
-    font-size: 1rem
+    display: inline-block;
+  
+    margin: -.71em;
+    padding: 1em 6em 1em 3em;
+
+    -webkit-transform: perspective(120px) rotateX(30deg);
+       -moz-transform: perspective(120px) rotateX(30deg);
     text-align: center;
 
-    display: inline-block;
-
-    margin: .1em;
-    padding: 1em;
-
     border: .0625em solid white;
+    border-bottom: none;
+    background-color: #546e7a;
+}
+
+li.last
+{
+    color: #546e7a;
+    border-right: 0rem;
 }
