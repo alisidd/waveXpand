@@ -39,7 +39,7 @@ li
     display: inline-block;
 
     margin: -.71em;
-    padding: 1.3em 6em 1em 3em;
+    padding: 1.3em 7em 1em 3em;
 
     -webkit-transform: perspective(120px) rotateX(30deg);
        -moz-transform: perspective(120px) rotateX(30deg);
@@ -56,11 +56,13 @@ li.last
     border-right: 0rem;
 }
 
-.container {
-  left: 50%;
-  margin: auto -50px;
-  position: absolute;
-  top: 90%;
+.container
+{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+
+    margin: auto -50px;
 }
 
 .swing div
