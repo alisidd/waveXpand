@@ -5,15 +5,26 @@ body
 
 header
 {
-    background-color: #455a64;
+    background-color: #546e7a;
+    box-shadow: 0rem .125rem .1875rem #000;
 }
 
-.logo {
+.logo
+{
+    display: inline;
 
+    width: 10rem;
+    height: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 2.5rem;
 }
 
 ul.menu-options
 {
+    position: absolute;
+    top: 1.8em;
+
     display: inline-block;
 
     list-style-type: none;
