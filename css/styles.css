@@ -40,26 +40,35 @@ ul.nav-options
     color: #fff;
 }
 
-li.nav-option
-{
-    display: inline-block;
-
-    margin: -.71em;
-    padding: 1.3em 7em 1em 3em;
-
-    -webkit-transform: perspective(120px) rotateX(30deg);
-       -moz-transform: perspective(120px) rotateX(30deg);
-    text-align: center;
-
-    border: .0625em solid white;
-    border-bottom: none;
-    background-color: #546e7a;
+.tab {
+  width:12.5em;
+  height:2.8125rem;
+  overflow:hidden;
+  float:left;
+  margin:0 -3.4375em 0 0;
 }
 
-li.last
-{
-    color: #546e7a;
-    border-right: 0rem;
+
+.tab-box {
+  height:3.125em;
+  border:0.0625em solid #ccc;
+  margin:0 0.875em 0;
+  background-color: #546e7a;
+  padding: 1em 0em 0em 1.4em;
+ -webkit-transform: perspective(120px) rotateX(30deg);
+ -moz-transform: perspective(120px) rotateX(30deg);
+
+}
+
+.tab-box--last {
+  height:3.125em;
+  border-left:0.0625em solid #ccc;
+  margin:0 0.875em 0;
+  background-color: #546e7a;
+  padding: 1em 0em 0em 1.4em;
+ -webkit-transform: perspective(120px) rotateX(30deg);
+ -moz-transform: perspective(120px) rotateX(30deg);
+
 }
 
 .mobile-toggle
