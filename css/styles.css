@@ -40,35 +40,41 @@ ul.nav-options
     color: #fff;
 }
 
-.tab {
-  width:12.5em;
-  height:2.8125rem;
-  overflow:hidden;
-  float:left;
-  margin:0 -3.4375em 0 0;
+.tab
+{
+    float: left;
+    overflow: hidden;
+
+    width: 12.5em;
+    height: 2.8125rem;
+    margin: 0 -3.4375em 0 0;
 }
 
 
-.tab-box {
-  height:3.125em;
-  border:0.0625em solid #ccc;
-  margin:0 0.875em 0;
-  background-color: #546e7a;
-  padding: 1em 0em 0em 1.4em;
- -webkit-transform: perspective(120px) rotateX(30deg);
- -moz-transform: perspective(120px) rotateX(30deg);
+.tab-box
+{
+    height: 3.125em;
+    margin: 0 .875em 0;
+    padding: 1em 0 0 1.4em;
 
+    -webkit-transform: perspective(120px) rotateX(30deg);
+       -moz-transform: perspective(120px) rotateX(30deg);
+
+    border: .0625em solid #ccc;
+    background-color: #546e7a;
 }
 
-.tab-box--last {
-  height:3.125em;
-  border-left:0.0625em solid #ccc;
-  margin:0 0.875em 0;
-  background-color: #546e7a;
-  padding: 1em 0em 0em 1.4em;
- -webkit-transform: perspective(120px) rotateX(30deg);
- -moz-transform: perspective(120px) rotateX(30deg);
+.tab-box--last
+{
+    height: 3.125em;
+    margin: 0 .875em 0;
+    padding: 1em 0 0 1.4em;
 
+    -webkit-transform: perspective(120px) rotateX(30deg);
+       -moz-transform: perspective(120px) rotateX(30deg);
+
+    border-left: .0625em solid #ccc;
+    background-color: #546e7a;
 }
 
 .mobile-toggle
@@ -76,6 +82,7 @@ ul.nav-options
     position: absolute;
     top: 2.3rem;
     right: 2rem;
+
     display: none;
 
     width: 3rem;
@@ -132,15 +139,16 @@ li.nav-option--mobile:after
 
 @media only screen and (max-width: 958px)
 {
+    ul.nav-options,
+    li.nav-option
+    {
+        display: none;
+    }
 
-  ul.nav-options, li.nav-option
-  {
-    display: none;
-  }
-
-  .mobile-toggle {
-    display: inline-block;
-  }
+    .mobile-toggle
+    {
+        display: inline-block;
+    }
 }
 
 #monitor
@@ -165,7 +173,7 @@ iframe
     height: 42%;
 }
 
-.container
+.container-edit
 {
     position: absolute;
     top: 90%;
@@ -392,4 +400,120 @@ iframe
 {
     -webkit-animation: shadow-r-n .425s ease-in-out infinite alternate;
             animation: shadow-r-n .425s ease-in-out infinite alternate;
+}
+
+.course-options
+{
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#button1
+{
+    font-family: 'Exo 2';
+    font-size: 20px;
+
+    margin-top: 30px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+    padding: 90px 90px 50px 80px;
+
+    color: white;
+    background: url('../images/cube.png') no-repeat center;
+    background-size: contain;
+}
+
+#button2
+{
+    font-family: 'Exo 2';
+    font-size: 20px;
+
+    margin-top: 30px;
+    margin-right: 100px;
+    margin-bottom: 50px;
+    padding: 100px 90px 50px 80px;
+
+    color: white;
+    background: url('../images/cube.png') no-repeat center;
+    background-size: contain;
+}
+
+#button3
+{
+    font-family: 'Exo 2';
+    font-size: 20px;
+
+    margin-top: 30px;
+    margin-bottom: 50px;
+    padding: 80px 90px 60px 80px;
+
+    text-align: center;
+
+    color: white;
+    background: url('../images/cube.png') no-repeat center;
+    background-size: contain;
+}
+
+@media only screen and (max-width: 663px) {
+  .course-options {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  #button1 {
+    padding: 3.4em 3.4em 3.4em 3.4em;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #button2 {
+    padding: 4.1em 4.1em 4.1em 4.1em;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #button3 {
+    padding: 2.8em 2.8em 2.8em 2.8em;
+
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}
+
+.card-panel
+{
+    margin: 0 auto;
+}
+
+#courseNameShown
+{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
+
+p.date
+{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+p.status
+{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: bold;
+}
+
+p.spots
+{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 22px;
 }

@@ -1,0 +1,133 @@
+<?php
+	session_start();
+	$password = "pass";
+
+	if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
+	{
+		header("Location: registration.php");
+	}
+
+	if (isset($_POST['password']))
+	{
+		if ($_POST['password'] == $password)
+		{
+			$_SESSION['logged_in'] = true;
+			header("Location: registration.php");
+		}
+	}
+	if (!empty($_POST))
+	{
+    $_SESSION['$loginEmail'] = $_POST['email'];
+	}
+?>
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <!-- Import Google Icon fonts -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Exo+2:900' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,200,300,500' rel='stylesheet' type='text/css'>
+
+  	<!--Import materialize.css-->
+  	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script async type="text/javascript">
+  		function mobileToggle(){
+        if ($(".nav-options--mobile").hasClass("active")) {
+          $(".nav-options--mobile").fadeOut();
+        } else {
+          $(".nav-options--mobile").fadeIn();
+        }
+        $(".nav-options--mobile").toggleClass("active");
+  		}
+  	</script>
+
+    <script async type="text/javascript">
+  		function displayForm(c){
+  			var input = document.getElementById(c);
+  			var courseName = input.innerHTML;
+  			console.log(courseName);
+  			courseName = courseName.replace(/(<br ?\/?>)*/g,"");
+  			console.log(courseName);
+  			document.getElementById('courseNameShown').innerHTML = courseName;
+  		}
+  	</script>
+  </head>
+  <body>
+    <header>
+        <img class="logo" src="images/logo.png">
+
+        <nav>
+
+          <!-- Nav options -->
+          <ul class="nav-options">
+            <div class="tab">
+    					<div class="tab-box">
+                About
+              </div>
+            </div>
+            <div class="tab">
+    					<div class="tab-box">
+                Training
+              </div>
+            </div>
+            <div class="tab">
+    					<div class="tab-box--last">
+
+              </div>
+            </div>
+          </ul>
+
+          <!-- Mobile navigation menu -->
+          <img onclick="mobileToggle()" src="images/nav.png" class="mobile-toggle">
+          <ul class="nav-options--mobile">
+              <li class="nav-option--mobile">Home</li>
+              <li class="nav-option--mobile">About</li>
+              <li class="nav-option--mobile--last">Training</li>
+          </ul>
+        </nav>
+    </header>
+
+    <div class="course-options">
+  		<span onclick="displayForm(this.id)" id="button1">Routing & <br> Switching</span>
+  		<span onclick="displayForm(this.id)" id="button2">Security</span>
+  		<span onclick="displayForm(this.id)" id="button3">Application <br> Centric <br> Infrastructure</span>
+  	</div>
+
+    <div id="card">
+      <div class="card-panel container">
+        <h1 id="courseNameShown"></h1>
+  			<span >Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+  			</span>
+        <p class="date"> Enter your name: </p>
+  	    <form class="col s12">
+  	        <div class="input-field col s6">
+  	          <input id="full_name" type="text" class="validate select">
+  	          <label for="full_name">Name</label>
+  	        </div>
+  			</form>
+  			<p class="date"> Select date to check availability: </p>
+  			<div class="input-field col s12 l2">
+  				<select>
+  					<option value="" disabled selected>Choose your date</option>
+  					<option value="1">29 Nov 2016</option>
+  					<option value="2">7 Sept 2016</option>
+  					<option value="3">2 Jan 2017</option>
+  				</select>
+  			</div>
+  			</br>
+  			<p class="status"> Status - </p>
+  			<p class="spots"> 14 spots available </p>
+      </div>
+    </div>
+  </body>
+</html>
