@@ -12,21 +12,43 @@
     <!-- Scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
+    <script async type="text/javascript">
+  		function mobileToggle(){
+        if ($(".nav-options--mobile").hasClass("active")) {
+          $(".nav-options--mobile").fadeOut();
+        } else {
+          $(".nav-options--mobile").fadeIn();
+        }
+        $(".nav-options--mobile").toggleClass("active")
+  		}
+  	</script>
+
 </head>
 
 <body>
     <header>
         <img class="logo" src="images/logo.png">
-        <ul class="menu-options">
-            <li>About</li>
-            <li>Training</li>
-            <li class="last">*Empty*</li>
-        </ul>
+
+        <nav style="display:inline-block">
+
+          <ul class="nav-options">
+              <li class="nav-option">About</li>
+              <li class="nav-option">Training</li>
+              <li class="last nav-option">*Empty*</li>
+          </ul>
+
+          <img onclick="mobileToggle()" src="images/nav.png" class="mobile-toggle">
+          <ul class="nav-options--mobile">
+              <li class="nav-option--mobile">Home</li>
+              <li class="nav-option--mobile">About</li>
+              <li class="nav-option--mobile--last">Training</li>
+          </ul>
+        </nav>
     </header>
 
     <div>
   		<img id="monitor" src="images/monitor.png" alt="background monitor" >
-  		<iframe width="42%" height="42%" src="https://www.youtube.com/embed/dilnw_dP3xk" frameborder="0" allowfullscreen></iframe>
+  		<iframe src="https://www.youtube.com/embed/dilnw_dP3xk" frameborder="0" allowfullscreen></iframe>
   	</div>
 
     <div aria-busy="true" aria-label="Loading" role="progressbar" class="container">
