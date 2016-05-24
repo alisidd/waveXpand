@@ -147,7 +147,7 @@ li.nav-option--mobile:after
 
     .mobile-toggle
     {
-        display: inline-block;
+        display: inline;
     }
 }
 
@@ -456,34 +456,38 @@ iframe
     background-size: contain;
 }
 
-@media only screen and (max-width: 663px) {
-  .course-options {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-  }
+@media only screen and (max-width: 663px)
+{
+    .course-options
+    {
+        display: flex;
+        flex-direction: column;
 
-  #button1 {
-    padding: 3.4em 3.4em 3.4em 3.4em;
+        align-content: center;
+    }
 
-    margin-left: auto;
-    margin-right: auto;
-  }
+    #button1
+    {
+        margin-right: auto;
+        margin-left: auto;
+        padding: 3.4em 3.4em 3.4em 3.4em;
+    }
 
-  #button2 {
-    padding: 4.1em 4.1em 4.1em 4.1em;
+    #button2
+    {
+        margin-right: auto;
+        margin-left: auto;
+        padding: 4.1em 4.1em 4.1em 4.1em;
+    }
 
-    margin-left: auto;
-    margin-right: auto;
-  }
+    #button3
+    {
+        margin-right: auto;
+        margin-left: auto;
+        padding: 2.8em 2.8em 2.8em 2.8em;
 
-  #button3 {
-    padding: 2.8em 2.8em 2.8em 2.8em;
-
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
+        text-align: center;
+    }
 }
 
 .card-panel
