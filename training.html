@@ -28,6 +28,8 @@
     <!-- Import Google Icon fonts -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Exo+2:600' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,200,300,500' rel='stylesheet' type='text/css'>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -45,6 +47,18 @@
         $(".nav-options--mobile").toggleClass("active");
   		}
   	</script>
+
+    <script async type="text/javascript">
+  		function displayForm(c){
+  			var input = document.getElementById(c);
+  			var courseName = input.innerHTML;
+  			console.log(courseName);
+  			courseName = courseName.replace(/(<br ?\/?>)*/g,"");
+  			console.log(courseName);
+  			document.getElementById('courseNameShown').innerHTML = courseName;
+  		}
+  	</script>
+    
   </head>
   <body>
     <header>
