@@ -26,14 +26,52 @@
   	</script>
 
     <script async type="text/javascript">
-  		function displayForm(c){
-  			var input = document.getElementById(c);
-  			var courseName = input.innerHTML;
-  			console.log(courseName);
-  			courseName = courseName.replace(/(<br ?\/?>)*/g,"");
-  			console.log(courseName);
-  			document.getElementById('courseNameShown').innerHTML = courseName;
-  		}
+
+      function populate(course, date)
+      {
+        var input = document.getElementById(course);
+        var courseName = input.innerHTML;
+        console.log(courseName);
+        courseName = courseName.replace(/(<br ?\/?>)*/g,"");
+        console.log(courseName);
+        document.getElementById('courseNameShown').innerHTML = courseName;
+      	var course = document.getElementById(course);
+      	var date = document.getElementById(date);
+        console.log(courseName);
+
+        date.innerHTML = "";
+
+      	if(courseName == "Security")
+      		{
+      			var optionArray = ["sept,1,2016|sept,1,2016","sept,6,2016|sept,6,2016","sept,9,2016|sept,9,2016"];
+      		}
+
+      	else if(courseName == "Routing &amp;  Switching")
+      		{
+      			var optionArray = ["oct,1,2016|oct,1,2016","oct,6,2016|oct,6,2016","oct,9,2016|oct,9,2016"];
+      		}
+
+      	else if(courseName == "Application  Centric  Infrastructure")
+      		{
+      			var optionArray = ["nov,1,2016|nov,1,2016","nov,6,2016|nov,6,2016","nov,9,2016|nov,9,2016"];
+      		}
+
+      	for(var option in optionArray)
+      		{
+      			var pair = optionArray[option].split("|");
+      			var newOption = document.createElement("option");
+      			newOption.value = pair[0];
+      			newOption.innerHTML = pair[1];
+      			date.options.add(newOption);
+      		}
+      		$('select').material_select();
+      }
+    </script>
+
+    <script>
+  		$(document).ready(function() {
+  	    $('select').material_select();
+  	  });
   	</script>
 
   </head>
@@ -72,11 +110,11 @@
           </ul>
         </nav>
     </header>
-    
+
     <div class="course-options">
-  		<span onclick="displayForm(this.id)" id="button1">Routing & <br> Switching</span>
-  		<span onclick="displayForm(this.id)" id="button2">Security</span>
-  		<span onclick="displayForm(this.id)" id="button3">Application <br> Centric <br> Infrastructure</span>
+  		<span onclick="populate(this.id, 'date')" id="button1">Routing & <br> Switching</span>
+  		<span onclick="populate(this.id, 'date')" id="button2">Security</span>
+  		<span onclick="populate(this.id, 'date')" id="button3">Application <br> Centric <br> Infrastructure</span>
   	</div>
 
     <div id="card">
@@ -88,19 +126,11 @@
   	    <form>
   	        <div class="input-field">
   	          <input id="full_name" type="text" class="validate">
-  	          <label style=for="full_name">Name</label>
+  	          <label for="full_name">Name</label>
   	        </div>
   			</form>
   			<p class="date"> Select date to check availability: </p>
-  			<div class="input-field">
-  				<select>
-  					<option value="" disabled selected>Choose your date</option>
-  					<option value="1">29 Nov 2016</option>
-  					<option value="2">7 Sept 2016</option>
-  					<option value="3">2 Jan 2017</option>
-  				</select>
-  			</div>
-  			</br>
+        <select id="date" name="date"/>
   			<p class="status"> Status - </p>
   			<p class="spots"> 14 spots available </p>
       </div>

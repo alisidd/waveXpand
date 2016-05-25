@@ -119,7 +119,7 @@ ul.nav-options--mobile
     text-align: center;
 
     color: white;
-    background-color: orange;
+    background-color: #f4731c;
 }
 
 ul.nav-options--mobile.active
@@ -526,11 +526,10 @@ input[type=text].validate + label
 input[type=text],
 input[type=password]
 {
-
     box-sizing: content-box;
     width: 100%;
     height: 3rem;
-    margin: 0 0 0.9375em 0;
+    margin: 0 0 .9375em 0;
     padding: 0;
 
     transition: all .3s;
@@ -608,7 +607,8 @@ input[type=text] + label:after
 input[type=number]:disabled,
 input[type=number][readonly='readonly']
 {
-    color: rgba(0,0,0,.26);border-bottom: 1px dotted rgba(0,0,0,.26);
+    color: rgba(0,0,0,.26);
+    border-bottom: 1px dotted rgba(0,0,0,.26);
 }
 
 input[type=password]:disabled + label,
@@ -636,19 +636,29 @@ input[type=password]:focus.valid
 input[type=password].valid + label:after,
 input[type=password]:focus.valid + label:after
 {
-    content: attr(data-success);opacity: 1;color: #f4731c;
+    content: attr(data-success);
+
+    opacity: 1;
+    color: #f4731c;
 }
 
 input[type=password].validate + label
 {
-    width: 100%;pointer-events: none;
+    width: 100%;
+
+    pointer-events: none;
 }
 
 input[type=password] + label:after
 {
     position: absolute;top: 65px;
 
-    display: block;content: '';transition: .2s opacity ease-out, .2s color ease-out;opacity: 0;
+    display: block;
+
+    content: '';
+    transition: .2s opacity ease-out, .2s color ease-out;
+
+    opacity: 0;
 }
 
 input[type=submit]
@@ -691,6 +701,7 @@ input[type=submit]
     z-index: 1;
 
     display: inline-block;
+    float: right;
     overflow: hidden;
 
     cursor: pointer;
@@ -703,8 +714,6 @@ input[type=submit]
 
     -webkit-tap-highlight-color: transparent;
     will-change: opacity, transform;
-
-    float: right;
 }
 
 .btn:hover
@@ -719,7 +728,7 @@ select
     width: 100%;
     height: 3rem;
     margin-left: .0625em;
-    padding: 0.3125em;
+    padding: .3125em;
 
     border: 1px solid #f2f2f2;
     border-radius: 2px;
@@ -731,6 +740,26 @@ select
     font-family: 'Work Sans', sans-serif;
     font-weight: 500;
 }
+
+select
+{
+  width: 100%;height: 3rem;padding: 5px;border: 1px solid #f2f2f2;border-radius: 2px;
+      background-color: rgba(255,255,255,.9);
+  }select.browser-default
+{
+    display: block;
+}select
+{width: 100%;height: 3rem;padding: 5px;border: 1px solid #f2f2f2;border-radius: 2px;
+    background-color: rgba(255,255,255,.9);
+}
+select:disabled
+{
+    color: rgba(0,0,0,.3);
+}
+select:focus
+{
+    outline: 1px solid #c9f3ef;
+  }
 
 p.date
 {
