@@ -140,6 +140,7 @@ ul.nav-options--mobile.active
 li.nav-option--mobile,
 li.nav-option--mobile--last
 {
+    position: relative;
     padding: 2em 0 2em 0;
 }
 
@@ -155,6 +156,17 @@ li.nav-option--mobile:after
     content: '';
 
     border-bottom: 1px solid #808080;
+}
+
+.empty-span
+{
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+
+  z-index: 1;
 }
 
 /* Index page */
