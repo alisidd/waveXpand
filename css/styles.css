@@ -19,7 +19,7 @@ body
 
 header
 {
-    background-color: #546e7a;
+    background-color: #186d84;
     box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
 
@@ -73,7 +73,7 @@ ul.nav-options
        -moz-transform: perspective(120px) rotateX(30deg);
 
     border: .0625em solid #ccc;
-    background-color: #546e7a;
+    background-color: #186d84;
 }
 
 .tab-box--last
@@ -86,7 +86,7 @@ ul.nav-options
        -moz-transform: perspective(120px) rotateX(30deg);
 
     border-left: .0625em solid #ccc;
-    background-color: #546e7a;
+    background-color: #186d84;
 }
 
 a
@@ -130,7 +130,7 @@ ul.nav-options--mobile
     text-align: center;
 
     color: white;
-    background-color: #f4731c;
+    background-color: #298765;
     box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
 
@@ -607,7 +607,7 @@ input[type=password]:focus,
 input[type=password].valid,
 input[type=password]:focus.valid
 {
-    border-bottom: 1px solid #f4731c;
+    border-bottom: 1px solid #298765;
 }
 
 input[type=text]:disabled,
@@ -676,7 +676,7 @@ input[type=password]:focus.valid + label:after
     content: attr(data-success);
 
     opacity: 1;
-    color: #f4731c;
+    color: #298765;
 }
 
 input[type=password].validate + label
@@ -720,7 +720,7 @@ input[type=submit]
     border: none;
     border-radius: 2px;
     outline: 0;
-    background-color: #f4731c;
+    background-color: #298765;
     box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0 rgba(0,0,0,.15);
 
     -webkit-tap-highlight-color: transparent;
