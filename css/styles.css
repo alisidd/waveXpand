@@ -1,3 +1,8 @@
+@font-face
+{
+    font-family: 'Roboto';font-weight: 300;src: local(Roboto Light),url('../fonts/roboto/Roboto-Light.eot');src: url('../fonts/roboto/Roboto-Light.eot?#iefix') format('embedded-opentype'),url('../fonts/roboto/Roboto-Light.woff2') format('woff2'),url('../fonts/roboto/Roboto-Light.woff') format('woff'),url('../fonts/roboto/Roboto-Light.ttf') format('truetype');
+}
+
 body
 {
     margin: 0rem;
@@ -456,7 +461,7 @@ iframe
     background-size: contain;
 }
 
-@media only screen and (max-width: 663px)
+@media only screen and (max-width: 712px)
 {
     .course-options
     {
@@ -498,12 +503,152 @@ iframe
 
 .card-panel
 {
-    margin: .5rem 3rem 1rem 3rem;padding: 20px;background-color: #fff;
+    margin: .5rem 3rem 1rem 3rem;
+    padding: 20px;
+
+    background-color: #fff;
 }
 
 .card
 {
-    position: relative;margin: .5rem 0 1rem 0;transition: box-shadow .25s;border-radius: 2px;
+    position: relative;
+
+    margin: .5rem 0 1rem 0;
+
+    transition: box-shadow .25s;
+
+    border-radius: 2px;
+}
+
+input
+{
+    font: inherit;
+
+    margin: 0;
+
+    color: inherit;
+}
+
+input[type=text].validate + label
+{
+    width: 100%;
+
+    pointer-events: none;
+}
+
+.input-field
+{
+    position: relative;
+
+    margin-top: 1rem;
+}
+
+input[type=text]
+{
+    font-size: 1rem;
+
+    box-sizing: content-box;
+    width: 100%;
+    height: 3rem;
+    margin: 0 0 15px 0;
+    padding: 0;
+
+    transition: all .3s;
+
+    border: none;
+    border-bottom: 1px solid #9e9e9e;
+    border-radius: 0;
+    outline: none;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+input[type=text]:disabled,
+input[type=text][readonly='readonly']
+{
+    color: rgba(0,0,0,.26);
+    border-bottom: 1px dotted rgba(0,0,0,.26);
+}
+
+input[type=text] + label
+{
+    font-family: 'Roboto', sans-serif;
+}
+
+input[type=text]:disabled + label,
+input[type=text][readonly='readonly'] + label
+{
+    color: rgba(0,0,0,.26);
+}
+
+input[type=text]:focus:not([readonly]) + label
+{
+    color: #f4731c;
+}
+
+input[type=text].valid,
+input[type=text]:focus.valid
+{
+    border-bottom: 1px solid #4caf50;
+    box-shadow: 0 1px 0 0 #4caf50;
+}
+
+input[type=text].valid + label:after,
+input[type=text]:focus.valid + label:after
+{
+    content: attr(data-success);
+
+    opacity: 1;
+    color: #4caf50;
+}
+
+input[type=text].invalid,
+input[type=text]:focus.invalid
+{
+    border-bottom: 1px solid #f44336;
+    box-shadow: 0 1px 0 0 #f44336;
+}
+
+input[type=text].invalid + label:after,
+input[type=text]:focus.invalid + label:after
+{
+    content: attr(data-error);
+
+    opacity: 1;
+    color: #f44336;
+}
+
+input[type=text] + label:after
+{
+    position: absolute;
+    top: 65px;
+
+    display: block;content: '';
+    transition: .2s opacity ease-out, .2s color ease-out;
+
+    opacity: 0;
+}
+
+.input-field label
+{
+    font-size: 1rem;
+
+    position: absolute;
+    top: .8rem;
+    left: .75rem;
+
+    cursor: text;
+    transition: .2s ease-out;
+
+    color: #9e9e9e;
+}
+
+.input-field label.active
+{
+    font-size: .8rem;
+
+    -webkit-transform: translateY(-140%);
+            transform: translateY(-140%);
 }
 
 #courseNameShown
@@ -525,10 +670,14 @@ p.status
     font-size: 24px;
     font-weight: 500;
     font-style: bold;
+
+    display: inline-block;
 }
 
 p.spots
 {
     font-family: 'Work Sans', sans-serif;
     font-size: 22px;
+
+    display: inline-block;
 }
