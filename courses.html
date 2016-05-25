@@ -26,6 +26,49 @@
   	</script>
 
     <script async type="text/javascript">
+
+      function populate(course, date)
+      {
+        var input = document.getElementById(course);
+        var courseName = input.innerHTML;
+        console.log(courseName);
+        courseName = courseName.replace(/(<br ?\/?>)*/g,"");
+        console.log(courseName);
+        document.getElementById('courseNameShown').innerHTML = courseName;
+      	var course = document.getElementById(course);
+      	var date = document.getElementById(date);
+        console.log(courseName);
+
+        date.innerHTML = "";
+
+      	if(courseName == "Security")
+      		{
+      			var optionArray = ["sept,1,2016|sept,1,2016","sept,6,2016|sept,6,2016","sept,9,2016|sept,9,2016"];
+      		}
+
+      	else if(courseName == "Routing &amp;  Switching")
+      		{
+      			var optionArray = ["oct,1,2016|oct,1,2016","oct,6,2016|oct,6,2016","oct,9,2016|oct,9,2016"];
+      		}
+
+      	else if(courseName == "Application  Centric  Infrastructure")
+      		{
+      			var optionArray = ["nov,1,2016|nov,1,2016","nov,6,2016|nov,6,2016","nov,9,2016|nov,9,2016"];
+      		}
+
+      	for(var option in optionArray)
+      		{
+      			var pair = optionArray[option].split("|");
+      			var newOption = document.createElement("option");
+      			newOption.value = pair[0];
+      			newOption.innerHTML = pair[1];
+      			date.options.add(newOption);
+      		}
+      		$('select').material_select();
+      }
+    </script>
+
+    <script async type="text/javascript">
   		$(document).ready(function(){
   			$('.parallax').parallax();
   		});

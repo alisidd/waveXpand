@@ -1,3 +1,5 @@
+/* All pages */
+
 @font-face
 {
     font-family: 'Roboto';font-weight: 300;
@@ -155,6 +157,8 @@ li.nav-option--mobile:after
     border-bottom: 1px solid #808080;
 }
 
+/* Index page */
+
 #monitor
 {
     position: absolute;
@@ -185,6 +189,8 @@ iframe
 
     margin: auto -50px;
 }
+
+/* Swing */
 
 .swing div
 {
@@ -408,24 +414,58 @@ iframe
 
 .parallax-container
 {
-    position: relative;overflow: hidden;height: 500px;
+    position: relative;
+
+    overflow: hidden;
+
+    height: 500px;
 }
 .parallax
 {
-    position: absolute;z-index: -1;top: 0;right: 0;bottom: 0;left: 0;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 }
 .parallax img
 {
-    position: absolute;bottom: 0;left: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
 
-    display: none;min-width: 100%;min-height: 100%;-webkit-transform: translate3d(0, 0, 0);-webkit-transform: translateX(-50%);transform: translate3d(0, 0, 0);transform: translateX(-50%);
+    display: none;
+
+    min-width: 100%;
+    min-height: 100%;
+
+    -webkit-transform: translate3d(0, 0, 0);
+    -webkit-transform: translateX(-50%);
+            transform: translate3d(0, 0, 0);
+            transform: translateX(-50%);
 }
+
+/* About page */
 
 .about-body
 {
-  margin: 2em 12em 2em 12em;
-  line-height: 200%;
+    line-height: 200%;
+
+    margin: 2em 12em 2em 12em;
 }
+
+/* Login page */
+
+.card-panel#login
+{
+    width: 50%;
+    margin-top: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Courses page */
 
 .course-options
 {
@@ -434,6 +474,8 @@ iframe
     flex-wrap: wrap;
     justify-content: center;
 }
+
+/* The cubes for the courses */
 
 #button1
 {
@@ -481,18 +523,12 @@ iframe
     background-size: contain;
 }
 
+/* Card content */
+
 .card-panel,
 .card
 {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
-}
-
-.card-panel#login
-{
-    width: 50%;
-    margin-top: 2rem;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .card-panel
@@ -514,6 +550,8 @@ iframe
     border-radius: 2px;
 }
 
+/* All input fields on the card */
+
 input
 {
     font: inherit;
@@ -521,13 +559,6 @@ input
     margin: 0;
 
     color: inherit;
-}
-
-input[type=text].validate + label
-{
-    width: 100%;
-
-    pointer-events: none;
 }
 
 .input-field
@@ -557,7 +588,9 @@ input[type=password]
 }
 
 input[type=text]:focus,
-input[type=password]:focus
+input[type=password]:focus,
+input[type=password].valid,
+input[type=password]:focus.valid
 {
     border-bottom: 1px solid #f4731c;
 }
@@ -569,20 +602,24 @@ input[type=text][readonly='readonly']
     border-bottom: 1px dotted rgba(0,0,0,.26);
 }
 
+input[type=text].validate + label
+{
+    width: 100%;
+
+    pointer-events: none;
+}
+
 input[type=text] + label
 {
     font-family: 'Roboto', sans-serif;
 }
 
 input[type=text]:disabled + label,
-input[type=text][readonly='readonly'] + label
+input[type=text][readonly='readonly'] + label,
+input[type=password]:disabled + label,
+input[type=password][readonly='readonly'] + label
 {
     color: rgba(0,0,0,.26);
-}
-
-input[type=text]:focus:not([readonly]) + label
-{
-    color: #f4731c;
 }
 
 input[type=text] + label:after
@@ -618,35 +655,6 @@ input[type=text] + label:after
             transform: translateY(-140%);
 }
 
-input[type=number]:disabled,
-input[type=number][readonly='readonly']
-{
-    color: rgba(0,0,0,.26);
-    border-bottom: 1px dotted rgba(0,0,0,.26);
-}
-
-input[type=password]:disabled + label,
-input[type=password][readonly='readonly'] + label
-{
-    color: rgba(0,0,0,.26);
-}
-
-input[type=password]:focus:not([readonly])
-{
-    border-bottom: 1px solid #f4731c;
-}
-
-input[type=password]:focus:not([readonly]) + label
-{
-    color: #f4731c;
-}
-
-input[type=password].valid,
-input[type=password]:focus.valid
-{
-    border-bottom: 1px solid #f4731c;
-}
-
 input[type=password].valid + label:after,
 input[type=password]:focus.valid + label:after
 {
@@ -673,12 +681,6 @@ input[type=password] + label:after
     transition: .2s opacity ease-out, .2s color ease-out;
 
     opacity: 0;
-}
-
-input[type=submit]
-{
-    border: none;
-    background: none;
 }
 
 input[type=submit]
@@ -755,26 +757,22 @@ select
     font-weight: 500;
 }
 
-select
-{
-    width: 100%;height: 3rem;padding: 5px;border: 1px solid #f2f2f2;border-radius: 2px;
-    background-color: rgba(255,255,255,.9);
-}select.browser-default
+select.browser-default
 {
     display: block;
-}select
-{
-    width: 100%;height: 3rem;padding: 5px;border: 1px solid #f2f2f2;border-radius: 2px;
-    background-color: rgba(255,255,255,.9);
 }
+
 select:disabled
 {
     color: rgba(0,0,0,.3);
 }
+
 select:focus
 {
     outline: 1px solid #c9f3ef;
 }
+
+/* Text on the card */
 
 p.date
 {
@@ -800,7 +798,7 @@ p.spots
     display: inline-block;
 }
 
-
+/* Settings for phones and tablets */
 
 @media only screen and (max-width: 958px)
 {
