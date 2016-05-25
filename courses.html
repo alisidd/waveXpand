@@ -68,6 +68,12 @@
       }
     </script>
 
+    <script async type="text/javascript">
+  		$(document).ready(function(){
+  			$('.parallax').parallax();
+  		});
+  	</script>
+
     <script>
   		$(document).ready(function() {
   	    $('select').material_select();
@@ -75,42 +81,68 @@
   	</script>
 
   </head>
+
   <body>
 
-    <header>
-        <img class="logo" src="images/logo.png">
+    <div class="parallax-container">
 
-        <nav>
+      <header>
 
-          <!-- Nav options -->
-          <ul class="nav-options">
-            <div class="tab">
-    					<div class="tab-box">
-                About
+          <a href="index.html">
+            <img class="logo" src="images/logo.png">
+          </a>
+
+          <nav>
+
+            <!-- Nav options -->
+            <ul class="nav-options">
+              <div class="tab">
+      					<div class="tab-box">
+                  <a href="about.html">
+                    About
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="tab">
-    					<div class="tab-box">
-                Training
+              <div class="tab">
+      					<div class="tab-box">
+                  <a href="login.html">
+                    Training
+                  </a>
+                </div>
               </div>
-            </div>
-            <div class="tab">
-    					<div class="tab-box--last">
+              <div class="tab">
+      					<div class="tab-box--last">
 
+                </div>
               </div>
-            </div>
-          </ul>
+            </ul>
 
-          <!-- Mobile navigation menu -->
-          <img onclick="mobileToggle()" src="images/nav.png" class="mobile-toggle">
-          <ul class="nav-options--mobile">
-              <li class="nav-option--mobile">Home</li>
-              <li class="nav-option--mobile">About</li>
-              <li class="nav-option--mobile--last">Training</li>
-          </ul>
-        </nav>
-    </header>
+            <!-- Mobile navigation menu -->
+            <img onclick="mobileToggle()" src="images/nav.png" class="mobile-toggle">
+            <ul class="nav-options--mobile">
+                <li class="nav-option--mobile">
+                  <a href="index.html">
+                    Home
+                  </a>
+                </li>
+                <li class="nav-option--mobile">
+                  <a href="about.html">
+                    About
+                  </a>
+                </li>
+                <li class="nav-option--mobile--last">
+                  <a href="login.html">
+                    Training
+                  </a>
+                </li>
+            </ul>
+          </nav>
+      </header>
 
+      <div class="parallax" ><img src="images/training-small.png"></div>
+
+    </div>
+    
     <div class="course-options">
   		<span onclick="populate(this.id, 'date')" id="button1">Routing & <br> Switching</span>
   		<span onclick="populate(this.id, 'date')" id="button2">Security</span>

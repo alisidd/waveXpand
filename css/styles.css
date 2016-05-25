@@ -87,6 +87,12 @@ ul.nav-options
     background-color: #546e7a;
 }
 
+a
+{
+  color: inherit;
+  text-decoration: none;
+}
+
 .mobile-toggle
 {
     position: absolute;
@@ -398,27 +404,27 @@ iframe
             animation: shadow-r-n .425s ease-in-out infinite alternate;
 }
 
+.parallax-container
+{
+    position: relative;overflow: hidden;height: 500px;
+}
+.parallax
+{
+    position: absolute;z-index: -1;top: 0;right: 0;bottom: 0;left: 0;
+}
+.parallax img
+{
+    position: absolute;bottom: 0;left: 50%;
+
+    display: none;min-width: 100%;min-height: 100%;-webkit-transform: translate3d(0, 0, 0);-webkit-transform: translateX(-50%);transform: translate3d(0, 0, 0);transform: translateX(-50%);
+}
+
 .course-options
 {
     display: flex;
 
     flex-wrap: wrap;
     justify-content: center;
-}
-
-#button0
-{
-    font-family: 'Exo 2';
-    font-size: 1.25rem;
-
-    position: absolute;
-    left: -50%;
-
-    padding: 5.625em 5.625em 3.125em 5em;
-
-    color: white;
-    background: url('../images/cube.png') no-repeat center;
-    background-size: contain;
 }
 
 #button1

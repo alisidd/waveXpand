@@ -73,9 +73,14 @@
 		</script>
 
   </head>
+  
   <body>
+
     <header>
-        <img class="logo" src="images/logo.png">
+
+        <a href="index.html">
+          <img class="logo" src="images/logo.png">
+        </a>
 
         <nav>
 
@@ -83,12 +88,16 @@
           <ul class="nav-options">
             <div class="tab">
     					<div class="tab-box">
-                About
+                <a href="about.html">
+                  About
+                </a>
               </div>
             </div>
             <div class="tab">
     					<div class="tab-box">
-                Training
+                <a href="login.html">
+                  Training
+                </a>
               </div>
             </div>
             <div class="tab">
@@ -101,9 +110,21 @@
           <!-- Mobile navigation menu -->
           <img onclick="mobileToggle()" src="images/nav.png" class="mobile-toggle">
           <ul class="nav-options--mobile">
-              <li class="nav-option--mobile">Home</li>
-              <li class="nav-option--mobile">About</li>
-              <li class="nav-option--mobile--last">Training</li>
+              <li class="nav-option--mobile">
+                <a href="index.html">
+                  Home
+                </a>
+              </li>
+              <li class="nav-option--mobile">
+                <a href="about.html">
+                  About
+                </a>
+              </li>
+              <li class="nav-option--mobile--last">
+                <a href="login.html">
+                  Training
+                </a>
+              </li>
           </ul>
         </nav>
     </header>
