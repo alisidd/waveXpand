@@ -871,4 +871,10 @@ p.spots
 
         text-align: center;
     }
+
+    .card-panel
+    {
+        margin: .5rem .5rem 1rem .5rem;
+        padding: 1.75rem;
+    }
 }
