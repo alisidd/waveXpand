@@ -1,29 +1,5 @@
-<?php
-	session_start();
-	$password = "pass";
+<html>
 
-	if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
-	{
-		header("Location: registration.php");
-	}
-
-	if (isset($_POST['password']))
-	{
-		if ($_POST['password'] == $password)
-		{
-			$_SESSION['logged_in'] = true;
-			header("Location: registration.php");
-		}
-	}
-	if (!empty($_POST))
-	{
-    $_SESSION['$loginEmail'] = $_POST['email'];
-	}
-?>
-
-<!DOCTYPE html>
-
-<html lang="en-US">
   <head>
     <!-- Import Google Icon fonts -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -49,8 +25,20 @@
   		}
   	</script>
 
+    <script async type="text/javascript">
+  		function displayForm(c){
+  			var input = document.getElementById(c);
+  			var courseName = input.innerHTML;
+  			console.log(courseName);
+  			courseName = courseName.replace(/(<br ?\/?>)*/g,"");
+  			console.log(courseName);
+  			document.getElementById('courseNameShown').innerHTML = courseName;
+  		}
+  	</script>
+
   </head>
   <body>
+
     <header>
         <img class="logo" src="images/logo.png">
 
@@ -84,24 +72,39 @@
           </ul>
         </nav>
     </header>
+    
+    <div class="course-options">
+  		<span onclick="displayForm(this.id)" id="button1">Routing & <br> Switching</span>
+  		<span onclick="displayForm(this.id)" id="button2">Security</span>
+  		<span onclick="displayForm(this.id)" id="button3">Application <br> Centric <br> Infrastructure</span>
+  	</div>
 
-    <div id="login" class="card-panel">
-      <h1>Login</h1>
-      <span>You have to login before registration</span>
-      <div>
-        <form name="myForm" class='form-style-9' action="process.php" onsubmit="return validateForm();" method="post">
-          <div class="input-field">
-						<input id="username" type="text" name="email">
-						<label for="username">Username</label>
-					</div>
-					<div class="input-field">
-						<input id="password" type="password" name="password">
-						<label for="password">Password</label>
-					</div>
-          <input class="waves-effect btn" type="submit" value="Login">
-        </form>
+    <div id="card">
+      <div class="card-panel">
+        <h1 id="courseNameShown"></h1>
+  			<span >Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+  			</span>
+        <p class="date"> Enter your name: </p>
+  	    <form>
+  	        <div class="input-field">
+  	          <input id="full_name" type="text" class="validate">
+  	          <label style=for="full_name">Name</label>
+  	        </div>
+  			</form>
+  			<p class="date"> Select date to check availability: </p>
+  			<div class="input-field">
+  				<select>
+  					<option value="" disabled selected>Choose your date</option>
+  					<option value="1">29 Nov 2016</option>
+  					<option value="2">7 Sept 2016</option>
+  					<option value="3">2 Jan 2017</option>
+  				</select>
+  			</div>
+  			</br>
+  			<p class="status"> Status - </p>
+  			<p class="spots"> 14 spots available </p>
       </div>
-    </br>
     </div>
   </body>
+
 </html>
