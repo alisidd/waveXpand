@@ -670,6 +670,7 @@ input[type=text] + label:after
 .input-field label.active
 {
     font-size: .8rem;
+    color: #aa473c;
 
     -webkit-transform: translateY(-140%);
             transform: translateY(-140%);
