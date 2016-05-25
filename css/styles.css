@@ -106,6 +106,8 @@ a
 
     width: 3rem;
     height: auto;
+
+    cursor: pointer;
 }
 
 ul.nav-options--mobile
