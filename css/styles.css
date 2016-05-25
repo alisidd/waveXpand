@@ -490,9 +490,20 @@ iframe
     }
 }
 
+.card-panel,
+.card
+{
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+}
+
 .card-panel
 {
-    margin: 0 auto;
+    margin: .5rem 3rem 1rem 3rem;padding: 20px;background-color: #fff;
+}
+
+.card
+{
+    position: relative;margin: .5rem 0 1rem 0;transition: box-shadow .25s;border-radius: 2px;
 }
 
 #courseNameShown
