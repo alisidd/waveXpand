@@ -825,9 +825,6 @@ p.spots
 @media only screen and (max-width: 1141px)
 {
 
-    body {
-        background: fff;
-    }
     .about-body
     {
         margin: 2em 2em 2em 2em;
