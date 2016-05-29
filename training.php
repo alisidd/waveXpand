@@ -3,15 +3,15 @@
   <head>
     <!-- Import Google Icon fonts -->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:600' rel='stylesheet' type='text/css'>
   	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,200,300,500' rel='stylesheet' type='text/css'>
 
-	
-	
-	
-	
+
+
+
+
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -159,26 +159,36 @@
     <div id="card">
       <div class="card-panel">
         <h1 id="courseNameShown"></h1>
-  			<span >Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-  			</span>
-        <p class="date"> Enter your name: </p>
-		<form name="myForm" class='col s12' action="process.php" onsubmit="return validateForm();" method="post">
+
+    		<form name="myForm" class='col s12' action="process.php" onsubmit="return validateForm();" method="post">
+            <div class="input-field col s12">
+              <select>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Course 1</option>
+                <option value="2">Course 2</option>
+                <option value="3">Course 3</option>
+              </select>
+            </div>
+
+            <span >Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+      			</span>
+
+            <p class="date"> Enter your name: </p>
   	        <div class="input-field">
   	          <input id="full_name" type="text" class="validate" name="firstName">
   	          <label for="full_name">Name</label>
   	        </div>
-  			
-  			<p class="date"> Select date to check availability: </p>
-			<div class="input-field col s12">
-			<select id="date" name="date"></select>
-			<input name="course" type="hidden" id="courseID">
-		
-		</div>
-		
-  			<p class="status"> Status - </p>
-  			<p class="spots"> 14 spots available </p>
-			<br/><input type="submit" value="Submit" >
-		</form>
+
+      			<p class="date"> Select date to check availability: </p>
+    			  <div class="input-field">
+        			<select id="date" name="date"></select>
+        			<input name="course" type="hidden" id="courseID">
+    		    </div>
+
+      			<p class="status"> Status - </p>
+      			<p class="spots"> 14 spots available </p>
+    			<br/><input type="submit" value="Submit" >
+    		</form>
       </div>
     </div>
   </body>
