@@ -850,24 +850,24 @@ p.spots
 
 @media only screen and (max-width: 630px)
 {
-  #phone
-  {
-      display: inline;
+    #phone
+    {
+        top: 20%;
+        right: 33%;
 
-      top: 20%;
-      right: 33%;
-  }
+        display: inline;
+    }
 
-  iframe
-  {
-      position: absolute;
-      z-index: 10;
-      top: 26.5%;
-      right: 35%;
+    iframe
+    {
+        position: absolute;
+        z-index: 10;
+        top: 26.5%;
+        right: 35%;
 
-      width: 180px;
-      height: 318px;
-  }
+        width: 180px;
+        height: 318px;
+    }
 }
 
 
@@ -891,10 +891,10 @@ p.spots
 
     #phone
     {
-        display: inline;
-
         top: 20%;
         right: 38%;
+
+        display: inline;
     }
 
     iframe
@@ -919,44 +919,44 @@ p.spots
 
 @media only screen and (max-width: 520px)
 {
-  #phone
-  {
-      display: inline;
+    #phone
+    {
+        top: 20%;
+        right: 28%;
 
-      top: 20%;
-      right: 28%;
-  }
+        display: inline;
+    }
 
-  iframe
-  {
-      position: absolute;
-      z-index: 10;
-      top: 26.5%;
-      right: 30%;
+    iframe
+    {
+        position: absolute;
+        z-index: 10;
+        top: 26.5%;
+        right: 30%;
 
-      width: 180px;
-      height: 318px;
-  }
+        width: 180px;
+        height: 318px;
+    }
 }
 
 @media only screen and (max-width: 420px)
 {
-  #phone
-  {
-      display: inline;
+    #phone
+    {
+        top: 20%;
+        right: 21%;
 
-      top: 20%;
-      right: 21%;
-  }
+        display: inline;
+    }
 
-  iframe
-  {
-      position: absolute;
-      z-index: 10;
-      top: 26.5%;
-      right: 23%;
+    iframe
+    {
+        position: absolute;
+        z-index: 10;
+        top: 26.5%;
+        right: 23%;
 
-      width: 180px;
-      height: 318px;
-  }
+        width: 180px;
+        height: 318px;
+    }
 }
