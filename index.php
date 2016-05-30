@@ -82,6 +82,7 @@
 
     <div>
   		<img id="monitor" src="images/monitor.png" alt="background monitor" >
+      <img id="phone" src="images/phone.png" alt="background phone" >
   		<iframe src="https://www.youtube.com/embed/dilnw_dP3xk" frameborder="0" allowfullscreen></iframe>
   	</div>
 

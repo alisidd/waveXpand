@@ -185,6 +185,17 @@ li.nav-option--mobile:after
     height: 58%;
 }
 
+#phone
+{
+    position: absolute;
+    z-index: 10;
+
+    display: none;
+
+    width: 200px;
+    height: auto;
+}
+
 iframe
 {
     position: absolute;
@@ -764,7 +775,7 @@ input[type=submit]
 
 .select-course
 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 p.date
@@ -793,31 +804,8 @@ p.spots
 
 /* Settings for phones and tablets */
 
-@media only screen and (max-width: 958px)
-{
-    ul.nav-options,
-    li.nav-option
-    {
-        display: none;
-    }
-
-    .mobile-toggle
-    {
-        display: inline;
-    }
-
-    .card-panel#login
-    {
-        width: 80%;
-        margin-top: 2rem;
-        margin-right: auto;
-        margin-left: auto;
-    }
-}
-
 @media only screen and (max-width: 1141px)
 {
-
     .about-body
     {
         margin: 2em 2em 2em 2em;
@@ -858,4 +846,117 @@ p.spots
         margin: .5rem .5rem 1rem .5rem;
         padding: 1.75rem;
     }
+}
+
+@media only screen and (max-width: 630px)
+{
+  #phone
+  {
+      display: inline;
+
+      top: 20%;
+      right: 33%;
+  }
+
+  iframe
+  {
+      position: absolute;
+      z-index: 10;
+      top: 26.5%;
+      right: 35%;
+
+      width: 180px;
+      height: 318px;
+  }
+}
+
+
+@media only screen and (max-width: 958px)
+{
+    ul.nav-options,
+    li.nav-option
+    {
+        display: none;
+    }
+
+    .mobile-toggle
+    {
+        display: inline;
+    }
+
+    #monitor
+    {
+        display: none;
+    }
+
+    #phone
+    {
+        display: inline;
+
+        top: 20%;
+        right: 38%;
+    }
+
+    iframe
+    {
+        position: absolute;
+        z-index: 10;
+        top: 26.5%;
+        right: 39.5%;
+
+        width: 180px;
+        height: 318px;
+    }
+
+    .card-panel#login
+    {
+        width: 80%;
+        margin-top: 2rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+@media only screen and (max-width: 520px)
+{
+  #phone
+  {
+      display: inline;
+
+      top: 20%;
+      right: 28%;
+  }
+
+  iframe
+  {
+      position: absolute;
+      z-index: 10;
+      top: 26.5%;
+      right: 30%;
+
+      width: 180px;
+      height: 318px;
+  }
+}
+
+@media only screen and (max-width: 420px)
+{
+  #phone
+  {
+      display: inline;
+
+      top: 20%;
+      right: 21%;
+  }
+
+  iframe
+  {
+      position: absolute;
+      z-index: 10;
+      top: 26.5%;
+      right: 23%;
+
+      width: 180px;
+      height: 318px;
+  }
 }

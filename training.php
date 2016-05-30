@@ -30,13 +30,13 @@
       $(document).on('change','#course-select',function() {
          switch ($(this).val()) {
             case "1":
-              var optionArray = ["sept,1,2016|sept,1,2016","sept,6,2016|sept,6,2016","sept,9,2016|sept,9,2016"];
+              var optionArray = ["Sept 1, 2016|Sept 1, 2016","Sept 6, 2016|Sept 6, 2016","Sept 9, 2016|Sept 9, 2016"];
               break;
             case "2":
-              var optionArray = ["oct,1,2016|oct,1,2016","oct,6,2016|oct,6,2016","oct,9,2016|oct,9,2016"];
+              var optionArray = ["Oct 1, 2016|Oct 1, 2016","Oct 6, 2016|Oct 6, 2016","Oct 9, 2016|Oct 9, 2016"];
               break;
             case "3":
-              var optionArray = ["nov,1,2016|nov,1,2016","nov,6,2016|nov,6,2016","nov,9,2016|nov,9,2016"];
+              var optionArray = ["Nov 1, 2016|Nov 1, 2016","Nov 6, 2016|Nov 6, 2016","Nov 9, 2016|Nov 9, 2016"];
               break;
         }
 
