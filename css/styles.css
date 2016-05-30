@@ -482,7 +482,7 @@ iframe
 
 /* Courses page */
 
-.course-options
+.track-options
 {
     display: flex;
 
@@ -670,18 +670,6 @@ input[type=text] + label:after
 .input-field label.active
 {
     font-size: .8rem;
-<<<<<<< HEAD
-
-    -webkit-transform: translateY(-140%);
-            transform: translateY(-140%);
-
-    color: #aa473c;
-=======
-    color: #aa473c;
-
-    -webkit-transform: translateY(-140%);
-            transform: translateY(-140%);
->>>>>>> ee046b9d2d4cea9e86149f4f177abed7de7b2ab4
 }
 
 input[type=password].valid + label:after,
@@ -774,6 +762,11 @@ input[type=submit]
 
 /* Text on the card */
 
+.select-course
+{
+  font-size: 2rem;
+}
+
 p.date
 {
     font-family: 'Work Sans', sans-serif;
@@ -830,7 +823,7 @@ p.spots
         margin: 2em 2em 2em 2em;
     }
 
-    .course-options
+    .track-options
     {
         flex-direction: column;
 

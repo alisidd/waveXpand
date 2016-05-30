@@ -27,38 +27,22 @@
   	</script>
 
     <script async type="text/javascript">
+      $(document).on('change','#course-select',function() {
+         switch ($(this).val()) {
+            case "1":
+              var optionArray = ["sept,1,2016|sept,1,2016","sept,6,2016|sept,6,2016","sept,9,2016|sept,9,2016"];
+              break;
+            case "2":
+              var optionArray = ["oct,1,2016|oct,1,2016","oct,6,2016|oct,6,2016","oct,9,2016|oct,9,2016"];
+              break;
+            case "3":
+              var optionArray = ["nov,1,2016|nov,1,2016","nov,6,2016|nov,6,2016","nov,9,2016|nov,9,2016"];
+              break;
+        }
 
-      function populate(course, date)
-      {
-        var input = document.getElementById(course);
-        var courseName = input.innerHTML;
-        console.log(courseName);
-        courseName = courseName.replace(/(<br ?\/?>)*/g,"");
-        console.log(courseName);
-        document.getElementById('courseNameShown').innerHTML = courseName;
-		document.getElementById('courseID').value = courseName;
-      	var course = document.getElementById(course);
-      	var date = document.getElementById(date);
-        console.log(courseName);
+        document.getElementById("date").innerHTML = "";
 
-        date.innerHTML = "";
-
-      	if(courseName == "Security")
-      		{
-      			var optionArray = ["sept,1,2016|sept,1,2016","sept,6,2016|sept,6,2016","sept,9,2016|sept,9,2016"];
-      		}
-
-      	else if(courseName == "Routing &amp;  Switching")
-      		{
-      			var optionArray = ["oct,1,2016|oct,1,2016","oct,6,2016|oct,6,2016","oct,9,2016|oct,9,2016"];
-      		}
-
-      	else if(courseName == "Application  Centric  Infrastructure")
-      		{
-      			var optionArray = ["nov,1,2016|nov,1,2016","nov,6,2016|nov,6,2016","nov,9,2016|nov,9,2016"];
-      		}
-
-      	for(var option in optionArray)
+        for(var option in optionArray)
       		{
       			var pair = optionArray[option].split("|");
       			var newOption = document.createElement("option");
@@ -67,6 +51,18 @@
       			date.options.add(newOption);
       		}
       		$('select').material_select();
+      });
+    </script>
+
+    <script async type="text/javascript">
+
+      function populateCard(course, date)
+      {
+        var input = document.getElementById(course);
+        var courseName = input.innerHTML;
+        courseName = courseName.replace(/(<br ?\/?>)*/g,"");
+        document.getElementById('courseNameShown').innerHTML = courseName;
+		    document.getElementById('courseID').value = courseName;
       }
     </script>
 
@@ -146,10 +142,10 @@
         </li>
     </ul>
 
-    <div class="course-options">
-  		<span onclick="populate(this.id, 'date')" id="button1">Routing & <br> Switching</span>
-  		<span onclick="populate(this.id, 'date')" id="button2">Security</span>
-  		<span onclick="populate(this.id, 'date')" id="button3">Application <br> Centric <br> Infrastructure</span>
+    <div class="track-options">
+  		<span onclick="populateCard(this.id, 'date')" id="button1">Routing & <br> Switching</span>
+  		<span onclick="populateCard(this.id, 'date')" id="button2">Security</span>
+  		<span onclick="populateCard(this.id, 'date')" id="button3">Application <br> Centric <br> Infrastructure</span>
   	</div>
 
     <div id="card">
@@ -157,9 +153,10 @@
         <h1 id="courseNameShown"></h1>
 
     		<form name="myForm" class='col s12' action="process.php" onsubmit="return validateForm();" method="post">
-            <div class="input-field col s12">
-              <select>
-                <option value="" disabled selected>Choose your option</option>
+            <p class="select-course"> Choose a Course </p>
+            <div class="input-field">
+              <select id="course-select">
+                <option value="" disabled selected>Choose a course</option>
                 <option value="1">Course 1</option>
                 <option value="2">Course 2</option>
                 <option value="3">Course 3</option>
