@@ -848,29 +848,6 @@ p.spots
     }
 }
 
-@media only screen and (max-width: 630px)
-{
-    #phone
-    {
-        top: 20%;
-        right: 33%;
-
-        display: inline;
-    }
-
-    iframe
-    {
-        position: absolute;
-        z-index: 10;
-        top: 26.5%;
-        right: 35%;
-
-        width: 180px;
-        height: 318px;
-    }
-}
-
-
 @media only screen and (max-width: 958px)
 {
     ul.nav-options,
@@ -899,8 +876,6 @@ p.spots
 
     iframe
     {
-        position: absolute;
-        z-index: 10;
         top: 26.5%;
         right: 39.5%;
 
@@ -917,25 +892,31 @@ p.spots
     }
 }
 
-@media only screen and (max-width: 520px)
+@media only screen and (max-width: 630px)
 {
     #phone
     {
-        top: 20%;
-        right: 28%;
+        right: 33%;
 
         display: inline;
     }
 
     iframe
     {
-        position: absolute;
-        z-index: 10;
-        top: 26.5%;
-        right: 30%;
+        right: 35%;
+    }
+}
 
-        width: 180px;
-        height: 318px;
+@media only screen and (max-width: 520px)
+{
+    #phone
+    {
+        right: 28%;
+    }
+
+    iframe
+    {
+        right: 30%;
     }
 }
 
@@ -943,7 +924,6 @@ p.spots
 {
     #phone
     {
-        top: 20%;
         right: 21%;
 
         display: inline;
@@ -951,12 +931,6 @@ p.spots
 
     iframe
     {
-        position: absolute;
-        z-index: 10;
-        top: 26.5%;
         right: 23%;
-
-        width: 180px;
-        height: 318px;
     }
 }
