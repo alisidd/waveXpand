@@ -802,6 +802,30 @@ p.spots
     display: inline-block;
 }
 
+/* Styling for profile page */
+
+#profile-photo
+{
+    display: inline-block;
+
+    position: relative;
+    bottom: 10rem;
+    width: 16rem;
+    height: 16rem;
+    vertical-align: text-top;
+}
+
+.profile-card
+{
+  position: relative;
+  top: 10rem;
+}
+
+.card-panel #fullName
+{
+    display: inline-block;
+}
+
 /* Settings for phones and tablets */
 
 @media only screen and (max-width: 1141px)
