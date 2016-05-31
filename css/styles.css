@@ -825,22 +825,16 @@ p.spots
 {
     position: relative;
     top: 7rem;
-
-    float: left;
-
-    width: 60%;
 }
 
 .reminder-card
 {
     position: fixed;
     right: 2rem;
-    top: 13.7rem;
+    top: 11.7rem;
 
-    float: left;
-
-    width: 20%;
-    height: 20rem;
+    width: 30%;
+    height: auto;
 
 
     color: white;
