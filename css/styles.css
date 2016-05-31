@@ -806,24 +806,63 @@ p.spots
 
 #profile-photo
 {
-    display: inline-block;
-
     position: relative;
     bottom: 10rem;
+    left: 2rem;
+
+    display: inline-block;
+
     width: 16rem;
     height: 16rem;
+    padding: 1px;
+
     vertical-align: text-top;
+
+    border: 1px solid #021a40;
 }
 
 .profile-card
 {
-  position: relative;
-  top: 10rem;
+    position: relative;
+    top: 10rem;
+
+    float: left;
+
+    width: 60%;
 }
 
-.card-panel #fullName
+.reminder-card
 {
+    position: fixed;
+    right: 2rem;
+    top: 16.7rem;
+
+    float: left;
+
+    width: 20%;
+    height: 20rem;
+
+
+    color: white;
+    background-color: #c62828;
+}
+
+.card-panel #profileDetails
+{
+    font-size: 3rem;
+
     display: inline-block;
+
+    margin-left: 1.5em;
+}
+
+.card-panel #profileDetails p
+{
+    font-size: 1rem;
+
+    margin-left: 2em;
+
+    color: #808080;
 }
 
 /* Settings for phones and tablets */
