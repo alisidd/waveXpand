@@ -9,6 +9,7 @@ ob_start();
 
 $isRegistered = false;
 
+
 // This part is for connecting to PHPMailer
 require 'phpmailer/PHPMailerAutoload.php';
 
@@ -57,7 +58,7 @@ $stringDate = "$xplod[2]-$xplod[0]-$xplod[1]";
 $sqlDate = date("Y-m-d", strtotime($stringDate));
 //echo "<br />$sqlDate <br />";
 
-//echo "Hello $firstname"; ?> <br>
+//echo "Hello $firstname"; ?>
 <?php
 //echo "you have chosen the $course";
 
@@ -74,7 +75,7 @@ $message='Congratulations, you have successfully registered in our course';
 
 
 ?>
-<br>
+
 <?php
 
 
@@ -90,14 +91,14 @@ $db = new mysqli('wavexpanddb.cxxqjl7is3yc.us-west-2.rds.amazonaws.com', $user, 
 $query = mysqli_query($db, "SELECT * From registrationtable WHERE applicantEmail='$email' AND registeredCourse='$course'");
 if(mysqli_num_rows($query) > 0)
 {
-	echo 'You have already registered this course ';
 	$isRegistered = true;
+	echo "You have already registered !!!!!!!!";
 }
 else
 {
 
-$mailConfirmation->Subject = 'Database Excel File';
-$mailConfirmation->Body    = 'The table of registered SEs is attached with this email';
+$mailConfirmation->Subject = 'Registration Confirmation';
+$mailConfirmation->Body    = 'You have successfully registered in our course';
 $mailConfirmation->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
 if(!$mailConfirmation->send()) {
@@ -108,7 +109,7 @@ if(!$mailConfirmation->send()) {
 }
 	
 mail($email, $subject, $message, "From:".$from);
-print "A confirmation message has been sent to your email";
+//print "A confirmation message has been sent to your email";
 
 $sql = "INSERT INTO registrationtable ( applicantName, applicantEmail, registeredCourse, courseDate ) VALUES ( '{$db->real_escape_string($_POST['firstName'])}', 
 '{$db->real_escape_string($email)}', '{$db->real_escape_string($_POST['course'])}', '{$db->real_escape_string($sqlDate)}'  )";
@@ -228,21 +229,7 @@ $db->close();
   		}
   	</script>
 
-		<script type="text/javascript">
-			
-			function populateCard()
-			{
-				var card = document.getElementByID();
-				var cardHTML = card.innerHTML;
-				var isRegistered = <?php $isRegistered ?>;
-				if (isRegistered == true)
-				{
-					cardHTML = 'You have already registered';
-				}
-				console.log(cardHTML);
-			}
-
-		</script>
+		
 
   </head>
 
@@ -301,14 +288,41 @@ $db->close();
     </header>
 
     <div id="logout" class="card-panel">
-      <h1>Registration Completed</h1>
-      <div>
-        <p><?php echo "Hello $firstname"; ?></p>
-        <br />
-        <p>You have successfully registered in our course </p>
-        <br />
-        <p>A confirmation message has been sent to your email </p>
-        <h2><a href="logout.php"> Logout</a><h2>
+      
+      
+      <h2 id="regResult"></h2>
+      <h3 id="extraInfo"></h3>
+      <div class="input-field">
+      <form action="logout.php">
+        <input type="submit" class="btn" value="Logout" ><a href="logout.php"></a></input>
+        </form>
+        <script type="text/javascript">
+			
+				
+				var isRegistered = "<?php echo $isRegistered?>";
+				//isRegistered = true;
+				//document.write(isRegistered);
+				var card = document.getElementById("regResult");
+				//var cardHTML = card.innerHTML;
+				
+				
+				console.log(isRegistered);
+				
+				if (isRegistered == true)
+				{
+					//card.innerHTML.replace(/(<br ?\/?>)*/g,"You are already registered to this course");
+					document.getElementById("regResult").innerHTML = "You are already registered to this course";
+				}
+				else
+				{
+					document.getElementById("regResult").innerHTML = "You have successfully completed  your registration";
+					document.getElementById("extraInfo").innerHTML = "A confirmation message has been sent to your email";
+				}
+				//console.log(cardHTML);
+			
+
+		</script>
+		
       </div>
     </br>
     </div>
