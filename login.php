@@ -3,12 +3,12 @@
 <?php
 	session_start();
 	$password = "pass";
-	
+
 	if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
 	{
 		header("Location: training.php");
 	}
-	
+
 	if (isset($_POST['password']))
 	{
 		if ($_POST['password'] == $password)
@@ -21,7 +21,7 @@
 	{
 $_SESSION['$loginEmail'] = $_POST['email'];
 	}
-	
+
 	?>
 -->
 
@@ -37,6 +37,8 @@ $_SESSION['$loginEmail'] = $_POST['email'];
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Login - waveXpand</title>
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
