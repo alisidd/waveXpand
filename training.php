@@ -1,12 +1,11 @@
 <html>
 
   <head>
-    <!-- Import Google Icon fonts -->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!-- Import Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Exo+2:600' rel='stylesheet' type='text/css'>
-  	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,200,300,500' rel='stylesheet' type='text/css'>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -28,166 +27,197 @@
   		}
   	</script>
 
-    <script async type="text/javascript">
-      $(document).on('change','#course-select',function() {
-         switch ($(this).val()) {
-            case "1":
-              var optionArray = ["Sept 1, 2016|Sept 1, 2016","Sept 6, 2016|Sept 6, 2016","Sept 9, 2016|Sept 9, 2016"];
-              break;
-            case "2":
-              var optionArray = ["Oct 1, 2016|Oct 1, 2016","Oct 6, 2016|Oct 6, 2016","Oct 9, 2016|Oct 9, 2016"];
-              break;
-            case "3":
-              var optionArray = ["Nov 1, 2016|Nov 1, 2016","Nov 6, 2016|Nov 6, 2016","Nov 9, 2016|Nov 9, 2016"];
-              break;
-        }
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('a[href^="#"]').on('click',function (e) {
+            e.preventDefault();
 
-        document.getElementById("date").innerHTML = "";
+            var target = this.hash;
+            var $target = $(target);
 
-        for(var option in optionArray)
-      		{
-      			var pair = optionArray[option].split("|");
-      			var newOption = document.createElement("option");
-      			newOption.value = pair[0];
-      			newOption.innerHTML = pair[1];
-      			date.options.add(newOption);
-      		}
-      		$('select').material_select();
+            $('html, body').stop().animate({
+              'scrollTop': $target.offset().top
+            }, 900, 'swing');
+        });
       });
     </script>
 
     <script async type="text/javascript">
-
-      function populateCard(course, date)
+      function populateList(course)
       {
+        document.getElementById("dates").innerHTML = "";
         var input = document.getElementById(course);
-        var courseName = input.innerHTML;
-        courseName = courseName.replace(/(<br ?\/?>)*/g,"");
-        document.getElementById('courseNameShown').innerHTML = courseName;
-		    document.getElementById('courseID').value = courseName;
+        if (course == "button1") {
+          document.getElementById("second-step").style.display = "inline";
+          document.getElementById("security-options").style.display = "flex";
+          document.getElementById("routing-options").style.display = "none";
+          document.getElementById("ise-options").style.display = "none";
+
+          document.getElementById("third-step").style.display = "inline";
+
+          var optionArray = ['Sep 1, 2016','Sep 6, 2016','Sep 9, 2016'];
+
+
+        } else if (course == "button2") {
+          document.getElementById("second-step").style.display = "inline";
+          document.getElementById("routing-options").style.display = "flex";
+          document.getElementById("security-options").style.display = "none";
+          document.getElementById("ise-options").style.display = "none";
+
+          document.getElementById("third-step").style.display = "inline";
+
+          var optionArray = ["Oct 1, 2016","Oct 6, 2016","Oct 9, 2016"];
+
+
+        } else if (course == "button3") {
+          document.getElementById("second-step").style.display = "inline";
+          document.getElementById("ise-options").style.display = "flex";
+          document.getElementById("security-options").style.display = "none";
+          document.getElementById("routing-options").style.display = "none";
+
+          document.getElementById("third-step").style.display = "inline";
+
+          var optionArray = ["Nov 1, 2016","Nov 6, 2016","Nov 9, 2016"];
+
+
+        }
+
+        var arrayLength = optionArray.length;
+
+        for (var i = 0; i < arrayLength; i++) {
+      			var newOption = document.createElement("a");
+            var t = document.createTextNode(optionArray[i]);
+            newOption.appendChild(t);
+            newOption.className += "date-option";
+            document.getElementById("dates").appendChild(newOption);
+      	}
       }
     </script>
-
-    <script async type="text/javascript">
-  		$(document).ready(function(){
-  			$('.parallax').parallax();
-  		});
-  	</script>
-
-    <script>
-  		$(document).ready(function() {
-  	    $('select').material_select();
-  	  });
-  	</script>
-
-
 
   </head>
 
   <body>
 
-    <div class="parallax-container">
+    <header>
+      <a href="index.php">
+        <img class="logo" src="images/logo.png">
+      </a>
 
-      <header>
+      <ul class="nav-options">
+        <a class="nav-option" href="training.php">
+          training
+        </a>
+        <a class="nav-option" href="login.php">
+          sign in
+        </a>
+      </ul>
+    </header>
 
-          <a href="index.php">
-            <img class="logo" src="images/logo.png">
+    <div id="registration">
+
+      <p class="title">sign up for a course in 3 steps!</p>
+
+      <div id="first-step">
+
+        <p class="sub-title">
+          1. pick a track
+        </p>
+
+        <div class="options">
+          <a id="button1" class="option track-1" onclick="populateList(this.id)" href="#second-step">
+            <p> CYBER SECURITY  </p>
           </a>
+          <a id="button2" class="option track-2" onclick="populateList(this.id)" href="#second-step">
+            <p> ROUTING </p>
+          </a>
+          <a id="button3" class="option track-3" onclick="populateList(this.id)" href="#second-step">
+            <p> ISE </p>
+          </a>
+        </div>
 
-          <nav>
+      </div> <!-- END OF FIRST STEP -->
 
-            <!-- Nav options -->
-            <ul class="nav-options">
-              <div class="tab">
-      					<div class="tab-box">
-                  <a href="about.php">
-                    About
-                    <span class="empty-span"></span>
-                  </a>
-                </div>
-              </div>
-              <div class="tab">
-      					<div class="tab-box">
-                  <a href="login.php">
-                    Training
-                    <span class="empty-span"></span>
-                  </a>
-                </div>
-              </div>
-              <div class="tab">
-      					<div class="tab-box--last">
+      <div id="second-step">
+        <p class="sub-title">
+          2. pick a course
+        </p>
 
-                </div>
-              </div>
-            </ul>
+        <div id="security-options" class="course-options">
+          <a class="security option" href="#third-step">
+            <p> Security 1 </p>
+          </a>
+          <p>
+            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+          </p>
+          <a class="security option" href="#third-step">
+            <p> Security 2 </p>
+          </a>
+          <p>
+            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+          </p>
+          <a class="security option" href="#third-step">
+            <p> Security 3 </p>
+          </a>
+          <p>
+            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+          </p>
+        </div>
 
-            <!-- Mobile navigation menu -->
-            <img onclick="mobileToggle()" src="images/nav.png" class="mobile-toggle">
+        <div id="routing-options" class="course-options">
+          <a class="routing option" href="#third-step">
+            <p> Routing 1 </p>
+          </a>
+          <p>
+            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+          </p>
+          <a class="routing option" href="#third-step">
+            <p> Routing 2 </p>
+          </a>
+          <p>
+            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+          </p>
+          <a class="routing option" href="#third-step">
+            <p> Routing 3 </p>
+          </a>
+          <p>
+            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+          </p>
+        </div>
 
-          </nav>
-      </header>
+        <div id="ise-options" class="course-options">
+          <a class="ise option" href="#third-step">
+            <p> ISE 1 </p>
+          </a>
+          <p>
+            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+          </p>
+          <a class="ise option" href="#third-step">
+            <p> ISE 2 </p>
+          </a>
+          <p>
+            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+          </p>
+          <a class="ise option" href="#third-step">
+            <p> ISE 3 </p>
+          </a>
+          <p>
+            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
+          </p>
+        </div>
+      </div> <!-- END OF SECOND STEP -->
 
-      <div class="parallax" ><img src="images/training-small.png"></div>
+      <div id="third-step">
 
-    </div>
+        <p class="sub-title">
+          3. pick a date
+        </p>
 
-    <ul class="nav-options--mobile">
-        <li class="nav-option--mobile">
-          Home
-          <a href="index.php"><span class="empty-span"></span></a>
-        </li>
-        <li class="nav-option--mobile">
-          About
-          <a href="about.php"><span class="empty-span"></span></a>
-        </li>
-        <li class="nav-option--mobile--last">
-          Training
-          <a href="login.php"><span class="empty-span"></span></a>
-        </li>
-    </ul>
+        <div id="dates" class="date-options">
+        </div>
 
-    <div class="track-options">
-  		<span onclick="populateCard(this.id, 'date')" id="button1">Routing & <br> Switching</span>
-  		<span onclick="populateCard(this.id, 'date')" id="button2">Security</span>
-  		<span onclick="populateCard(this.id, 'date')" id="button3">Application <br> Centric <br> Infrastructure</span>
-  	</div>
+      </div> <!-- END OF THIRD STEP -->
+    </div> <!-- END OF REGISTRATION -->
 
-    <div id="card">
-      <div class="card-panel">
-        <h1 id="courseNameShown"></h1>
-
-    		<form name="myForm" class='col s12' action="process.php" onsubmit="return validateForm();" method="post">
-            <p class="select-course"> Choose a Course </p>
-            <div class="input-field">
-              <select id="course-select">
-                <option value="" disabled selected>Choose a course</option>
-                <option value="1">Course 1</option>
-                <option value="2">Course 2</option>
-                <option value="3">Course 3</option>
-              </select>
-            </div>
-
-            <span >Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-      			</span>
-
-            <p class="date"> Enter your name: </p>
-  	        <div class="input-field">
-  	          <input id="full_name" type="text" class="validate" name="firstName">
-  	          <label for="full_name">Name</label>
-  	        </div>
-
-      			<p class="date"> Select date to check availability: </p>
-    			  <div class="input-field">
-        			<select id="date" name="date"></select>
-        			<input name="course" type="hidden" id="courseID">
-    		    </div>
-
-      			<p class="status"> Status - </p>
-      			<p class="spots"> 14 spots available </p>
-    			<br/><input type="submit" value="Submit" >
-    		</form>
-      </div>
-    </div>
   </body>
 
 </html>
