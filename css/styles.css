@@ -308,6 +308,7 @@ p.sub-title
 {
     font-family: 'Indie Flower', cursive;
     font-size: 4rem;
+    text-align: left;
 
     margin: 1em 1.3em 0 3em;
 
@@ -318,6 +319,7 @@ p.sub-title
 #second-step
 {
     display: none;
+    text-align: center;
 }
 
 .options
@@ -427,41 +429,9 @@ p.sub-title
     background: linear-gradient( rgba(91, 100, 137, .8), rgba(0, 0, 0, .5) ), url(../images/infrastructure.jpg) center left;
 }
 
-.routing p,
-.security p,
-.ise p
+.levels
 {
-    position: absolute;
-    bottom: 10%;
-    left: 0;
-
-    width: 100%;
-
-    text-align: center;
-}
-
-.routing + p,
-.security + p,
-.ise + p
-{
-    font-family: 'Coming Soon', cursive;
-    font-size: 1.2rem;
-
-    position: relative;
-    z-index: 10;
-    top: .8rem;
-    right: 4rem;
-
-    display: inline-block;
-
-    width: 36rem;
-    height: 12.3rem;
-    padding: 1.3em 2em 0 2em;
-
-    color: #fff;
-    border: .1rem solid #915c81;
-    border-radius: .4rem;
-    background-color: rgba(255, 255, 255, .1);
+  margin-top: 3rem;
 }
 
 .levels li
@@ -474,7 +444,7 @@ p.sub-title
     color: white;
     border: .0625rem solid #fff;
     margin-right: -0.3rem;
-    padding: 0.5em 0.7em;
+    padding: 0.5em 0.8em;
 }
 
 .levels .active

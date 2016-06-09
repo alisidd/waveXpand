@@ -150,15 +150,15 @@
         </ul>
 
         <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
-          <p> Security </p>
+          <p> Intro </p>
           <p class="small-text"> Part One </p>
         </button>
         <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
-          <p> Security </p>
+          <p> Intro </p>
           <p class="small-text"> Part Two </p>
         </button>
         <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
-          <p> Security </p>
+          <p> Intro </p>
           <p class="small-text"> Part Three </p>
         </button>
 
