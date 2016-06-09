@@ -42,6 +42,43 @@
       });
     </script>
 
+    <script type="text/javascript">
+      function filter(selection) {
+        if (selection == "all") {
+          $("#all").toggleClass("active");
+
+          document.getElementById("intro-courses").style.display = "none";
+          document.getElementById("intermediate-courses").style.display = "none";
+          document.getElementById("expert-courses").style.display = "none";
+
+          document.getElementById("intro-courses").style.display = "inline";
+          document.getElementById("intermediate-courses").style.display = "inline";
+          document.getElementById("expert-courses").style.display = "inline";
+        } else if (selection == "intro") {
+
+          $("#intro").toggleClass("active");
+
+          document.getElementById("intro-courses").style.display = "inline";
+          document.getElementById("intermediate-courses").style.display = "none";
+          document.getElementById("expert-courses").style.display = "none";
+        } else if (selection == "intermediate") {
+
+          $("#intermediate").toggleClass("active");
+
+          document.getElementById("intro-courses").style.display = "none";
+          document.getElementById("intermediate-courses").style.display = "inline";
+          document.getElementById("expert-courses").style.display = "none";
+        } else if (selection == "expert") {
+
+          $("#expert").toggleClass("active");
+
+          document.getElementById("intro-courses").style.display = "none";
+          document.getElementById("intermediate-courses").style.display = "none";
+          document.getElementById("expert-courses").style.display = "inline";
+        }
+      }
+    </script>
+
     <script async type="text/javascript">
       function populateList(course)
       {
@@ -143,24 +180,27 @@
         </p>
 
         <ul class="levels">
-          <li class="level-1 active">All</li>
-          <li>Intro</li>
-          <li>Intermediate</li>
-          <li class="level-last">Expert</li>
+          <li id="all" onclick="filter(this.id);" class="level-1 active">All</li>
+          <li id="intro" onclick="filter(this.id);">Intro</li>
+          <li id="intermediate" onclick="filter(this.id);">Intermediate</li>
+          <li id="expert" onclick="filter(this.id);" class="level-last">Expert</li>
         </ul>
 
-        <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
-          <p> Intro </p>
-          <p class="small-text"> Part One </p>
-        </button>
-        <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
-          <p> Intro </p>
-          <p class="small-text"> Part Two </p>
-        </button>
-        <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
-          <p> Intro </p>
-          <p class="small-text"> Part Three </p>
-        </button>
+        <div id="intro-courses">
+          <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
+            <p> Intro </p>
+          </button>
+        </div>
+        <div id="intermediate-courses">
+          <button  class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
+            <p> Intermediate </p>
+          </button>
+        </div>
+        <div id="expert-courses">
+          <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
+            <p> Expert </p>
+          </button>
+        </div>
 
       </div> <!-- END OF SECOND STEP -->
 
