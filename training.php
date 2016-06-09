@@ -188,14 +188,14 @@
 
       <div id="second-step">
         <p class="sub-title">
-          2. pick a level
+          2. pick a course
         </p>
 
         <ul class="levels">
-          <li id="all" onclick="filter(this.id);" class="level-1 active">All</li>
-          <li id="intro" onclick="filter(this.id);">Intro</li>
-          <li id="intermediate" onclick="filter(this.id);">Intermediate</li>
-          <li id="expert" onclick="filter(this.id);" class="level-last">Expert</li>
+          <li id="all" onclick="filter(this.id);" class="level-1 active">all</li>
+          <li id="intro" onclick="filter(this.id);">intro</li>
+          <li id="intermediate" onclick="filter(this.id);">intermediate</li>
+          <li id="expert" onclick="filter(this.id);" class="level-last">expert</li>
         </ul>
 
         <div id="intro-courses">
