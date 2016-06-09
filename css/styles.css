@@ -404,7 +404,7 @@ p.sub-title
 .security
 {
     width: 24%;
-    height: 30%;
+    height: 14rem;
 
     background: linear-gradient( rgba(91, 100, 137, .8), rgba(0, 0, 0, .5) ), url(../images/cyber-security.jpg) center left;
 }
@@ -412,7 +412,7 @@ p.sub-title
 .routing
 {
     width: 24%;
-    height: 30%;
+    height: 14rem;
 
     background: linear-gradient( rgba(91, 100, 137, .8), rgba(0, 0, 0, .5) ), url(../images/routing.jpg) center left;
 }
@@ -422,7 +422,7 @@ p.sub-title
     line-height: 8rem;
 
     width: 24%;
-    height: 30%;
+    height: 14rem;
 
     background: linear-gradient( rgba(91, 100, 137, .8), rgba(0, 0, 0, .5) ), url(../images/infrastructure.jpg) center left;
 }

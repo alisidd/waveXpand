@@ -1,0 +1,48 @@
+,,,,,,
+Architectures,Session Code,Session Description,Date ,Duration,Trainer,LAB Required
+Collaboration,Collab_Intro_P1,"Collaboration, Introductory Level- Part One",30-Aug-16,3,Khaled Tawfik,Dcloud
+,Collab_Intro_P2,"Collaboration, Introductory Level- Part Two",1-Jan-17,3,Mohamed Zaher,Dcloud
+,Collab_Intro_P3,"Collaboration, Introductory Level- Part Three",27-Feb-17,2,Ahmed Assem,Dcloud
+,Collab_Med_P1,"Collaboration, Intermediate Level- Part One",9-Jul-17,3,Khaled Tawfik,Dcloud
+,Collab_Med_P2,"Collaboration, Intermediate Level- Part Two",9-Aug-17,2,Ahmed Assem,Dcloud
+,Collab_Med_P3,"Collaboration, Intermediate Level- Part Three",22-Aug-17,3,Mohamed Zaher,Dcloud
+,Collab_Med_P4,"Collaboration, Intermediate Level- Part Four",18-Sep-17,2,Mohamed AlAttar,Dcloud
+,Collab_Exp_P1,"Collaboration, Expert Level- Part One",10-Oct-17,3,Mohamed Zaher,Dcloud
+,Collab_Exp_P2,"Collaboration, Expert Level- Part Two",20-Sep-17,2,Mohamed AlAttar,Dcloud
+,,,,,,
+DC,DC_Intro_P1,"Data Center, Introductory Level- Part One",2-Oct-16,3,Amr Ibrahim,Dcloud
+,DC_Intro_P2,"Data Center, Introductory Level- Part Two",30-Jan-17,3,Amr Ibrahim,DCUFI GK Lab
+,DC_Intro_P3,"Data Center, Introductory Level- Part Three",5-Mar-17,3,Ahmed El Rakhawy,NA
+,DC_Med_P1,"Data Center, Intermediate Level- Part One",26-Jul-17,2,Amr Ibrahim,Dcloud
+,DC_Exp_P1,"Data Center, Expert Level- Part One",By Cisco,4,By Cisco,By Cisco
+,,,,,,
+R&S,R&S_Intro_P1,"R&S, Introductory Level- Part One",,2,Nasser ElKhateeb,Dcloud
+,R&S_Med_P1,"R&S, Intermediate Level- Part One",6-Nov-16,3,Nasser ElKhateeb,Dcloud
+,R&S_Expert_P1,"R&S, Expert Level- Part One",30-Apr-17,3,Nasser ElKhateeb,Dcloud
+,R&S_Expert_P2,"R&S, Expert Level- Part Two",3-May-17,1,Nasser ElKhateeb,Dcloud
+,,,,,,
+Security ,Sec_Intro_P1,"Security, Introductory Level- Part One",9-Feb-16,3,Wael Talaat,SISE GK Lab
+,Sec_Intro_P2,"Security, Introductory Level- Part Two",17-Feb-16,2,Wael Talaat,SITCS GK Lab
+,Sec_Med_P1,"Security, Intermediate Level- Part One",18-Sep-16,3,Wael Talaat,Virtual
+,Sec_Exp_P1,"Security, Expert Level- Part One",By Cisco,3,By Cisco,By Cisco
+,,,,,,
+IOT,IOT_Intro_P1,"IOT, Introductory Level- Part One",By Cisco,2,By Cisco,By Cisco
+,IOT_MED_P1,"IOT, Intermediate Level- Part One",By Cisco,2,By Cisco,By Cisco
+,IOE_Exp_P1,"IOE, Expert Level- Part One",By Cisco,4,By Cisco,By Cisco
+,,,,,,
+Mobility,Mob_Intro_P1,"Mobility, Introductory Level- Part One",3-May-16,3,Mohamed Shoura,WIFUND GK Lab
+,Mob_Med_P1,"Mobility, Intermediate Level- Part One",18-Dec-16,3,Mohamed Shoura,Dcloud
+,Mob_Exp_P1,"Mobility, Expert Level- Part One",9-May-17,3,Mohamed Shoura,Dcloud
+,,,,,,
+SDN,SDN_Intro_P1,"SDN, Introductory Level- Part One",By Cisco,4,By Cisco,By Cisco
+,SDN_Med_P1,"SDN, Intermediate Level- Part One",By Cisco,5,By Cisco,By Cisco
+,SDN_Exp_P1,"SDN, Expert Level- Part One",By Cisco,3,By Cisco,By Cisco
+,,,,,,
+Prof. Skills,PS_MED_P1,"Prof Skills, Intermediate Level- Part One",7-Aug-16,3,Mohamed Assem,NA
+,PS_MED_P2,"Prof Skills, Intermediate Level- Part Two",10-Aug-16,2,Mohamed Assem,NA
+,PS_MED_P3,"Prof Skills, Intermediate Level- Part Three-ITIL",14-Nov-16,3,Ali Ramadan,NA
+,PS_MED_P4,"Prof Skills, Intermediate Level- Part Four",By Cisco,2,Essam to Advise,By Cisco
+,PS_MED_P5,"Prof Skills, Intermediate Level- Part Five",By Cisco,3,Essam to Advise,By Cisco
+,PS_Exp_P1,"Prof Skills, Expert Level- Part One",By Cisco,2,Essam to Advise,By Cisco
+,PS_Exp_P2 ,"Prof Skills, Expert Level- Part Two",By Cisco,2,Essam to Advise,By Cisco
+,PS_Exp_P3,"Prof Skills, Expert Level- Part Three-TOGAF",10-Jan-17,3,Ali Ramadan,By Cisco

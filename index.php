@@ -54,7 +54,7 @@
 
     <div class="left-pane">
       <p class="intro-text"> expand your knowledge with our courses </p>
-      <a class="intro-sub-text" href="training.php">learn more</a>
+      <a class="intro-sub-text" href="training.php">get started</a>
     </div>
 
     <div class="right-pane">

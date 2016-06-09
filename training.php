@@ -113,7 +113,7 @@
       </ul>
     </header>
 
-    <div id="registration">
+    <form id="registration" name="myForm" action="process.php" onsubmit="return validateForm();" method="post">
 
       <p class="title">sign up for a course in 3 steps!</p>
 
@@ -131,7 +131,7 @@
             <p> Routing </p>
           </button>
           <button id="button3" class="option track-3" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
-            <p> ISE </p>
+            <p> ACI </p>
           </button>
         </div>
 
@@ -186,19 +186,19 @@
 
         <div id="ise-options" class="course-options">
           <button class="ise option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> ISE 1 </p>
+            <p> ACI 1 </p>
           </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
           <button class="ise option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> ISE 2 </p>
+            <p> ACI 2 </p>
           </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
           <button class="ise option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> ISE 3 </p>
+            <p> ACI 3 </p>
           </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
@@ -216,7 +216,7 @@
         </div>
 
       </div> <!-- END OF THIRD STEP -->
-    </div> <!-- END OF REGISTRATION -->
+    </form> <!-- END OF REGISTRATION -->
 
   </body>
 
