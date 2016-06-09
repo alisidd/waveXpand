@@ -14,8 +14,7 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/papaparse.js"></script>
-
+    
     <script async type="text/javascript">
   		function mobileToggle(){
         if ($(".nav-options--mobile").hasClass("active")) {
@@ -49,10 +48,6 @@
           $("#intro").removeClass("active");
           $("#intermediate").removeClass("active");
           $("#expert").removeClass("active");
-
-          document.getElementById("intro-courses").style.display = "none";
-          document.getElementById("intermediate-courses").style.display = "none";
-          document.getElementById("expert-courses").style.display = "none";
 
           document.getElementById("intro-courses").style.display = "inline";
           document.getElementById("intermediate-courses").style.display = "inline";
