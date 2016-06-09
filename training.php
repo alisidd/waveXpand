@@ -85,7 +85,7 @@
         var arrayLength = optionArray.length;
 
         for (var i = 0; i < arrayLength; i++) {
-      			var newOption = document.createElement("a");
+      			var newOption = document.createElement("button");
             var t = document.createTextNode(optionArray[i]);
             newOption.appendChild(t);
             newOption.className += "date-option";
@@ -124,15 +124,15 @@
         </p>
 
         <div class="options">
-          <a id="button1" class="option track-1" onclick="populateList(this.id)" href="#second-step">
-            <p> CYBER SECURITY  </p>
-          </a>
-          <a id="button2" class="option track-2" onclick="populateList(this.id)" href="#second-step">
-            <p> ROUTING </p>
-          </a>
-          <a id="button3" class="option track-3" onclick="populateList(this.id)" href="#second-step">
+          <button id="button1" class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
+            <p> Cyber Security </p>
+          </button>
+          <button id="button2" class="option track-2" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
+            <p> Routing </p>
+          </button>
+          <button id="button3" class="option track-3" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
             <p> ISE </p>
-          </a>
+          </button>
         </div>
 
       </div> <!-- END OF FIRST STEP -->
@@ -143,63 +143,63 @@
         </p>
 
         <div id="security-options" class="course-options">
-          <a class="security option" href="#third-step">
+          <button class="security option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
             <p> Security 1 </p>
-          </a>
+          </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
-          <a class="security option" href="#third-step">
+          <button class="security option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
             <p> Security 2 </p>
-          </a>
+          </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
-          <a class="security option" href="#third-step">
+          <button class="security option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
             <p> Security 3 </p>
-          </a>
+          </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
         </div>
 
         <div id="routing-options" class="course-options">
-          <a class="routing option" href="#third-step">
+          <button class="routing option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
             <p> Routing 1 </p>
-          </a>
+          </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
-          <a class="routing option" href="#third-step">
+          <button class="routing option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
             <p> Routing 2 </p>
-          </a>
+          </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
-          <a class="routing option" href="#third-step">
+          <button class="routing option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
             <p> Routing 3 </p>
-          </a>
+          </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
         </div>
 
         <div id="ise-options" class="course-options">
-          <a class="ise option" href="#third-step">
+          <button class="ise option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
             <p> ISE 1 </p>
-          </a>
+          </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
-          <a class="ise option" href="#third-step">
+          <button class="ise option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
             <p> ISE 2 </p>
-          </a>
+          </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
-          <a class="ise option" href="#third-step">
+          <button class="ise option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
             <p> ISE 3 </p>
-          </a>
+          </button>
           <p>
             Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
           </p>
