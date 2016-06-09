@@ -447,24 +447,24 @@ p.sub-title
     padding: .5em .8em;
 
     cursor: pointer;
+    transition: background-color 200ms ease-in-out;
 
     color: white;
     border: .0625rem solid #fff;
-    transition: background-color 200ms ease-in-out;
 }
 
 .levels li:hover
 {
     transition: background-color 200ms ease-in-out;
 
-    background-color: rgba(255, 255, 255, .2);
+    background-color: rgba(145, 92, 129, .5);
 }
 
 .levels .active
 {
     transition: background-color 200ms ease-in-out;
 
-    background-color: rgba(255, 255, 255, .4);
+    background-color: rgba(145, 92, 129, .9);
 }
 
 .levels .level-1
