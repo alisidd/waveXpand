@@ -308,9 +308,10 @@ p.sub-title
 {
     font-family: 'Indie Flower', cursive;
     font-size: 4rem;
-    text-align: left;
 
     margin: 1em 1.3em 0 3em;
+
+    text-align: left;
 
     color: #fff;
     border-bottom: .13rem solid #fff;
@@ -319,6 +320,7 @@ p.sub-title
 #second-step
 {
     display: none;
+
     text-align: center;
 }
 
@@ -431,7 +433,7 @@ p.sub-title
 
 .levels
 {
-  margin-top: 3rem;
+    margin-top: 3rem;
 }
 
 .levels li
@@ -441,27 +443,30 @@ p.sub-title
 
     display: inline;
 
+    margin-right: -.3rem;
+    padding: .5em .8em;
+
+    cursor: pointer;
+
     color: white;
     border: .0625rem solid #fff;
-    margin-right: -0.3rem;
-    padding: 0.5em 0.8em;
 }
 
 .levels .active
 {
-  background-color: rgba(255, 255, 255, .4);
+    background-color: rgba(255, 255, 255, .4);
 }
 
 .levels .level-1
 {
-  border-top-left-radius: 2rem;
-  border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
 }
 
 .levels .level-last
 {
-  border-top-right-radius: 2rem;
-  border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
 }
 
 .small-text

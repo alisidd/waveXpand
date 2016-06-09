@@ -45,7 +45,10 @@
     <script type="text/javascript">
       function filter(selection) {
         if (selection == "all") {
-          $("#all").toggleClass("active");
+          $("#all").addClass("active");
+          $("#intro").removeClass("active");
+          $("#intermediate").removeClass("active");
+          $("#expert").removeClass("active");
 
           document.getElementById("intro-courses").style.display = "none";
           document.getElementById("intermediate-courses").style.display = "none";
@@ -56,21 +59,30 @@
           document.getElementById("expert-courses").style.display = "inline";
         } else if (selection == "intro") {
 
-          $("#intro").toggleClass("active");
+          $("#intro").addClass("active");
+          $("#all").removeClass("active");
+          $("#intermediate").removeClass("active");
+          $("#expert").removeClass("active");
 
           document.getElementById("intro-courses").style.display = "inline";
           document.getElementById("intermediate-courses").style.display = "none";
           document.getElementById("expert-courses").style.display = "none";
         } else if (selection == "intermediate") {
 
-          $("#intermediate").toggleClass("active");
+          $("#intermediate").addClass("active");
+          $("#intro").removeClass("active");
+          $("#all").removeClass("active");
+          $("#expert").removeClass("active");
 
           document.getElementById("intro-courses").style.display = "none";
           document.getElementById("intermediate-courses").style.display = "inline";
           document.getElementById("expert-courses").style.display = "none";
         } else if (selection == "expert") {
 
-          $("#expert").toggleClass("active");
+          $("#expert").addClass("active");
+          $("#intro").removeClass("active");
+          $("#intermediate").removeClass("active");
+          $("#all").removeClass("active");
 
           document.getElementById("intro-courses").style.display = "none";
           document.getElementById("intermediate-courses").style.display = "none";
