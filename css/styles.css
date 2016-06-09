@@ -464,46 +464,39 @@ p.sub-title
     background-color: rgba(255, 255, 255, .1);
 }
 
-#third-step
+.levels li
 {
-    display: none;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.3rem;
+
+    display: inline;
+
+    color: white;
+    border: .0625rem solid #fff;
+    margin-right: -0.3rem;
+    padding: 0.5em 0.7em;
 }
 
-.date-options
+.levels .active
 {
-    display: flex;
-
-    margin: 3rem 2rem 0 12rem;
-
-    text-align: center;
-
-    flex-wrap: wrap;
+  background-color: rgba(255, 255, 255, .4);
 }
 
-.date-option
+.levels .level-1
 {
-    font-family: 'Coming Soon', cursive;
-    font-size: 2rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
 
-    z-index: 20;
+.levels .level-last
+{
+  border-top-right-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+}
 
-    width: 26%;
-    height: 9rem;
-    margin: 2rem 3rem 2rem 2rem;
-    padding: 1em 1.9em 1em 1.9em;
-
-    cursor: pointer;
-
-    color: #fff;
-    border: .1rem solid #915c81;
-    border-radius: .4rem;
-    background: linear-gradient( rgba(91, 100, 137, .8), rgba(0, 0, 0, .5) ), url(../images/date.jpg) center center;
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
-
-    background-blend-mode: screen;
+.small-text
+{
+    font-size: 1.2rem;
 }
 
 /* All input fields on the card */

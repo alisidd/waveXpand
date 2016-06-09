@@ -139,78 +139,32 @@
 
       <div id="second-step">
         <p class="sub-title">
-          2. pick a course
+          2. pick a level
         </p>
 
-        <div id="security-options" class="course-options">
-          <button class="security option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> Security 1 </p>
-          </button>
-          <p>
-            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-          </p>
-          <button class="security option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> Security 2 </p>
-          </button>
-          <p>
-            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-          </p>
-          <button class="security option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> Security 3 </p>
-          </button>
-          <p>
-            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-          </p>
-        </div>
+        <ul class="levels">
+          <li class="level-1 active">All</li>
+          <li>Intro</li>
+          <li>Intermediate</li>
+          <li class="level-last">Expert</li>
+        </ul>
 
-        <div id="routing-options" class="course-options">
-          <button class="routing option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> Routing 1 </p>
-          </button>
-          <p>
-            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-          </p>
-          <button class="routing option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> Routing 2 </p>
-          </button>
-          <p>
-            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-          </p>
-          <button class="routing option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> Routing 3 </p>
-          </button>
-          <p>
-            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-          </p>
-        </div>
+        <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
+          <p> Security </p>
+          <p class="small-text"> Part One </p>
+        </button>
+        <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
+          <p> Security </p>
+          <p class="small-text"> Part Two </p>
+        </button>
+        <button class="option track-1" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
+          <p> Security </p>
+          <p class="small-text"> Part Three </p>
+        </button>
 
-        <div id="ise-options" class="course-options">
-          <button class="ise option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> ACI 1 </p>
-          </button>
-          <p>
-            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-          </p>
-          <button class="ise option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> ACI 2 </p>
-          </button>
-          <p>
-            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-          </p>
-          <button class="ise option" onclick="document.getElementById('third-step').scrollIntoView();" type="button">
-            <p> ACI 3 </p>
-          </button>
-          <p>
-            Lorem ipsum lobortis eu nam facilisis, viverra cubilia fames dolor bibendum, sodales senectus sit cursus non faucibus eget libero magna gravida inceptos euismod senectus phasellus accumsan sollicitudin quis in consectetur commodo auctor aenean accumsan duis, quam orci tellus porta dui consectetur enim felis volutpat, gravida erat habitant luctus purus blandit ligula.
-          </p>
-        </div>
       </div> <!-- END OF SECOND STEP -->
 
       <div id="third-step">
-
-        <p class="sub-title">
-          3. pick a date
-        </p>
 
         <div id="dates" class="date-options">
         </div>
