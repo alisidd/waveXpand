@@ -192,7 +192,10 @@ iframe
     font-size: 3rem;
 
     width: 30%;
+    min-width: 294px;
     height: 40%;
+    margin-right: 20px;
+    margin-top: 2rem;
 
     cursor: pointer;
     text-align: center;
@@ -291,6 +294,7 @@ iframe
 .all-courses
 {
     margin: 4rem 5rem 0 5rem;
+    text-align: center;
 }
 
 /* Misc classes for input */
