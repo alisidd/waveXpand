@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html lang="en-US">
-
-<head>
+<html>
+  <head>
     <!-- Import Google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
@@ -14,28 +12,9 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
 
-    <script async type="text/javascript">
-  		$(document).ready(function(){
-  			$('.parallax').parallax();
-  		});
-  	</script>
-
-    <script async type="text/javascript">
-  		function mobileToggle(){
-        if ($(".nav-options--mobile").hasClass("active")) {
-          $(".nav-options--mobile").fadeOut();
-        } else {
-          $(".nav-options--mobile").fadeIn();
-        }
-        $(".nav-options--mobile").toggleClass("active");
-  		}
-  	</script>
-
-</head>
-
-<body>
+  </head>
+  <body>
 
     <header>
       <a href="index.php">
@@ -52,18 +31,23 @@
       </ul>
     </header>
 
-    <div class="left-pane">
-      <p class="intro-text"> expand your knowledge with our courses </p>
-      <a class="intro-sub-text" href="training.php">get started</a>
-    </div>
+    <div class="content--index">
 
-    <div class="right-pane">
-      <p class="intro-video">a video about us</p>
-      <div class="video">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/4KmewIC-eV4" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
+      <div class="left-pane">
 
-</body>
+        <p class="intro-text"> expand your knowledge with our courses </p>
+        <a class="intro-sub-text" href="training.php">get started</a>
 
+      </div> <!-- End of left pane -->
+
+      <div class="right-pane">
+
+        <p class="intro-video">a video about us</p>
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/4KmewIC-eV4" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+      </div> <!-- End of right pane -->
+    </div><!-- End of Content -->
+  </body>
 </html>
