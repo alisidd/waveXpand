@@ -203,13 +203,14 @@ iframe
     font-family: 'Titillium Web', sans-serif;
     font-size: 1.5rem;
 
+    position: relative;
+    right: .5rem;
+    bottom: 1rem;
+
     display: block;
 
     width: 10em;
     height: 5rem;
-    position: relative;
-    bottom: 1rem;
-    right: 0.5rem;
 
     text-align: center;
 
@@ -233,9 +234,10 @@ iframe
 
 .number-desc
 {
-    display: inline;
     position: relative;
-    bottom: 0.6rem;
+    bottom: .6rem;
+
+    display: inline;
 }
 
 .track-option
@@ -257,17 +259,47 @@ iframe
     background-color: rgba(216, 172, 61, .9);
 }
 
-
-
-.title--box
+.course-option--desc
 {
     font-family: 'Titillium Web', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
 
-    padding-left: 2rem;
+    position: relative;
+    top: 2rem;
+    right: 1rem;
+
+    display: block;
+
+    width: 105%;
+    height: 5rem;
+
+    text-align: left;
 
     color: white;
-    border-bottom: 1px solid #fff;
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(145, 92, 129, .9);
+}
+
+.number--course
+{
+    position: relative;
+    top: .3rem;
+    left: 1.3rem;
+
+    display: inline-block;
+
+    width: 5%;
+    height: auto;
+}
+
+.number-desc--course
+{
+    position: relative;
+    bottom: .6rem;
+    left: 2rem;
+
+    display: inline;
 }
 
 .courses
