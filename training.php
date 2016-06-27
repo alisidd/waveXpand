@@ -3,7 +3,6 @@
     <!-- Import Google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 
     <!--Let browser know website is optimized for mobile-->
@@ -22,9 +21,9 @@
           $("#intermediate").removeClass("active");
           $("#expert").removeClass("active");
 
-          document.getElementById("intro-courses").style.display = "inline";
-          document.getElementById("intermediate-courses").style.display = "inline";
-          document.getElementById("expert-courses").style.display = "inline";
+          document.getElementsByClassName("intro")[0].style.display = "flex";
+          document.getElementsByClassName("intermediate")[0].style.display = "flex";
+          document.getElementsByClassName("expert")[0].style.display = "flex";
         } else if (selection == "intro") {
 
           $("#intro").addClass("active");
@@ -32,9 +31,9 @@
           $("#intermediate").removeClass("active");
           $("#expert").removeClass("active");
 
-          document.getElementById("intro-courses").style.display = "inline";
-          document.getElementById("intermediate-courses").style.display = "none";
-          document.getElementById("expert-courses").style.display = "none";
+          document.getElementsByClassName("intro")[0].style.display = "flex";
+          document.getElementsByClassName("intermediate")[0].style.display = "none";
+          document.getElementsByClassName("expert")[0].style.display = "none";
         } else if (selection == "intermediate") {
 
           $("#intermediate").addClass("active");
@@ -42,9 +41,9 @@
           $("#all").removeClass("active");
           $("#expert").removeClass("active");
 
-          document.getElementById("intro-courses").style.display = "none";
-          document.getElementById("intermediate-courses").style.display = "inline";
-          document.getElementById("expert-courses").style.display = "none";
+          document.getElementsByClassName("intro")[0].style.display = "none";
+          document.getElementsByClassName("intermediate")[0].style.display = "flex";
+          document.getElementsByClassName("expert")[0].style.display = "none";
         } else if (selection == "expert") {
 
           $("#expert").addClass("active");
@@ -52,62 +51,25 @@
           $("#intermediate").removeClass("active");
           $("#all").removeClass("active");
 
-          document.getElementById("intro-courses").style.display = "none";
-          document.getElementById("intermediate-courses").style.display = "none";
-          document.getElementById("expert-courses").style.display = "inline";
+          document.getElementsByClassName("intro")[0].style.display = "none";
+          document.getElementsByClassName("intermediate")[0].style.display = "none";
+          document.getElementsByClassName("expert")[0].style.display = "flex";
         }
       }
     </script>
 
-    <script async type="text/javascript">
-      function populateList(course)
-      {
-        document.getElementById("dates").innerHTML = "";
-        var input = document.getElementById(course);
-        if (course == "button1") {
-          document.getElementById("second-step").style.display = "block";
-          document.getElementById("security-options").style.display = "flex";
-          document.getElementById("routing-options").style.display = "none";
-          document.getElementById("ise-options").style.display = "none";
+    <script type="text/javascript">
+      function displayCourse(course) {
+      }
+    </script>
 
-          document.getElementById("third-step").style.display = "inline";
-
-          var optionArray = ['Sep 1, 2016','Sep 6, 2016','Sep 9, 2016'];
-
-
-        } else if (course == "button2") {
-          document.getElementById("second-step").style.display = "block";
-          document.getElementById("routing-options").style.display = "flex";
-          document.getElementById("security-options").style.display = "none";
-          document.getElementById("ise-options").style.display = "none";
-
-          document.getElementById("third-step").style.display = "inline";
-
-          var optionArray = ["Oct 1, 2016","Oct 6, 2016","Oct 9, 2016"];
-
-
-        } else if (course == "button3") {
-          document.getElementById("second-step").style.display = "block";
-          document.getElementById("ise-options").style.display = "flex";
-          document.getElementById("security-options").style.display = "none";
-          document.getElementById("routing-options").style.display = "none";
-
-          document.getElementById("third-step").style.display = "inline";
-
-          var optionArray = ["Nov 1, 2016","Nov 6, 2016","Nov 9, 2016"];
-
-
+    <script type="text/javascript">
+      function populateList(track) {
+        var courses = document.getElementsByClassName("course-title");
+        var i;
+        for (i = 0; i < courses.length; i++) {
+          courses[i].innerHTML = track;
         }
-
-        var arrayLength = optionArray.length;
-
-        for (var i = 0; i < arrayLength; i++) {
-      			var newOption = document.createElement("button");
-            var t = document.createTextNode(optionArray[i]);
-            newOption.appendChild(t);
-            newOption.className += "date-option";
-            document.getElementById("dates").appendChild(newOption);
-      	}
       }
     </script>
 
@@ -129,72 +91,196 @@
       </ul>
     </header>
 
+
+        <!--
+          <div class="options">
+            <div class="track-options">
+              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
+                <p> Collab </p>
+              </button>
+              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
+                <p> DC </p>
+              </button>
+              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
+                <p> R&S </p>
+              </button>
+              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
+                <p> Security </p>
+              </button>
+              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
+                <p> IoT </p>
+              </button>
+              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
+                <p> Mobility </p>
+              </button>
+              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
+                <p> SDN </p>
+              </button>
+              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
+                <p> Prof. Skills </p>
+              </button>
+            </div>
+
+            <div class="courses">
+              <ul class="levels">
+                <li id="all" onclick="filter(this.id);" class="level-1 active">all</li>
+                <li id="intro" onclick="filter(this.id);">intro</li>
+                <li id="intermediate" onclick="filter(this.id);">intermediate</li>
+                <li id="expert" onclick="filter(this.id);" class="level-last">expert</li>
+              </ul>
+
+              <ul class="course-options">
+                <div class="intro">
+                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
+                    <p class="course-title"> SDN </p>
+                    <p class="course-part"> Part 1 </p>
+                  </li>
+                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
+                    <p class="course-title"> SDN </p>
+                    <p class="course-part"> Part 2 </p>
+                  </li>
+                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
+                    <p class="course-title"> SDN </p>
+                    <p class="course-part"> Part 3 </p>
+                  </li>
+                </div>
+                <div class="intermediate">
+                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
+                    <p class="course-title"> SDN </p>
+                    <p class="course-part"> Part 1 </p>
+                  </li>
+                </div>
+                <div class="expert">
+                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
+                    <p class="course-title"> SDN </p>
+                    <p class="course-part"> Part 1 </p>
+                  </li>
+                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
+                    <p class="course-title"> SDN </p>
+                    <p class="course-part"> Part 2 </p>
+                  </li>
+                </div>
+              </ul>
+            </div>
+          </div>
+
+          <div class="course-details">
+            <p id="course-name">SDN PART 1</p>
+            <p id="course-description">
+                Basic Network Concepts and Network Components <br>
+                Operate a medium sized LAN with multiple switches, supporting VLANs, and trunking <br>
+                Explain how bridging and switching operates <br>
+                Explain the purpose and operations of the Spanning-Tree Protocol <br>
+                Define IP Protocol IPv4  address and subnetting b <br>
+                Define characteristics, functions, and component of a WAN <br>
+                Describe SNMP, syslog, and NetFlow, and manage Cisco device configurations, Cisco IOS images and licenses <br>
+                Introduction to Prime infrastructure  b <br>
+            </p>
+          </div>
+      </form> <!-- END OF REGISTRATION -->
     <div class="content--training">
       <form id="registration" name="myForm" action="process.php" onsubmit="return validateForm();" method="post">
 
-        <p class="title">sign up for a course in 3 steps!</p>
+        <p class="title">sign up for a course</p>
 
-        <div id="first-step">
-
-          <p class="sub-title">
-            1. pick a track
-          </p>
-
+        <div class="left-pane--training">
           <div class="options">
-            <button id="button1" class="option" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
-              <p> Cyber Security </p>
-            </button>
-            <button id="button2" class="option" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
-              <p> Routing </p>
-            </button>
-            <button id="button3" class="option" onclick="populateList(this.id);document.getElementById('second-step').scrollIntoView();" type="button">
-              <p> ACI </p>
-            </button>
-          </div>
-
-        </div> <!-- END OF FIRST STEP -->
-
-        <div id="second-step">
-          <p class="sub-title">
-            2. pick a course
-          </p>
-
-          <ul class="levels">
-            <li id="all" onclick="filter(this.id);" class="level-1 active">all</li>
-            <li id="intro" onclick="filter(this.id);">intro</li>
-            <li id="intermediate" onclick="filter(this.id);">intermediate</li>
-            <li id="expert" onclick="filter(this.id);" class="level-last">expert</li>
-          </ul>
-
-          <div class="all-courses">
-            <div id="intro-courses">
-              <button class="option track-1" type="button">
-                <p> Intro </p>
+            <div class="track-options">
+              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+                <p> Collab </p>
               </button>
-            </div>
-
-            <div id="intermediate-courses">
-              <button  class="option track-1" type="button">
-                <p> Intermediate </p>
+              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+                <p> DC </p>
               </button>
-            </div>
-
-            <div id="expert-courses">
-              <button class="option track-1" type="button">
-                <p> Expert </p>
+              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+                <p> R&S </p>
+              </button>
+              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+                <p> Security </p>
+              </button>
+              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+                <p> IoT </p>
+              </button>
+              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+                <p> Mobility </p>
+              </button>
+              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+                <p> SDN </p>
+              </button>
+              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+                <p> Prof. Skills </p>
               </button>
             </div>
           </div>
+        </div>
 
-        </div> <!-- END OF SECOND STEP -->
+        <div class="right-pane--training">
+          <div class="courses">
+            <div class="title--box">
+              2. pick a course
+            </div>
+            <ul class="levels">
+              <li id="all" onclick="filter(this.id);" class="level-1 active">all</li>
+              <li id="intro" onclick="filter(this.id);">intro</li>
+              <li id="intermediate" onclick="filter(this.id);">intermediate</li>
+              <li id="expert" onclick="filter(this.id);" class="level-last">expert</li>
+            </ul>
 
-        <div id="third-step">
+            <ul class="course-options">
+              <div class="intro">
+                <li class="course" onclick="displayCourse(this.innerHTML)">
+                  <p class="course-title"> SDN </p>
+                  <p class="course-part"> Part 1 </p>
+                </li>
+                <li class="course" onclick="displayCourse(this.innerHTML)">
+                  <p class="course-title"> SDN </p>
+                  <p class="course-part"> Part 2 </p>
+                </li>
+                <li class="course" onclick="displayCourse(this.innerHTML)">
+                  <p class="course-title"> SDN </p>
+                  <p class="course-part"> Part 3 </p>
+                </li>
+              </div>
+              <div class="intermediate">
+                <li class="course" onclick="displayCourse(this.innerHTML)">
+                  <p class="course-title"> SDN </p>
+                  <p class="course-part"> Part 1 </p>
+                </li>
+              </div>
+              <div class="expert">
+                <li class="course" onclick="displayCourse(this.innerHTML)">
+                  <p class="course-title"> SDN </p>
+                  <p class="course-part"> Part 1 </p>
+                </li>
+                <li class="course" onclick="displayCourse(this.innerHTML)">
+                  <p class="course-title"> SDN </p>
+                  <p class="course-part"> Part 2 </p>
+                </li>
+              </div>
+            </ul>
+          </div> <!-- End of step 2 -->
 
-          <div id="dates" class="date-options">
+          <div class="course-signup">
+              <div id="course-name">
+                  SDN Part 2
+              </div>
+
+              <div id="course-description">
+                  <li> Collaboration Preferred Architecture & Solution Components </li>
+                  <li> Collaboration market and solutions (on-premise, cloud, mid-market, hosted) </li>
+                  <li> CUCM Call Control Basics for Voice/Video/IM (includes IM&P Node) </li>
+                  <li> Enterprise call control design.  Single site, multiple sites, cluster over WAN </li>
+                  <li> CUCM configuration foundation </li>
+                  <li> UC Applications foundational knowledge (Unity Connection, Attendant Consoles, Paging, Billing/Fax, etc.) </li>
+                  <li> Collaboration Edge Architecture (Expressway + CUBE) </li>
+                  <li> Collaboration Packaged solutions  BE6K S/M/H, BE7K M/H </li>
+                  <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>
+              </div>
           </div>
 
-        </div> <!-- END OF THIRD STEP -->
-      </form> <!-- END OF REGISTRATION -->
+        </div> <!-- End of Right Pane -->
+
+      </form>
     </div>
   </body>
 </html>

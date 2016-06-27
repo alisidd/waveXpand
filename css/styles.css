@@ -69,6 +69,8 @@ a
 
 .right-pane
 {
+    position: relative;
+
     float: right;
 
     width: 40%;
@@ -123,10 +125,10 @@ iframe
 {
     position: absolute;
 
-    width: 37%;
-    height: 40%;
+    width: 100%;
+    height: 180%;
 
-    border: .1rem solid #915c81;
+    border: .1rem solid rgba(145, 92, 129, 1);
 }
 
 /* Training page */
@@ -134,14 +136,14 @@ iframe
 .content--training
 {
     margin: 0 30px;
+
+    border-radius: .3rem;
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
 
 #registration
 {
     padding-bottom: 4rem;
-
-    border-radius: .3rem;
-    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
 
 .title
@@ -167,77 +169,82 @@ iframe
     border-bottom: .13rem solid #fff;
 }
 
-#first-step,
-#second-step
+.left-pane--training
 {
-    margin: 1em 5em 0 8em;
+    float: left;
+
+    width: 20%;
+    margin-left: 6rem;
+}
+
+.right-pane--training
+{
+    float: right;
+
+    width: 60%;
+    margin-right: 5rem;
 }
 
 .options
 {
-    display: flex;
-    flex-direction: row;
+    display: inline-block;
 
-    margin: 3rem 5rem 0 5rem;
-
-    text-align: center;
-
-    justify-content: space-around;
-    flex-wrap: wrap;
+    margin-top: 4rem;
 }
 
-.option
+.track-options
 {
-    font-family: 'Coming Soon', cursive;
-    font-size: 3rem;
+    display: inline;
+}
 
-    width: 30%;
-    min-width: 294px;
-    height: 40%;
-    min-height: 239px;
-    max-height: 294px
-    margin-right: 20px;
-    margin-top: 2rem;
+.track-option
+{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 2rem;
+
+    display: block;
+
+    width: 7em;
+    margin-top: -.2rem;
 
     cursor: pointer;
-    text-align: center;
 
     color: #fff;
-    border: .1rem solid #915c81;
-    border-radius: .4rem;
-
-    background-blend-mode: screen;
+    border: none;
+    border-bottom: 3px solid #fff;
+    background-color: rgba(145, 92, 129, 1);
 }
 
-#button1
+.track-option:hover
 {
-    background: linear-gradient( rgba(91, 100, 137, .8), rgba(0, 0, 0, .5) ), url(../images/cyber-security.jpg) center left;
+    background-color: rgba(145, 92, 200, 1);
 }
 
-.track-1
+.title--box
 {
-    background: linear-gradient( rgba(91, 100, 137, .8), rgba(0, 0, 0, .5) ), url(../images/cyber-security.jpg) center left;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 2rem;
+
+    padding-left: 2rem;
+
+    color: white;
+    border-bottom: 1px solid #fff;
 }
 
-#button2
+.courses
 {
-    background: linear-gradient( rgba(91, 100, 137, .8), rgba(0, 0, 0, .5) ), url(../images/routing.jpg) center left;
-}
+    margin: 4rem 1rem 0 0;
 
-#button3
-{
-    background: linear-gradient( rgba(91, 100, 137, .8), rgba(0, 0, 0, .5) ), url(../images/infrastructure.jpg) center left;
-}
-
-#second-step
-{
-    display: none;
-
-    margin: 1em 5em 0 8em;
+    border: 1px solid #fff;
+    border-radius: 3px;
 }
 
 .levels
 {
+    display: inline-block;
+
+    width: 100%;
+
     text-align: center;
 }
 
@@ -284,21 +291,83 @@ iframe
     background-color: rgba(145, 92, 129, .9);
 }
 
-#intro-courses,
-#intermediate-courses,
-#expert-courses
+.course-options
 {
-    display: inline;
-
-    margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.all-courses
+.intro,
+.intermediate,
+.expert
 {
-    margin: 4rem 5rem 0 5rem;
-
-    text-align: center;
+    display: flex;
+    flex-direction: row;
 }
+
+.course
+{
+    font-family: 'Titillium Web', sans-serif;
+
+    position: relative;
+
+    margin: 0 2rem 1rem 0;
+    padding: .3em 4em .3em 4em;
+
+    list-style-type: none;
+
+    cursor: pointer;
+
+    color: white;
+    border: 1px solid #fff;
+    transition: background-color 200ms ease-in-out;
+}
+
+.course:hover
+{
+    background-color: rgba(145, 92, 129, .4);
+}
+
+.course-title
+{
+    position: absolute;
+    top: -26px;
+    left: 10px;
+}
+
+.course-part
+{
+    font-size: 1.5rem;
+}
+
+.course-signup
+{
+  margin-top: 4rem;
+  margin-right: 1rem;
+  border: 1px solid #fff;
+}
+
+#course-name
+{
+    font-family: 'Indie Flower', cursive;
+    font-size: 4rem;
+
+    margin: 1rem 1rem 0 3rem;
+
+    color: white;
+}
+
+#course-description
+{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.2rem;
+
+    margin: 3rem 1rem 0 4rem;
+    padding-bottom: 2em;
+
+    color: white;
+}
+
 
 /* Misc classes for input */
 
