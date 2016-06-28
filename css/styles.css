@@ -200,10 +200,11 @@ iframe
 .track-option--desc
 {
     font-family: 'Titillium Web', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
 
     position: relative;
-    right: .5rem;
+    right: 2rem;
     bottom: 1rem;
 
     display: block;
@@ -253,7 +254,7 @@ iframe
 
     color: #fff;
     border: none;
-    border-bottom: 5px groove rgba(90, 175, 154, .7);
+    border-bottom: 5px groove rgba(90, 175, 154, 1);
     border-radius: 3px;
     background-color: rgba(204, 168, 78, .9);
 }
@@ -418,6 +419,28 @@ iframe
 .course-part
 {
     font-size: 1.5rem;
+}
+
+.sign-up-option--desc
+{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.3rem;
+
+    position: relative;
+    top: 2rem;
+
+    display: block;
+
+    width: 98%;
+    height: 5rem;
+    margin-top: 1rem;
+
+    text-align: left;
+
+    color: white;
+    border: none;
+    border-radius: 3px;
+    background-color: rgba(63, 79, 119, .6);
 }
 
 .course-signup
