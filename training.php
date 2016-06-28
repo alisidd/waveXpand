@@ -61,11 +61,13 @@
 
     <script type="text/javascript">
       function displayCourse(course) {
+        document.getElementsByClassName("course-signup").style.display = "auto";
       }
     </script>
 
     <script type="text/javascript">
       function populateList(track) {
+        document.getElementsByClassName("course").style.display = "auto";
         var courses = document.getElementsByClassName("course-title");
         var i;
         for (i = 0; i < courses.length; i++) {
@@ -212,7 +214,7 @@
               <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
                 <p> SDN </p>
               </button>
-              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+              <button class="track-option track-option-last" onclick="populateList(this.innerHTML);" type="button">
                 <p> Prof. Skills </p>
               </button>
             </div>

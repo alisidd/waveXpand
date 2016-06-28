@@ -23,11 +23,13 @@ a
     color: #fff;
 }
 
-::selection {
-  background-color: rgba(204, 168, 78, .7);/* WebKit/Blink Browsers */
+::selection
+{
+    background-color: rgba(204, 168, 78, .7);/* WebKit/Blink Browsers */
 }
-::-moz-selection {
-  background-color: rgba(204, 168, 78, .7);/* Gecko Browsers */
+::-moz-selection
+{
+    background-color: rgba(204, 168, 78, .7);/* Gecko Browsers */
 }
 
 .logo
@@ -251,9 +253,14 @@ iframe
 
     color: #fff;
     border: none;
-    border-bottom: 5px dotted rgba(90, 175, 154, .7);
+    border-bottom: 5px groove rgba(90, 175, 154, .7);
     border-radius: 3px;
     background-color: rgba(204, 168, 78, .9);
+}
+
+.track-option-last
+{
+    border-bottom: none;
 }
 
 .course-option--desc
@@ -269,6 +276,7 @@ iframe
 
     width: 102%;
     height: 5rem;
+    margin-top: 1rem;
 
     text-align: left;
 
@@ -301,7 +309,9 @@ iframe
 
 .courses
 {
-    margin: 4rem 1rem 0 0;
+    display: none;
+
+    margin: 4rem 1rem 1 0;
 
     border: 1px solid rgba(63, 79, 119, 1);
     border-radius: 3px;
@@ -412,6 +422,8 @@ iframe
 
 .course-signup
 {
+    display: none;
+
     margin-top: 4rem;
     margin-right: 1rem;
 
