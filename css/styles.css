@@ -23,6 +23,13 @@ a
     color: #fff;
 }
 
+::selection {
+  background-color: rgba(204, 168, 78, .7);/* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background-color: rgba(204, 168, 78, .7);/* Gecko Browsers */
+}
+
 .logo
 {
     width: 13rem;
@@ -135,36 +142,26 @@ iframe
 
 .content--training
 {
-    margin: 0 30px;
+    margin: 40px 30px 0 30px;
 
     border-radius: .3rem;
-    background-color: rgba(90, 175, 154, .7);
+    background-color: rgba(96, 104, 127, .7);
     box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
 
 #registration
 {
-    padding-bottom: 76rem;
+    padding-bottom: 80rem;
 }
 
 .title
 {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Indie Flower', serif;
     font-size: 5rem;
+    font-style: italic;
 
     margin: .2em 1em 0 1em;
     padding-top: 3rem;
-
-    color: #fff;
-    border-bottom: .13rem solid #fff;
-}
-
-.sub-title
-{
-    font-family: 'Indie Flower', cursive;
-    font-size: 4rem;
-
-    text-align: left;
 
     color: #fff;
     border-bottom: .13rem solid #fff;
@@ -217,7 +214,7 @@ iframe
     color: white;
     border: none;
     border-radius: 3px;
-    background-color: rgba(145, 92, 129, .9);
+    background-color: rgba(63, 79, 119, .6);
 }
 
 .number
@@ -256,7 +253,7 @@ iframe
     border: none;
     border-bottom: 5px dotted rgba(90, 175, 154, .7);
     border-radius: 3px;
-    background-color: rgba(216, 172, 61, .9);
+    background-color: rgba(204, 168, 78, .9);
 }
 
 .course-option--desc
@@ -270,7 +267,7 @@ iframe
 
     display: block;
 
-    width: 105%;
+    width: 102%;
     height: 5rem;
 
     text-align: left;
@@ -278,7 +275,7 @@ iframe
     color: white;
     border: none;
     border-radius: 3px;
-    background-color: rgba(145, 92, 129, .9);
+    background-color: rgba(63, 79, 119, .6);
 }
 
 .number--course
@@ -306,8 +303,9 @@ iframe
 {
     margin: 4rem 1rem 0 0;
 
-    border: 1px solid #fff;
+    border: 1px solid rgba(63, 79, 119, 1);
     border-radius: 3px;
+    background-color: rgba(63, 79, 119, .1);
 }
 
 .levels
@@ -330,10 +328,10 @@ iframe
     padding: .5em .8em;
 
     cursor: pointer;
-    transition: background-color 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
 
     color: white;
-    border: .0625rem solid #fff;
+    border: .0625rem solid rgba(63, 79, 119, 1);
 }
 
 .levels .level-1
@@ -352,14 +350,14 @@ iframe
 {
     transition: background-color 200ms ease-in-out;
 
-    background-color: rgba(145, 92, 129, .5);
+    background-color: rgba(63, 79, 119, .6);
 }
 
 .levels .active
 {
     transition: background-color 200ms ease-in-out;
 
-    background-color: rgba(145, 92, 129, .9);
+    background-color: rgba(63, 79, 119, 1);
 }
 
 .course-options
@@ -391,12 +389,13 @@ iframe
     transition: background-color 200ms ease-in-out;
 
     color: white;
-    border: 1px solid #fff;
+    border-radius: 3px;
+    background-color: rgba(204, 168, 78, .9);
 }
 
 .course:hover
 {
-    background-color: rgba(145, 92, 129, .4);
+    background-color: rgba(204, 168, 78, .7);
 }
 
 .course-title
@@ -416,12 +415,13 @@ iframe
     margin-top: 4rem;
     margin-right: 1rem;
 
-    border: 1px solid #fff;
+    border: 1px solid rgba(63, 79, 119, 1);
+    background-color: rgba(63, 79, 119, .2);
 }
 
 #course-name
 {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Ubuntu', serif;
     font-size: 4rem;
 
     margin: 1rem 1rem 0 3rem;
@@ -436,6 +436,8 @@ iframe
 
     margin: 3rem 1rem 0 4rem;
     padding-bottom: 2em;
+
+    list-style-type: square;
 
     color: white;
 }

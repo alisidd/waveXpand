@@ -3,6 +3,7 @@
     <!-- Import Google fonts -->
     <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
 
     <!--Let browser know website is optimized for mobile-->
@@ -186,6 +187,10 @@
         <div class="left-pane--training">
           <div class="options">
             <div class="track-options">
+              <button class="track-option--desc" onclick="populateList(this.innerHTML);" type="button">
+                <img class="number" src="images/1.png" alt="" />
+                <p class="number-desc"> pick a track</p>
+              </button>
               <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
                 <p> Collab </p>
               </button>
@@ -215,10 +220,13 @@
         </div>
 
         <div class="right-pane--training">
+
+          <button class="course-option--desc" onclick="populateList(this.innerHTML);" type="button">
+            <img class="number--course" src="images/2.png" alt="" />
+            <p class="number-desc--course"> pick a course</p>
+          </button>
+
           <div class="courses">
-            <div class="title--box">
-              2. pick a course
-            </div>
             <ul class="levels">
               <li id="all" onclick="filter(this.id);" class="level-1 active">all</li>
               <li id="intro" onclick="filter(this.id);">intro</li>
@@ -259,6 +267,11 @@
               </div>
             </ul>
           </div> <!-- End of step 2 -->
+
+          <button class="course-option--desc" onclick="populateList(this.innerHTML);" type="button">
+            <img class="number--course" src="images/3.png" alt="" />
+            <p class="number-desc--course"> sign up!</p>
+          </button>
 
           <div class="course-signup">
               <div id="course-name">
