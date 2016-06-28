@@ -62,6 +62,9 @@
     <script type="text/javascript">
       function displayCourse(course) {
         document.getElementsByClassName("course-signup")[0].style.display = "block";
+
+
+        document.getElementById("course-name").innerHTML = course.getElementsByTagName('p')[1].innerHTML + course.getElementsByTagName('p')[2].innerHTML;
       }
     </script>
 
@@ -238,31 +241,31 @@
 
             <ul class="course-options">
               <div class="intro">
-                <li class="course" onclick="displayCourse(this.innerHTML)">
+                <li class="course" onclick="displayCourse(this)">
                   <p class="course-title"> SDN </p>
                   <p class="course-part"> Part 1 </p>
                 </li>
-                <li class="course" onclick="displayCourse(this.innerHTML)">
+                <li class="course" onclick="displayCourse(this)">
                   <p class="course-title"> SDN </p>
                   <p class="course-part"> Part 2 </p>
                 </li>
-                <li class="course" onclick="displayCourse(this.innerHTML)">
+                <li class="course" onclick="displayCourse(this)">
                   <p class="course-title"> SDN </p>
                   <p class="course-part"> Part 3 </p>
                 </li>
               </div>
               <div class="intermediate">
-                <li class="course" onclick="displayCourse(this.innerHTML)">
+                <li class="course" onclick="displayCourse(this)">
                   <p class="course-title"> SDN </p>
                   <p class="course-part"> Part 1 </p>
                 </li>
               </div>
               <div class="expert">
-                <li class="course" onclick="displayCourse(this.innerHTML)">
+                <li class="course" onclick="displayCourse(this)">
                   <p class="course-title"> SDN </p>
                   <p class="course-part"> Part 1 </p>
                 </li>
-                <li class="course" onclick="displayCourse(this.innerHTML)">
+                <li class="course" onclick="displayCourse(this)">
                   <p class="course-title"> SDN </p>
                   <p class="course-part"> Part 2 </p>
                 </li>

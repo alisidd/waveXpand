@@ -174,7 +174,7 @@ iframe
     float: left;
 
     width: 20%;
-    margin-left: 6rem;
+    margin-left: 7rem;
 }
 
 .right-pane--training
@@ -200,7 +200,7 @@ iframe
 .track-option--desc
 {
     font-family: 'Titillium Web', sans-serif;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
 
     position: relative;
     right: 2rem;
@@ -312,7 +312,7 @@ iframe
 {
     display: none;
 
-    margin: 4rem 1rem 1 0;
+    margin: 4rem 1rem 0 0;
 
     border: 1px solid rgba(63, 79, 119, 1);
     border-radius: 3px;
