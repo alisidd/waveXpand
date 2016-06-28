@@ -61,13 +61,13 @@
 
     <script type="text/javascript">
       function displayCourse(course) {
-        document.getElementsByClassName("course-signup").style.display = "auto";
+        document.getElementsByClassName("course-signup")[0].style.display = "block";
       }
     </script>
 
     <script type="text/javascript">
       function populateList(track) {
-        document.getElementsByClassName("course").style.display = "auto";
+        document.getElementsByClassName("courses")[0].style.display = "block";
         var courses = document.getElementsByClassName("course-title");
         var i;
         for (i = 0; i < courses.length; i++) {
@@ -270,7 +270,7 @@
             </ul>
           </div> <!-- End of step 2 -->
 
-          <button class="course-option--desc" onclick="populateList(this.innerHTML);" type="button">
+          <button class="sign-up-option--desc" onclick="populateList(this.innerHTML);" type="button">
             <img class="number--course" src="images/3.png" alt="" />
             <p class="number-desc--course"> sign up!</p>
           </button>
