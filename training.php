@@ -294,6 +294,8 @@
                   <li> Collaboration Packaged solutions  BE6K S/M/H, BE7K M/H </li>
                   <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>
               </div>
+
+              <button class="action-button" type="button" name="sign-up">Sign up!</button>
           </div>
 
         </div> <!-- End of Right Pane -->
