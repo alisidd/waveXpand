@@ -83,7 +83,7 @@ a
 {
     position: relative;
 
-    width: 30%;
+    width: 40%;
     margin: 15% auto;
     padding: 4em;
 
@@ -94,28 +94,65 @@ a
 
 .close
 {
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-
     position: absolute;
-    top: .2rem;
+    top: 1rem;
     left: 1rem;
 
-    float: left;
+    display: inline-block;
+    overflow: hidden;
 
-    transition: color 200ms ease-in-out;
+    width: 50px;
+    height: 50px;
 
-    color: rgba(90, 175, 154, 1);
+    cursor: pointer;
+    transition: background 200ms ease-in-out;
+
+    border: 1px solid rgba(204, 168, 78, .9);
+    border-radius: 50%;
 }
 
-.close:hover,
-.close:focus
+.close::before,
+.close::after
 {
-    cursor: pointer;
-    text-decoration: none;
+    position: absolute;
+    top: 50%;
+    left: 20%;
 
-    color: rgba(90, 175, 154, .6);
+    width: 60%;
+    height: 2px;
+    margin-top: -1px;
+
+    content: '';
+
+    background: rgba(204, 168, 78, .9);
+}
+
+.close:hover
+{
+    background: rgba(255, 255, 255, .1);
+}
+
+.close::before
+{
+    transform: rotate(45deg);
+}
+
+.close::after
+{
+    transform: rotate(-45deg);
+}
+
+.warp::before,
+.warp::after
+{
+    border-radius: 120% 0;
+}
+
+#sign-in
+{
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
 }
 
 /* Index page */
@@ -523,7 +560,7 @@ iframe
     font-family: 'Ubuntu', serif;
     font-size: 4rem;
 
-    margin: 1rem 1rem 0 3rem;
+    margin: 2rem 1rem 0 3rem;
 
     color: white;
 }
@@ -595,7 +632,7 @@ input[type=password]
     box-sizing: content-box;
     width: 100%;
     height: 3rem;
-    margin: 0 0 .9375em 0;
+    margin: 0 0 .9375em 1em;
     padding: 0;
 
     transition: all .3s;
@@ -606,7 +643,6 @@ input[type=password]
     border-radius: 0;
     outline: none;
     background-color: transparent;
-    box-shadow: none;
 }
 
 input[type=text]:focus,
@@ -663,6 +699,8 @@ input[type=text] + label:after
     position: absolute;
     top: .8rem;
     left: .75rem;
+
+    margin-left: 1em;
 
     cursor: text;
     transition: .2s ease-out;
