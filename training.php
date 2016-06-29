@@ -192,10 +192,12 @@
         <div class="left-pane--training">
           <div class="options">
             <div class="track-options">
-              <button class="track-option--desc" onclick="populateList(this.innerHTML);" type="button">
+
+              <div class="track-option--desc">
                 <img class="number" src="images/1.png" alt="" />
                 <p class="number-desc"> pick a track</p>
-              </button>
+              </div>
+
               <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
                 <p> Collab </p>
               </button>
@@ -226,10 +228,10 @@
 
         <div class="right-pane--training">
 
-          <button class="course-option--desc" onclick="populateList(this.innerHTML);" type="button">
+          <div class="course-option--desc">
             <img class="number--course" src="images/2.png" alt="" />
             <p class="number-desc--course"> pick a course</p>
-          </button>
+          </div>
 
           <div class="courses">
             <ul class="levels">
@@ -273,10 +275,10 @@
             </ul>
           </div> <!-- End of step 2 -->
 
-          <button class="sign-up-option--desc" onclick="populateList(this.innerHTML);" type="button">
+          <div class="sign-up-option--desc">
             <img class="number--course" src="images/3.png" alt="" />
             <p class="number-desc--course"> sign up!</p>
-          </button>
+          </div>
 
           <div class="course-signup">
               <div id="course-name">
