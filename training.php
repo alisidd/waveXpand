@@ -297,7 +297,7 @@
                   <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>
               </div>
 
-              <button class="action-button" type="button" name="sign-up">Sign up!</button>
+              <button class="action-button" type="button" name="sign-up">Sign up</button>
           </div>
 
         </div> <!-- End of Right Pane -->

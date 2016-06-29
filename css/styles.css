@@ -454,8 +454,7 @@ iframe
 {
     display: none;
 
-    margin-top: 4rem;
-    margin-right: 1rem;
+    margin: 4rem 2rem 0rem 1rem;
     padding-bottom: 4rem;
 
     border: 1px solid rgba(63, 79, 119, 1);
