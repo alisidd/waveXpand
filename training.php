@@ -146,7 +146,7 @@
       <div id="login-box" class="modal">
 
         <div class="modal-content">
-          <span class="close" onclick="closeModal(this);">x</span>
+          <span class="close warp" onclick="closeModal(this);"></span>
 
           <form name="myForm" method="post" action="training.php" onsubmit="return validateForm();">
             <div class="input-field">
@@ -157,7 +157,7 @@
   						<input id="password" type="password" name="password">
   						<label for="password">Password</label>
   					</div>
-            <button class="action-button" type="submit" value="Submit" name="sign-in">Sign in</button>
+            <button class="action-button" type="submit" value="Submit" id="sign-in">Sign in</button>
           </form>
 
         </div>
