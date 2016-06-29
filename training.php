@@ -1,3 +1,31 @@
+<?php
+	$password = "pass";
+
+	if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
+	{
+    echo "<p> WHAT </p>";
+    echo "<script> changeLogin(); </script>";
+		header("Location: training.php");
+	}
+
+	if (isset($_POST['password']))
+	{
+		if ($_POST['password'] == $password)
+		{
+			$_SESSION['logged_in'] = true;
+			header("Location: training.php");
+		} else {
+			$message = "Incorrect Password";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+		}
+	}
+	if (!empty($_POST))
+	{
+    $_SESSION['$loginEmail'] = $_POST['email'];
+	}
+
+  ?>
+
 <html>
   <head>
     <!-- Import Google fonts -->
@@ -13,6 +41,26 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script type="text/javascript">
+      function changeLogin(course) {
+        document.getElementById("sign-in-nav").innerHTML = "logged in"
+      }
+    </script>
+
+    <script type="text/javascript">
+      function openModal(btn) {
+          var modal = document.getElementById('login-box');
+          modal.style.display = "block";
+      }
+    </script>
+
+    <script type="text/javascript">
+      function closeModal(btn) {
+          var modal = document = document.getElementById("login-box");
+          modal.style.display = "none";
+      }
+    </script>
 
     <script type="text/javascript">
       function filter(selection) {
@@ -63,7 +111,6 @@
       function displayCourse(course) {
         document.getElementsByClassName("course-signup")[0].style.display = "block";
 
-
         document.getElementById("course-name").innerHTML = course.getElementsByTagName('p')[1].innerHTML + course.getElementsByTagName('p')[2].innerHTML;
       }
     </script>
@@ -91,99 +138,34 @@
         <a class="nav-option" href="training.php">
           training
         </a>
-        <a class="nav-option" href="login.php">
+        <a id="sign-in-nav" class="nav-option" onclick="openModal(this);">
           sign in
         </a>
       </ul>
+
+      <div id="login-box" class="modal">
+
+        <div class="modal-content">
+          <span class="close" onclick="closeModal(this);">x</span>
+
+          <form name="myForm" method="post" action="training.php" onsubmit="return validateForm();">
+            <div class="input-field">
+  						<input id="username" type="text" name="email">
+  						<label for="username">Username</label>
+  					</div>
+  					<div class="input-field">
+  						<input id="password" type="password" name="password">
+  						<label for="password">Password</label>
+  					</div>
+            <button class="action-button" type="submit" value="Submit" name="sign-in">Sign in</button>
+          </form>
+
+        </div>
+
+      </div>
+
     </header>
 
-
-        <!--
-          <div class="options">
-            <div class="track-options">
-              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
-                <p> Collab </p>
-              </button>
-              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
-                <p> DC </p>
-              </button>
-              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
-                <p> R&S </p>
-              </button>
-              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
-                <p> Security </p>
-              </button>
-              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
-                <p> IoT </p>
-              </button>
-              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
-                <p> Mobility </p>
-              </button>
-              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
-                <p> SDN </p>
-              </button>
-              <button class="track-option" onmouseover="populateList(this.innerHTML);" type="button">
-                <p> Prof. Skills </p>
-              </button>
-            </div>
-
-            <div class="courses">
-              <ul class="levels">
-                <li id="all" onclick="filter(this.id);" class="level-1 active">all</li>
-                <li id="intro" onclick="filter(this.id);">intro</li>
-                <li id="intermediate" onclick="filter(this.id);">intermediate</li>
-                <li id="expert" onclick="filter(this.id);" class="level-last">expert</li>
-              </ul>
-
-              <ul class="course-options">
-                <div class="intro">
-                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
-                    <p class="course-title"> SDN </p>
-                    <p class="course-part"> Part 1 </p>
-                  </li>
-                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
-                    <p class="course-title"> SDN </p>
-                    <p class="course-part"> Part 2 </p>
-                  </li>
-                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
-                    <p class="course-title"> SDN </p>
-                    <p class="course-part"> Part 3 </p>
-                  </li>
-                </div>
-                <div class="intermediate">
-                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
-                    <p class="course-title"> SDN </p>
-                    <p class="course-part"> Part 1 </p>
-                  </li>
-                </div>
-                <div class="expert">
-                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
-                    <p class="course-title"> SDN </p>
-                    <p class="course-part"> Part 1 </p>
-                  </li>
-                  <li class="course-option" onclick="displayCourse(this.innerHTML)">
-                    <p class="course-title"> SDN </p>
-                    <p class="course-part"> Part 2 </p>
-                  </li>
-                </div>
-              </ul>
-            </div>
-          </div>
-
-          <div class="course-details">
-            <p id="course-name">SDN PART 1</p>
-            <p id="course-description">
-                Basic Network Concepts and Network Components <br>
-                Operate a medium sized LAN with multiple switches, supporting VLANs, and trunking <br>
-                Explain how bridging and switching operates <br>
-                Explain the purpose and operations of the Spanning-Tree Protocol <br>
-                Define IP Protocol IPv4  address and subnetting b <br>
-                Define characteristics, functions, and component of a WAN <br>
-                Describe SNMP, syslog, and NetFlow, and manage Cisco device configurations, Cisco IOS images and licenses <br>
-                Introduction to Prime infrastructure  b <br>
-            </p>
-          </div>
-      </form> <!-- END OF REGISTRATION -->
     <div class="content--training">
       <form id="registration" name="myForm" action="process.php" onsubmit="return validateForm();" method="post">
 
@@ -297,7 +279,7 @@
                   <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>
               </div>
 
-              <button class="action-button" type="button" name="sign-up">Sign up</button>
+              <input class="action-button" type="button" value="Submit"></button>
           </div>
 
         </div> <!-- End of Right Pane -->
