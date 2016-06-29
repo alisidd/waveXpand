@@ -257,6 +257,12 @@ iframe
     border-bottom: 5px groove rgba(90, 175, 154, 1);
     border-radius: 3px;
     background-color: rgba(204, 168, 78, .9);
+    transition: background-color 300ms ease-in-out;
+}
+
+.track-option:hover
+{
+    background-color: rgba(204, 168, 78, .7);
 }
 
 .track-option-last
@@ -491,10 +497,18 @@ iframe
     margin-right: 1rem;
     padding: .6em 2em .6em 2em;
 
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+
     color: rgba(63, 79, 119, 1);
     border: none;
     border-radius: 3px;
     background-color: rgba(204, 168, 78, .9);
+}
+
+.action-button:hover
+{
+    background-color: rgba(204, 168, 78, .7);
 }
 
 
