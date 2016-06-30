@@ -246,7 +246,7 @@ iframe
 
 #registration
 {
-    padding-bottom: 88rem;
+    padding-bottom: 90rem;
 }
 
 .title
@@ -565,6 +565,16 @@ iframe
     color: white;
 }
 
+#course-level
+{
+    font-family: 'Ubuntu', serif;
+    font-size: 2rem;
+
+    margin: 0 0 0 4rem;
+
+    color: white;
+}
+
 #course-description
 {
     font-family: 'Titillium Web', sans-serif;
@@ -632,7 +642,7 @@ input[type=password]
     box-sizing: content-box;
     width: 100%;
     height: 3rem;
-    margin: 0 0 .9375em 1em;
+    margin: 0 0 .9375em 0;
     padding: 0;
 
     transition: all .3s;
@@ -698,7 +708,7 @@ input[type=text] + label:after
 
     position: absolute;
     top: .8rem;
-    left: .75rem;
+    left: 0rem;
 
     margin-left: 1em;
 

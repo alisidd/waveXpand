@@ -112,6 +112,18 @@
         document.getElementsByClassName("course-signup")[0].style.display = "block";
 
         document.getElementById("course-name").innerHTML = course.getElementsByTagName('p')[1].innerHTML + course.getElementsByTagName('p')[2].innerHTML;
+
+        switch (course.parentNode.classList[0]) {
+          case "intro":
+          document.getElementById("course-level").innerHTML = "(Intro)";
+          break;
+          case "intermediate":
+          document.getElementById("course-level").innerHTML = "(Intermediate)";
+          break;
+          case "expert":
+          document.getElementById("course-level").innerHTML = "(Expert)";
+          break;
+        }
       }
     </script>
 
@@ -265,6 +277,10 @@
           <div class="course-signup">
               <div id="course-name">
                   SDN Part 2
+              </div>
+
+              <div id="course-level">
+                  Intermediate
               </div>
 
               <div id="course-description">
