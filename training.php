@@ -109,6 +109,11 @@
 
     <script type="text/javascript">
       function displayCourse(course) {
+
+        $('html, body').animate({
+            scrollTop: $("#step-3").offset().top
+        }, 500);
+
         document.getElementsByClassName("course-signup")[0].style.display = "block";
 
         document.getElementById("course-name").innerHTML = course.getElementsByTagName('p')[1].innerHTML + course.getElementsByTagName('p')[2].innerHTML;
@@ -129,6 +134,11 @@
 
     <script type="text/javascript">
       function populateList(track) {
+
+        $('html, body').animate({
+            scrollTop: $("#step-2").offset().top
+        }, 500);
+
         document.getElementsByClassName("courses")[0].style.display = "block";
         var courses = document.getElementsByClassName("course-title");
         var i;
@@ -222,7 +232,7 @@
 
         <div class="right-pane--training">
 
-          <div class="course-option--desc">
+          <div id="step-2" class="course-option--desc">
             <img class="number--course" src="images/2.png" alt="" />
             <p class="number-desc--course"> pick a course</p>
           </div>
@@ -269,7 +279,7 @@
             </ul>
           </div> <!-- End of step 2 -->
 
-          <div class="sign-up-option--desc">
+          <div id="step-3" class="sign-up-option--desc">
             <img class="number--course" src="images/3.png" alt="" />
             <p class="number-desc--course"> sign up!</p>
           </div>
