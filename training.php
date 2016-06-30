@@ -158,7 +158,7 @@
       <div id="login-box" class="modal">
 
         <div class="modal-content">
-          <span class="close warp" onclick="closeModal(this);"></span>
+          <span class="close" onclick="closeModal(this);"></span>
 
           <form name="myForm" method="post" action="training.php" onsubmit="return validateForm();">
             <div class="input-field">

@@ -87,9 +87,39 @@ a
     margin: 15% auto;
     padding: 4em;
 
+    -webkit-animation-name: animatetop;
+            animation-name: animatetop;
+    -webkit-animation-duration: .4s;
+            animation-duration: .4s;
+
     border-radius: 3px;
     background-color: rgba(63, 79, 119, 1);
     box-shadow: 0 16px 28px 0 rgba(0,0,0,.22),0 25px 55px 0 rgba(0,0,0,.21);
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop
+{
+    from
+    {
+        top: -300px; opacity: 0;
+    }
+    to
+    {
+        top: 0; opacity: 1;
+    }
+}
+
+@keyframes animatetop
+{
+    from
+    {
+        top: -300px; opacity: 0;
+    }
+    to
+    {
+        top: 0; opacity: 1;
+    }
 }
 
 .close
@@ -124,6 +154,7 @@ a
 
     content: '';
 
+    border-radius: 120% 0;
     background: rgba(204, 168, 78, .9);
 }
 
@@ -140,12 +171,6 @@ a
 .close::after
 {
     transform: rotate(-45deg);
-}
-
-.warp::before,
-.warp::after
-{
-    border-radius: 120% 0;
 }
 
 #sign-in
@@ -570,9 +595,11 @@ iframe
     font-family: 'Ubuntu', serif;
     font-size: 2rem;
 
-    margin: 0 0 0 4rem;
+    margin: 0 2rem 0 4rem;
+    padding-bottom: 1rem;
 
     color: white;
+    border-bottom: 1px solid #fff;
 }
 
 #course-description
