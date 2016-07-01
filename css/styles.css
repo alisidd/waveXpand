@@ -860,6 +860,8 @@ input[type=submit]
     box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
 }
 
+
+
 #register
 {
     margin-top: .8rem;
@@ -882,6 +884,8 @@ input[type=submit]
 
     width: 45%;
 }
+
+/* Form styling */
 
 li
 {
@@ -951,7 +955,8 @@ select.browser-default
 
 .select-wrapper + label
 {
-    font-size: .8rem;
+    font-size: 1.1rem;
+    color: rgba(90, 175, 154, 1);
 
     position: absolute;top: -14px;
 }
@@ -1008,8 +1013,7 @@ select.browser-default
 }
 
 .select-dropdown li.disabled,
-.select-dropdown li.disabled > span,
-.select-dropdown li.optgroup
+.select-dropdown li.disabled > span
 {
     color: rgba(0,0,0,.3);background-color: transparent;
 }
@@ -1032,9 +1036,7 @@ select.browser-default
     color: rgba(0,0,0,.87);
 }
 
-.dropdown-content li:hover,
-.dropdown-content li.active,
-.dropdown-content li.selected
+.dropdown-content li:hover
 {
     background-color: #519382;
 }
@@ -1059,11 +1061,10 @@ select.browser-default
 
     padding: 14px 16px;
 
-    color: rgba(63, 79, 119, 1);;
+    color: white;
 }
 
-.select-dropdown li.disabled,
-.select-dropdown li.disabled > span
+.select-dropdown li.disabled
 {
     cursor: default;
     pointer-events: none;

@@ -108,11 +108,6 @@
       </div>
 
       <div class="input-field">
-        <input id="country" type="text" name="country">
-        <label for="country">Country*</label>
-      </div>
-
-      <div class="input-field">
         <select>
           <option value="" disabled selected>Choose your location</option>
           <option value="1">Middle East</option>
