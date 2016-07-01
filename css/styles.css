@@ -177,7 +177,36 @@ a
 {
     position: absolute;
     right: 1rem;
-    bottom: 1rem;
+    bottom: 30%;
+
+    display: inline;
+
+    margin-bottom: -11%;
+}
+
+.register-on-card
+{
+    font-family: 'Titillium Web', sans-serif;
+
+    display: inline;
+
+    color: white;
+}
+
+#no-account
+{
+    display: inline-block;
+}
+
+#register-option
+{
+    display: inline-block;
+
+    margin-left: .3em;
+
+    text-decoration: underline;
+
+    color: rgba(204, 168, 78, .9);
 }
 
 /* Index page */
@@ -806,4 +835,36 @@ input[type=submit]
     box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0 rgba(0,0,0,.15);
 
     -webkit-tap-highlight-color: transparent;
+}
+
+/* Registration page */
+
+#registration--profile
+{
+    margin: 4rem 10rem 0 10rem;
+    padding: 3rem 5rem 5rem 5rem;
+
+    border-radius: .3rem;
+    background-color: rgba(96, 104, 127, .7);
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19);
+}
+
+#register
+{
+    margin-top: .5rem;
+}
+
+.input-field.left
+{
+    display: inline-block;
+
+    width: 45%;
+}
+
+.input-field.right
+{
+    display: inline-block;
+    float: right;
+
+    width: 45%;
 }

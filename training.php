@@ -169,6 +169,10 @@
   						<input id="password" type="password" name="password">
   						<label for="password">Password</label>
   					</div>
+						<div class="register-on-card">
+							<p id="no-account"> Don't have an account? </p>
+							<a id="register-option" href="register.php"> Register </a>
+						</div>
             <button class="action-button" type="submit" value="Submit" id="sign-in">Sign in</button>
           </form>
 
