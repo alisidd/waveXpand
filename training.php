@@ -299,7 +299,7 @@
                   <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>
               </div>
 
-              <input class="action-button" type="button" value="Submit"></button>
+              <input id="register--course" class="action-button" type="button" value="Submit"></button>
           </div>
 
         </div> <!-- End of Right Pane -->

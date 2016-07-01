@@ -23,6 +23,12 @@
     </script>
 
     <script type="text/javascript">
+      $(document).ready(function() {
+        $('select').material_select();
+      });
+    </script>
+
+    <script type="text/javascript">
       function openModal(btn) {
           var modal = document.getElementById('login-box');
           modal.style.display = "block";
@@ -83,7 +89,7 @@
 
       <div class="input-field left">
         <input id="first-name" type="text" name="name">
-        <label for="first-name">First Name</label>
+        <label for="first-name">First Name*</label>
       </div>
 
       <div class="input-field right">
@@ -93,22 +99,27 @@
 
       <div class="input-field">
         <input id="email--profile" type="text" name="email">
-        <label for="email--profile">Cisco Email</label>
+        <label for="email--profile">Cisco Email*</label>
       </div>
 
       <div class="input-field">
-        <input id="password--profile" type="password" name="password">
-        <label for="password--profile">Password</label>
+        <input id="number" type="text" name="number">
+        <label for="number">Mobile Number</label>
       </div>
 
       <div class="input-field">
-        <input id="password--profile--verify" type="password" name="password">
-        <label for="password--profile--verify">Verify Password</label>
+        <input id="country" type="text" name="country">
+        <label for="country">Country*</label>
       </div>
 
       <div class="input-field">
-        <input id="country" type="text" name="email">
-        <label for="country">Country</label>
+        <select>
+          <option value="" disabled selected>Choose your location</option>
+          <option value="1">Middle East</option>
+          <option value="2">USA</option>
+          <option value="3">UK</option>
+        </select>
+        <label>Country</label>
       </div>
 
       <button id="register" class="action-button" type="submit" value="Submit">Register</button>
