@@ -12,6 +12,20 @@
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    
+    <script type="text/javascript">
+      function openModal(btn) {
+          var modal = document.getElementById('login-box');
+          modal.style.display = "block";
+      }
+    </script>
+
+    <script type="text/javascript">
+      function closeModal(btn) {
+          var modal = document = document.getElementById("login-box");
+          modal.style.display = "none";
+      }
+    </script>
 
   </head>
   <body>
@@ -25,11 +39,34 @@
         <a class="nav-option" href="training.php">
           training
         </a>
-        <a class="nav-option" href="login.php">
+        <a id="sign-in-nav" class="nav-option" onclick="openModal(this);">
           sign in
         </a>
       </ul>
+
+      <div id="login-box" class="modal">
+
+        <div class="modal-content">
+          <span class="close" onclick="closeModal(this);"></span>
+
+          <form name="myForm" method="post" action="training.php" onsubmit="return validateForm();">
+            <div class="input-field">
+  						<input id="username" type="text" name="email">
+  						<label for="username">Username</label>
+  					</div>
+  					<div class="input-field">
+  						<input id="password" type="password" name="password">
+  						<label for="password">Password</label>
+  					</div>
+            <button class="action-button" type="submit" value="Submit" id="sign-in">Sign in</button>
+          </form>
+
+        </div>
+
+      </div>
+
     </header>
+
 
     <div class="content--index">
 
