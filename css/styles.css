@@ -176,7 +176,7 @@ a
 #sign-in
 {
     position: absolute;
-    right: 1rem;
+    right: 4rem;
     bottom: 30%;
 
     display: inline;
@@ -654,7 +654,6 @@ iframe
     float: right;
 
     margin-top: -.6rem;
-    margin-right: 1rem;
     padding: .6em 2em .6em 2em;
 
     cursor: pointer;
@@ -778,7 +777,13 @@ input[type=text] + label:after
 
 .input-field label.active
 {
-    font-size: .8rem;
+    font-size: 1.1rem;
+    margin-top: 0.4rem;
+
+    -webkit-transform: translateY(-140%);
+            transform: translateY(-140%);
+
+    color: rgba(90, 175, 154, 1);
 }
 
 input[type=password].valid + label:after,
@@ -851,7 +856,7 @@ input[type=submit]
 
 #register
 {
-    margin-top: .5rem;
+    margin-top: .8rem;
 }
 
 .input-field.left
