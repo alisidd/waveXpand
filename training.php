@@ -118,17 +118,7 @@
 
         document.getElementById("course-name").innerHTML = course.getElementsByTagName('p')[1].innerHTML + course.getElementsByTagName('p')[2].innerHTML;
 
-        switch (course.parentNode.classList[0]) {
-          case "intro":
-          document.getElementById("course-level").innerHTML = "(Intro)";
-          break;
-          case "intermediate":
-          document.getElementById("course-level").innerHTML = "(Intermediate)";
-          break;
-          case "expert":
-          document.getElementById("course-level").innerHTML = "(Expert)";
-          break;
-        }
+				document.getElementById("course-level").innerHTML = "(" + course.parentNode.classList[0] + ")";
       }
     </script>
 
