@@ -1,31 +1,3 @@
-<?php
-	$password = "pass";
-
-	if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
-	{
-    echo "<p> WHAT </p>";
-    echo "<script> changeLogin(); </script>";
-		header("Location: training.php");
-	}
-
-	if (isset($_POST['password']))
-	{
-		if ($_POST['password'] == $password)
-		{
-			$_SESSION['logged_in'] = true;
-			header("Location: training.php");
-		} else {
-			$message = "Incorrect Password";
-			echo "<script type='text/javascript'>alert('$message');</script>";
-		}
-	}
-	if (!empty($_POST))
-	{
-    $_SESSION['$loginEmail'] = $_POST['email'];
-	}
-
-  ?>
-
 <html>
   <head>
     <!-- Import Google fonts -->
@@ -183,53 +155,55 @@
 
     </header>
 
-    <div class="content--training">
-      <form id="registration" name="myForm" action="process.php" onsubmit="return validateForm();" method="post">
+    <form class="content--training" id="registration" name="myForm" action="process.php" onsubmit="return validateForm();" method="post">
+      <p class="title">sign up for a course</p>
 
-        <p class="title">sign up for a course</p>
+      <div class="left-pane--training">
+        <div class="track-step">
 
-        <div class="left-pane--training">
-          <div class="options">
-            <div class="track-options">
-
-              <div class="track-option--desc">
-                <img class="number" src="images/1.png" alt="" />
-                <p class="number-desc"> pick a track</p>
-              </div>
-
-              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-                <p> Collab </p>
-              </button>
-              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-                <p> DC </p>
-              </button>
-              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-                <p> R&S </p>
-              </button>
-              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-                <p> Security </p>
-              </button>
-              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-                <p> IoT </p>
-              </button>
-              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-                <p> Mobility </p>
-              </button>
-              <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-                <p> SDN </p>
-              </button>
-              <button class="track-option track-option-last" onclick="populateList(this.innerHTML);" type="button">
-                <p> Prof. Skills </p>
-              </button>
-            </div>
+          <div class="track-step--box">
+            <span class="helper"></span>
+            <img class="track-step--number" src="images/1.png" alt="" />
+            <p class="track-step--desc"> pick a track</p>
           </div>
+          <div class="track-step--buttons">
+            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+              <p> Collab </p>
+            </button>
+            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+              <p> DC </p>
+            </button>
+            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+              <p> R&S </p>
+            </button>
+            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+              <p> Security </p>
+            </button>
+            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+              <p> IoT </p>
+            </button>
+            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+              <p> Mobility </p>
+            </button>
+            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
+              <p> SDN </p>
+            </button>
+            <button class="track-option track-option-last" onclick="populateList(this.innerHTML);" type="button">
+              <p> Prof. Skills </p>
+            </button>
+          </div>
+
         </div>
+      </div>
 
-        <div class="right-pane--training">
+      <div class="right-pane--training">
 
-          <div id="step-2" class="course-option--desc">
-            <img class="number--course" src="images/2.png" alt="" />
-            <p class="number-desc--course"> pick a course</p>
+        <div class="course-step">
+
+          <div id="step-2" class="course-step--box">
+            <span class="helper"></span>
+            <img class="course-step--number" src="images/2.png" alt="" />
+            <p class="course-step--desc"> pick a course</p>
           </div>
 
           <div class="courses">
@@ -272,40 +246,42 @@
                 </li>
               </div>
             </ul>
-          </div> <!-- End of step 2 -->
-
-          <div id="step-3" class="sign-up-option--desc">
-            <img class="number--course" src="images/3.png" alt="" />
-            <p class="number-desc--course"> sign up!</p>
           </div>
 
-          <div class="course-signup">
-              <div id="course-name">
-                  SDN Part 2
-              </div>
+          <div class="sign-up-step">
+            <div id="step-3" class="sign-up-step--box">
+              <span class="helper"></span>
+              <img class="sign-up-step--number" src="images/3.png" alt="" />
+              <p class="sign-up-step--desc"> sign up!</p>
+            </div>
 
-              <div id="course-level">
-                  Intermediate
-              </div>
+            <div class="course-signup">
+                <div id="course-name">
+                    SDN Part 2
+                </div>
 
-              <div id="course-description">
-                  <li> Collaboration Preferred Architecture & Solution Components </li>
-                  <li> Collaboration market and solutions (on-premise, cloud, mid-market, hosted) </li>
-                  <li> CUCM Call Control Basics for Voice/Video/IM (includes IM&P Node) </li>
-                  <li> Enterprise call control design.  Single site, multiple sites, cluster over WAN </li>
-                  <li> CUCM configuration foundation </li>
-                  <li> UC Applications foundational knowledge (Unity Connection, Attendant Consoles, Paging, Billing/Fax, etc.) </li>
-                  <li> Collaboration Edge Architecture (Expressway + CUBE) </li>
-                  <li> Collaboration Packaged solutions  BE6K S/M/H, BE7K M/H </li>
-                  <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>
-              </div>
+                <div id="course-level">
+                    Intermediate
+                </div>
 
-              <input id="register--course" class="action-button" type="button" value="Submit"></button>
+                <div id="course-description">
+                    <li> Collaboration Preferred Architecture & Solution Components </li>
+                    <li> Collaboration market and solutions (on-premise, cloud, mid-market, hosted) </li>
+                    <li> CUCM Call Control Basics for Voice/Video/IM (includes IM&P Node) </li>
+                    <li> Enterprise call control design.  Single site, multiple sites, cluster over WAN </li>
+                    <li> CUCM configuration foundation </li>
+                    <li> UC Applications foundational knowledge (Unity Connection, Attendant Consoles, Paging, Billing/Fax, etc.) </li>
+                    <li> Collaboration Edge Architecture (Expressway + CUBE) </li>
+                    <li> Collaboration Packaged solutions  BE6K S/M/H, BE7K M/H </li>
+                    <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>
+                </div>
+
+                <input id="register--course" class="action-button" type="button" value="Submit"></button>
+            </div>
+
           </div>
-
-        </div> <!-- End of Right Pane -->
-
-      </form>
-    </div>
+        </div>
+      </div>
+    </form>
   </body>
 </html>
