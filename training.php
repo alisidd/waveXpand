@@ -12,6 +12,10 @@
     <title>training - waveXpand</title>
 
     <!-- Scripts -->
+
+    <script src="scripts/jquery-3.0.0.min.js"></script>
+    <script src="scripts/script.js"></script>
+
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/materialize.min.js"></script>
 
@@ -43,9 +47,9 @@
           $("#intermediate").removeClass("active");
           $("#expert").removeClass("active");
 
-          document.getElementsByClassName("intro")[0].style.display = "flex";
-          document.getElementsByClassName("intermediate")[0].style.display = "flex";
-          document.getElementsByClassName("expert")[0].style.display = "flex";
+          document.getElementById("intro-options").style.display = "flex";
+          document.getElementById("intermediate-options").style.display = "flex";
+          document.getElementById("expert-options").style.display = "flex";
         } else if (selection == "intro") {
 
           $("#intro").addClass("active");
@@ -53,9 +57,9 @@
           $("#intermediate").removeClass("active");
           $("#expert").removeClass("active");
 
-          document.getElementsByClassName("intro")[0].style.display = "flex";
-          document.getElementsByClassName("intermediate")[0].style.display = "none";
-          document.getElementsByClassName("expert")[0].style.display = "none";
+          document.getElementById("intro-options").style.display = "flex";
+          document.getElementById("intermediate-options").style.display = "none";
+          document.getElementById("expert-options").style.display = "none";
         } else if (selection == "intermediate") {
 
           $("#intermediate").addClass("active");
@@ -63,9 +67,9 @@
           $("#all").removeClass("active");
           $("#expert").removeClass("active");
 
-          document.getElementsByClassName("intro")[0].style.display = "none";
-          document.getElementsByClassName("intermediate")[0].style.display = "flex";
-          document.getElementsByClassName("expert")[0].style.display = "none";
+          document.getElementById("intro-options").style.display = "none";
+          document.getElementById("intermediate-options").style.display = "flex";
+          document.getElementById("expert-options").style.display = "none";
         } else if (selection == "expert") {
 
           $("#expert").addClass("active");
@@ -73,16 +77,15 @@
           $("#intermediate").removeClass("active");
           $("#all").removeClass("active");
 
-          document.getElementsByClassName("intro")[0].style.display = "none";
-          document.getElementsByClassName("intermediate")[0].style.display = "none";
-          document.getElementsByClassName("expert")[0].style.display = "flex";
+          document.getElementById("intro-options").style.display = "none";
+          document.getElementById("intermediate-options").style.display = "none";
+          document.getElementById("expert-options").style.display = "flex";
         }
       }
     </script>
 
     <script type="text/javascript">
       function displayCourse(course) {
-
         $('html, body').animate({
             scrollTop: $("#step-3").offset().top
         }, 500);
@@ -166,31 +169,11 @@
             <img class="track-step--number" src="images/1.png" alt="" />
             <p class="track-step--desc"> pick a track</p>
           </div>
+
           <div class="track-step--buttons">
-            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-              <p> Collab </p>
-            </button>
-            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-              <p> DC </p>
-            </button>
-            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-              <p> R&S </p>
-            </button>
-            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-              <p> Security </p>
-            </button>
-            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-              <p> IoT </p>
-            </button>
-            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-              <p> Mobility </p>
-            </button>
-            <button class="track-option" onclick="populateList(this.innerHTML);" type="button">
-              <p> SDN </p>
-            </button>
-            <button class="track-option track-option-last" onclick="populateList(this.innerHTML);" type="button">
-              <p> Prof. Skills </p>
-            </button>
+
+            <div id ="slctTrack"></div>
+            
           </div>
 
         </div>
@@ -215,36 +198,11 @@
             </ul>
 
             <ul class="course-options">
-              <div class="intro">
-                <li class="course" onclick="displayCourse(this)">
-                  <p class="course-title"> SDN </p>
-                  <p class="course-part"> Part 1 </p>
-                </li>
-                <li class="course" onclick="displayCourse(this)">
-                  <p class="course-title"> SDN </p>
-                  <p class="course-part"> Part 2 </p>
-                </li>
-                <li class="course" onclick="displayCourse(this)">
-                  <p class="course-title"> SDN </p>
-                  <p class="course-part"> Part 3 </p>
-                </li>
-              </div>
-              <div class="intermediate">
-                <li class="course" onclick="displayCourse(this)">
-                  <p class="course-title"> SDN </p>
-                  <p class="course-part"> Part 1 </p>
-                </li>
-              </div>
-              <div class="expert">
-                <li class="course" onclick="displayCourse(this)">
-                  <p class="course-title"> SDN </p>
-                  <p class="course-part"> Part 1 </p>
-                </li>
-                <li class="course" onclick="displayCourse(this)">
-                  <p class="course-title"> SDN </p>
-                  <p class="course-part"> Part 2 </p>
-                </li>
-              </div>
+
+            <div id ="slctCourse"></div>
+              <div id="intro-options"></div>
+              <div id="intermediate-options"></div>
+              <div id="expert-options"></div>
             </ul>
           </div>
 
@@ -265,7 +223,9 @@
                 </div>
 
                 <div id="course-description">
-                    <li> Collaboration Preferred Architecture & Solution Components </li>
+
+                  <div id ="courseDate"></div>
+                    <!--<li> Collaboration Preferred Architecture & Solution Components </li>
                     <li> Collaboration market and solutions (on-premise, cloud, mid-market, hosted) </li>
                     <li> CUCM Call Control Basics for Voice/Video/IM (includes IM&P Node) </li>
                     <li> Enterprise call control design.  Single site, multiple sites, cluster over WAN </li>
@@ -273,7 +233,7 @@
                     <li> UC Applications foundational knowledge (Unity Connection, Attendant Consoles, Paging, Billing/Fax, etc.) </li>
                     <li> Collaboration Edge Architecture (Expressway + CUBE) </li>
                     <li> Collaboration Packaged solutions  BE6K S/M/H, BE7K M/H </li>
-                    <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>
+                    <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>-->
                 </div>
 
                 <input id="register--course" class="action-button" type="button" value="Submit"></button>

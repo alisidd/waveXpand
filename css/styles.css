@@ -236,7 +236,7 @@ ul
     width: 40%;
 }
 
-.intro-text
+#intro-options-text
 {
     font-family: 'Indie Flower', cursive;
     font-size: 5rem;
@@ -246,7 +246,7 @@ ul
     color: white;
 }
 
-.intro-sub-text
+#intro-options-sub-text
 {
     font-family: 'Titillium Web', sans-serif;
     font-size: 2rem;
@@ -267,12 +267,12 @@ ul
     background-color: rgba(255, 255, 255, .2);
 }
 
-.intro-sub-text:hover
+#intro-options-sub-text:hover
 {
     background-color: rgba(255, 255, 255, .4);
 }
 
-.intro-video
+#intro-options-video
 {
     font-family: 'Indie Flower', cursive;
     font-size: 3rem;
@@ -398,8 +398,10 @@ iframe
 
     width: 7em;
     margin-top: -.2rem;
+    padding: 1em 0 1em 0;
 
     cursor: pointer;
+    text-transform: capitalize;
 
     color: rgba(63, 79, 119, 1);
     border: none;
@@ -532,9 +534,9 @@ iframe
     flex-direction: column;
 }
 
-.intro,
-.intermediate,
-.expert
+#intro-options,
+#intermediate-options,
+#expert-options
 {
     display: flex;
     flex-direction: row;
@@ -567,8 +569,10 @@ iframe
 .course-title
 {
     position: absolute;
-    top: -26px;
+    top: -10px;
     left: 10px;
+
+    text-transform: capitalize;
 }
 
 .course-part
@@ -1098,7 +1102,7 @@ select.browser-default
 
 @media screen and (max-width: 1331px)
 {
-    .intro-text
+    #intro-options-text
     {
         font-size: 3rem;
 
@@ -1143,9 +1147,9 @@ select.browser-default
         border-bottom-left-radius: .5rem;
     }
 
-    .intro,
-    .intermediate,
-    .expert
+    #intro-options,
+    #intermediate-options,
+    #expert-options
     {
         flex-direction: column;
     }
@@ -1261,7 +1265,7 @@ select.browser-default
 
 @media screen and (max-width: 947px)
 {
-    .intro-video
+    #intro-options-video
     {
         font-size: 2.5rem;
     }
