@@ -215,6 +215,8 @@ ul
 
 /* Index page */
 
+/* Index page */
+
 .content--index
 {
     margin: 0 50px;
@@ -236,7 +238,7 @@ ul
     width: 40%;
 }
 
-#intro-options-text
+.intro-text
 {
     font-family: 'Indie Flower', cursive;
     font-size: 5rem;
@@ -246,7 +248,7 @@ ul
     color: white;
 }
 
-#intro-options-sub-text
+.intro-sub-text
 {
     font-family: 'Titillium Web', sans-serif;
     font-size: 2rem;
@@ -267,12 +269,12 @@ ul
     background-color: rgba(255, 255, 255, .2);
 }
 
-#intro-options-sub-text:hover
+.intro-sub-text:hover
 {
     background-color: rgba(255, 255, 255, .4);
 }
 
-#intro-options-video
+.intro-video
 {
     font-family: 'Indie Flower', cursive;
     font-size: 3rem;
