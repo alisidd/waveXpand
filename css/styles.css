@@ -139,7 +139,6 @@ ul
     height: 50px;
 
     cursor: pointer;
-    transition: background 200ms ease-in-out;
 
     border: 1px solid rgba(204, 168, 78, .9);
     border-radius: 50%;
@@ -473,6 +472,8 @@ iframe
     min-width: 95%;
     margin-top: 2rem;
 
+    text-align: center;
+
     border: 1px solid rgba(63, 79, 119, 1);
     border-radius: 3px;
     background-color: rgba(63, 79, 119, .1);
@@ -481,8 +482,6 @@ iframe
 .levels
 {
     display: inline-block;
-
-    width: 100%;
 
     text-align: center;
 }
@@ -498,7 +497,6 @@ iframe
     padding: .5em .8em;
 
     cursor: pointer;
-    transition: all 200ms ease-in-out;
 
     color: white;
     border: .0625rem solid rgba(63, 79, 119, 1);
@@ -518,16 +516,103 @@ iframe
 
 .levels li:hover
 {
-    transition: background-color 200ms ease-in-out;
-
     background-color: rgba(63, 79, 119, .6);
 }
 
 .levels .active
 {
-    transition: background-color 200ms ease-in-out;
-
     background-color: rgba(63, 79, 119, 1);
+}
+
+.ball
+{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+
+    -webkit-animation: spin .5s infinite linear;
+       -moz-animation: spin .5s infinite linear;
+
+    opacity: .9;
+    border: 5px solid rgba(94, 175, 155, .9);
+    border-top: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0);
+    box-shadow: 0 0 35px #4f8e7d;
+}
+
+.ball1
+{
+    position: relative;
+    top: -50px;
+
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+
+    -webkit-animation: spinoff .5s infinite linear;
+       -moz-animation: spinoff .5s infinite linear;
+
+    opacity: .9;
+    border: 5px solid rgba(94, 175, 155, .9);
+    border-top: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0);
+    box-shadow: 0 0 15px #4f8e7d;
+}
+
+@-moz-keyframes spin
+{
+    0%
+    {
+        -moz-transform: rotate(0deg);
+    }
+
+    100%
+    {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes spinoff
+{
+    0%
+    {
+        -moz-transform: rotate(0deg);
+    }
+
+    100%
+    {
+        -moz-transform: rotate(-360deg);
+    }
+}
+
+@-webkit-keyframes spin
+{
+    0%
+    {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100%
+    {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spinoff
+{
+    0%
+    {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100%
+    {
+        -webkit-transform: rotate(-360deg);
+    }
 }
 
 .course-options
@@ -556,7 +641,6 @@ iframe
     list-style-type: none;
 
     cursor: pointer;
-    transition: background-color 200ms ease-in-out;
 
     color: rgba(63, 79, 119, 1);
     border-radius: 3px;
@@ -696,7 +780,6 @@ iframe
     padding: .6em 2em .6em 2em;
 
     cursor: pointer;
-    transition: background-color 200ms ease-in-out;
 
     color: rgba(63, 79, 119, 1);
     border: none;
@@ -708,7 +791,6 @@ iframe
 {
     background-color: rgba(204, 168, 78, .7);
 }
-
 
 /* Misc classes for input */
 

@@ -85,20 +85,6 @@
     </script>
 
     <script type="text/javascript">
-      function displayCourse(course) {
-        $('html, body').animate({
-            scrollTop: $("#step-3").offset().top
-        }, 500);
-
-        document.getElementsByClassName("course-signup")[0].style.display = "block";
-
-        document.getElementById("course-name").innerHTML = course.getElementsByTagName('p')[1].innerHTML + course.getElementsByTagName('p')[2].innerHTML;
-
-				document.getElementById("course-level").innerHTML = "(" + course.parentNode.classList[0] + ")";
-      }
-    </script>
-
-    <script type="text/javascript">
       function populateList(track) {
 
         $('html, body').animate({
@@ -106,11 +92,22 @@
         }, 500);
 
         document.getElementsByClassName("courses")[0].style.display = "block";
-        var courses = document.getElementsByClassName("course-title");
-        var i;
-        for (i = 0; i < courses.length; i++) {
-          courses[i].innerHTML = track;
-        }
+      }
+    </script>
+
+    <script type="text/javascript">
+      function displayCourse(course) {
+        $('html, body').animate({
+            scrollTop: $("#step-3").offset().top
+        }, 500);
+
+        document.getElementsByClassName("course-signup")[0].style.display = "block";
+
+        console.log(course.getElementsByTagName('p')[0].innerHTML);
+
+        document.getElementById("course-name").innerHTML = course.getElementsByTagName('p')[0].innerHTML + course.getElementsByTagName('p')[1].innerHTML;
+
+				document.getElementById("course-level").innerHTML = "(" + course.parentNode.id.split('-')[0] + ")";
       }
     </script>
 
@@ -173,7 +170,7 @@
           <div class="track-step--buttons">
 
             <div id ="slctTrack"></div>
-            
+
           </div>
 
         </div>
@@ -197,9 +194,12 @@
               <li id="expert" onclick="filter(this.id);" class="level-last">expert</li>
             </ul>
 
-            <ul class="course-options">
+            <div id="loading">
+              <div class="ball"></div>
+              <div class="ball1"></div>
+            </div>
 
-            <div id ="slctCourse"></div>
+            <ul id="slctCourse" class="course-options">
               <div id="intro-options"></div>
               <div id="intermediate-options"></div>
               <div id="expert-options"></div>
