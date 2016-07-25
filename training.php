@@ -40,6 +40,24 @@
     </script>
 
     <script type="text/javascript">
+      function validateForm() {
+
+        alert("validating the form");
+
+        var firstName = document.forms["myForm"]["firstName"].value;
+        var lastName = document.forms["myForm"]["lastName"].value;
+        var course = document.forms["myForm"]["course"].value;
+
+        if (firstName == null || firstName == "" || lastName == null || lastName == "" || course == null || course == "")
+        {
+          alert("Please Fill All Required Field");
+            return false;
+        }
+
+      }
+    </script>
+
+    <script type="text/javascript">
       function filter(selection) {
         if (selection == "all") {
           $("#all").addClass("active");
@@ -214,13 +232,9 @@
             </div>
 
             <div class="course-signup">
-                <div id="course-name">
-                    SDN Part 2
-                </div>
+                <div id="course-name"></div>
 
-                <div id="course-level">
-                    Intermediate
-                </div>
+                <div id="course-level"></div>
 
                 <div id="course-description">
 
@@ -236,7 +250,7 @@
                     <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>-->
                 </div>
 
-                <input id="register--course" class="action-button" type="button" value="Submit"></button>
+                <input id="register--course" class="action-button" type="submit" value="Submit"></button>
             </div>
 
           </div>

@@ -21,22 +21,34 @@ $(document).ready(function()
 
 $("#slctTrack").on("click",".track-option", function(e)
 	{
+		$("#intro-options").html("");
+		$("#intermediate-options").html("");
+		$("#expert-options").html("");
+
+		$("#loading").fadeIn("fast", "swing");
+
 		var idClicked = this;
 
 		$.getJSON("getCourses.php?tracks=" + $(idClicked).val(), success = function(data)
 		{
+			$("#loading").fadeOut("fast", "swing");
+
 			var introOptions = "";
 			var intermediateOptions = "";
 			var expertOptions = "";
 
 			for(var i = 0; i < data.length; i++)
 			{
-
 				var dataValues = data[i].split('_');
+
+				for(var j = 0; j < dataValues.length; j++)
+				{
+					dataValues[j] = dataValues[j].toLowerCase();
+				}
 
 				if (dataValues[1] == "intro") {
 
-					introOptions += "<li value='" + data[i].toLowerCase() + "' class='course' onclick=\"displayCourse(this);\" >";
+					introOptions += "<li id=course" + (i + 1) + " value='" + data[i].toLowerCase() + "' class='course' onclick=\"displayCourse(this);\" >";
 
 					introOptions += "<p class=\"course-title\">" + dataValues[0] + "</p>";
 
@@ -53,7 +65,7 @@ $("#slctTrack").on("click",".track-option", function(e)
 
 				} else if (dataValues[1] == "intermediate") {
 
-					intermediateOptions += "<li value='" + data[i].toLowerCase() + "' class='course' onclick=\"displayCourse(this);\" >";
+					intermediateOptions += "<li id=course" + (i + 1) + " value='" + data[i].toLowerCase() + "' class='course' onclick=\"displayCourse(this);\" >";
 
 					intermediateOptions += "<p class=\"course-title\">" + dataValues[0] + "</p>";
 
@@ -70,7 +82,7 @@ $("#slctTrack").on("click",".track-option", function(e)
 
 				} else if (dataValues[1] == "expert") {
 
-					expertOptions += "<li value='" + data[i].toLowerCase() + "' class='course' onclick=\"displayCourse(this);\" >";
+					expertOptions += "<li id=course" + (i + 1) + " value=" + data[i].toLowerCase() + "' class='course' onclick=\"displayCourse(this);\" >";
 
 					expertOptions += "<p class=\"course-title\">" + dataValues[0] + "</p>";
 
@@ -98,19 +110,27 @@ $("#slctTrack").on("click",".track-option", function(e)
 		});
 	});
 
-$("#slctCourse").on("click", function(e)
-{
-	alert("A course was SELECTED!!!!");
-	$.getJSON("getDate.php", success = function(data)
+$("#slctCourse").on("click",".course", function(e)
 	{
-		alert("getDate ACCESSED!!!!!");
-		var date = "<br/><p>"+data[0]+"</p>";
+		var idClicked = this.getAttribute("value");
+		console.log(idClicked);
+		//console.log($(e.target).text());
+		//window.alert($(this).text());
+		//console.log($(idClicked).text());
+		//alert($(idClicked).text());
+		$.getJSON("getDate.php?courses=" + $(idClicked), success = function(data)
+		{
+			alert(data[0]);
+			console.log($(data));
+			var stringData = data.toString();
+			alert($(stringData));
+			var date = "<p> The Date is "+data[0]+"</p>";
 
-		$("#courseDate").html("");
-		$("#courseDate").append(date);
+			$("#courseDate").html("");
+			$("#courseDate").append(date);
+		});
+
 	});
-
-});
 /*$('#slctTrack').click(function()
 	{
 		alert($("#slctButton").val());
