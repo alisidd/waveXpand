@@ -1,3 +1,16 @@
+<?php
+
+  session_start();
+  if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] == false)
+  {
+    header("Location: register.php");
+  }
+
+  //$_SESSION['$email'] = $_POST['email'];
+
+?>
+
+
 <html>
   <head>
     <!-- Import Google fonts -->
@@ -25,6 +38,7 @@
       });
     </script>
 
+    <!-- Open login box -->
     <script type="text/javascript">
       function openModal(btn) {
           var modal = document.getElementById('login-box');
@@ -32,6 +46,7 @@
       }
     </script>
 
+    <!-- Close login box -->
     <script type="text/javascript">
       function closeModal(btn) {
           var modal = document = document.getElementById("login-box");
@@ -41,34 +56,22 @@
 
     <script type="text/javascript">
       function validateForm() {
-
-        alert("validating the form");
-
         var firstName = document.forms["myForm"]["firstName"].value;
         var lastName = document.forms["myForm"]["lastName"].value;
         var course = document.forms["myForm"]["course"].value;
 
-        if (firstName == null || firstName == "" || lastName == null || lastName == "" || course == null || course == "")
-        {
-          alert("Please Fill All Required Field");
+        if (firstName == null || firstName == "" || lastName == null || lastName == "" || course == null || course == "") {
+            alert("Please Fill All Required Field");
             return false;
         }
 
       }
     </script>
 
+    <!-- Filter courses based on difficulty of course selected -->
     <script type="text/javascript">
       function filter(selection) {
-        if (selection == "all") {
-          $("#all").addClass("active");
-          $("#intro").removeClass("active");
-          $("#intermediate").removeClass("active");
-          $("#expert").removeClass("active");
-
-          document.getElementById("intro-options").style.display = "flex";
-          document.getElementById("intermediate-options").style.display = "flex";
-          document.getElementById("expert-options").style.display = "flex";
-        } else if (selection == "intro") {
+        if (selection == "intro") {
 
           $("#intro").addClass("active");
           $("#all").removeClass("active");
@@ -102,17 +105,25 @@
       }
     </script>
 
+    <!-- Populate the courses after track has been selected -->
     <script type="text/javascript">
       function populateList(track) {
-
         $('html, body').animate({
             scrollTop: $("#step-2").offset().top
         }, 500);
 
-        document.getElementsByClassName("courses")[0].style.display = "block";
+        filter("intro");
+
+        document.getElementsByClassName("courses")[0].style.display = "flex";
+        var courses = document.getElementsByClassName("course-title");
+        var i;
+        for (i = 0; i < courses.length; i++) {
+          courses[i].innerHTML = track;
+        }
       }
     </script>
 
+    <!-- Populate course details after course has been selected -->
     <script type="text/javascript">
       function displayCourse(course) {
         $('html, body').animate({
@@ -121,17 +132,16 @@
 
         document.getElementsByClassName("course-signup")[0].style.display = "block";
 
-        console.log(course.getElementsByTagName('p')[0].innerHTML);
-
         document.getElementById("course-name").innerHTML = course.getElementsByTagName('p')[0].innerHTML + course.getElementsByTagName('p')[1].innerHTML;
 
-				document.getElementById("course-level").innerHTML = "(" + course.parentNode.id.split('-')[0] + ")";
+				document.getElementById("courseLevel").innerHTML = "(" + course.parentNode.id.split('-')[0] + ")";
       }
     </script>
 
   </head>
   <body>
 
+    <!-- Navigation bar at the top -->
     <header>
       <a href="index.php">
         <img class="logo" src="images/logo.png">
@@ -141,9 +151,22 @@
         <a class="nav-option" href="training.php">
           training
         </a>
+        <?php
+        if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)):
+        ?>
+
         <a id="sign-in-nav" class="nav-option" onclick="openModal(this);">
           sign in
         </a>
+
+        <?php else: ?>
+          <a id="sign-in-nav" class="nav-option" href="myAccount.php">
+            my account
+          </a>
+          <a id="sign-in-nav" class="nav-option" href="logout.php">
+            sign out
+          </a>
+        <?php endif; ?>
       </ul>
 
       <div id="login-box" class="modal">
@@ -151,10 +174,10 @@
         <div class="modal-content">
           <span class="close" onclick="closeModal(this);"></span>
 
-          <form name="myForm" method="post" action="training.php" onsubmit="return validateForm();">
+          <form name="myForm" method="post" action="register.php" onsubmit="return validateForm();">
             <div class="input-field">
-  						<input id="username" type="text" name="email">
-  						<label for="username">Username</label>
+  						<input id="username" type="text" name="email" autocapitalize="none">
+  						<label for="username">Cisco Email</label>
   					</div>
   					<div class="input-field">
   						<input id="password" type="password" name="password">
@@ -171,12 +194,15 @@
 
       </div>
 
-    </header>
+    </header> <!-- End of navigation bar -->
 
     <form class="content--training" id="registration" name="myForm" action="process.php" onsubmit="return validateForm();" method="post">
+
       <p class="title">sign up for a course</p>
 
       <div class="left-pane--training">
+
+        <!-- Select tracks -->
         <div class="track-step">
 
           <div class="track-step--box">
@@ -191,11 +217,12 @@
 
           </div>
 
-        </div>
+        </div> <!-- End of track step -->
       </div>
 
       <div class="right-pane--training">
 
+        <!-- Select courses -->
         <div class="course-step">
 
           <div id="step-2" class="course-step--box">
@@ -204,15 +231,14 @@
             <p class="course-step--desc"> pick a course</p>
           </div>
 
-          <div class="courses">
-            <ul class="levels">
-              <li id="all" onclick="filter(this.id);" class="level-1 active">all</li>
-              <li id="intro" onclick="filter(this.id);">intro</li>
+          <div id="courses" class="courses">
+            <div class="levels">
+              <li id="intro" onclick="filter(this.id);" class="level-1 active">intro</li>
               <li id="intermediate" onclick="filter(this.id);">intermediate</li>
               <li id="expert" onclick="filter(this.id);" class="level-last">expert</li>
-            </ul>
+            </div>
 
-            <div id="loading">
+            <div id="loading-1">
               <div class="ball"></div>
               <div class="ball1"></div>
             </div>
@@ -223,38 +249,47 @@
               <div id="expert-options"></div>
             </ul>
           </div>
+        </div> <!-- End of course Step -->
 
-          <div class="sign-up-step">
-            <div id="step-3" class="sign-up-step--box">
-              <span class="helper"></span>
-              <img class="sign-up-step--number" src="images/3.png" alt="" />
-              <p class="sign-up-step--desc"> sign up!</p>
-            </div>
+        <!-- Register for courses -->
+        <div class="sign-up-step">
+          <div id="step-3" class="sign-up-step--box">
+            <span class="helper"></span>
+            <img class="sign-up-step--number" src="images/3.png" alt="" />
 
-            <div class="course-signup">
-                <div id="course-name"></div>
-
-                <div id="course-level"></div>
-
-                <div id="course-description">
-
-                  <div id ="courseDate"></div>
-                    <!--<li> Collaboration Preferred Architecture & Solution Components </li>
-                    <li> Collaboration market and solutions (on-premise, cloud, mid-market, hosted) </li>
-                    <li> CUCM Call Control Basics for Voice/Video/IM (includes IM&P Node) </li>
-                    <li> Enterprise call control design.  Single site, multiple sites, cluster over WAN </li>
-                    <li> CUCM configuration foundation </li>
-                    <li> UC Applications foundational knowledge (Unity Connection, Attendant Consoles, Paging, Billing/Fax, etc.) </li>
-                    <li> Collaboration Edge Architecture (Expressway + CUBE) </li>
-                    <li> Collaboration Packaged solutions  BE6K S/M/H, BE7K M/H </li>
-                    <li> Gateway Technologies (CME and SRST), PVDMs, Unity Express, BE6KS </li>-->
-                </div>
-
-                <input id="register--course" class="action-button" type="submit" value="Submit"></button>
-            </div>
+            <p class="sign-up-step--desc"> sign up! </p>
 
           </div>
-        </div>
+
+          <div class="course-signup">
+              <div id="course-name">
+                  Course Name
+              </div>
+              <div id="courseLevel"></div>
+
+              <div id="loading-2">
+                <div class="ball"></div>
+                <div class="ball1"></div>
+              </div>
+
+              <div id="course-description">
+                <ul class="details-box">
+                  <p> trainer </p>
+                  <div id="courseTrainer"></div>
+                </ul>
+                <ul class="details-box">
+                  <p> date </p>
+                  <div id="courseDate"></div>
+                </ul>
+                <ul class="details-box">
+                  <p> duration </p>
+                  <div id="courseDuration"></div>
+                </ul>
+              </div>
+
+              <input id="register--course" class="action-button" type="submit" value="Submit">
+          </div>
+        </div> <!-- End of sign up step -->
       </div>
     </form>
   </body>

@@ -1,6 +1,5 @@
 <?php
-
-//echo '<p> INSIDE getCourses </p>';
+//** This file displays the related courses to the selected track that is advertised from getTracks.php; in turn, this file advertises the selected course to getDate.php
 
 	if(isset($_GET["tracks"]))
 {

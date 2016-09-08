@@ -1,4 +1,5 @@
 <?php
+//** This file retrieves the name of the selected track and advertises it to getCourses.php
 	$user = 'DBMaster';
 	$pass = '12341234';
 	$db = 'wavexpandDB';

@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <html>
   <head>
     <!-- Import Google fonts -->
@@ -9,7 +15,7 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>training - waveXpand</title>
+    <title>waveXpand</title>
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -47,20 +53,34 @@
         <a class="nav-option" href="training.php">
           training
         </a>
+        <?php
+        // Check if user is logged in or not
+        if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)):
+        ?>
+
         <a id="sign-in-nav" class="nav-option" onclick="openModal(this);">
           sign in
         </a>
+
+      <?php else: ?>
+        <a id="sign-in-nav" class="nav-option" href="myAccount.php">
+          my account
+        </a>
+        <a id="sign-in-nav" class="nav-option" href="logout.php">
+          sign out
+        </a>
+      <?php endif; ?>
       </ul>
 
       <div id="login-box" class="modal">
 
         <div class="modal-content">
-          <span class="close" onclick="closeModal(this);"></span>
+          <span class="close" onclick="closeModal(this);"></span> <!--Display the sign-in form on click-->
 
-          <form name="myForm" method="post" action="training.php" onsubmit="return validateForm();">
+          <form name="myForm" method="post" action="register.php" onsubmit="return validateForm();">
             <div class="input-field">
-  						<input id="username" type="text" name="email">
-  						<label for="username">Username</label>
+  						<input id="username" type="text" name="email" autocapitalize="none">
+  						<label for="username">Cisco Email</label>
   					</div>
   					<div class="input-field">
   						<input id="password" type="password" name="password">

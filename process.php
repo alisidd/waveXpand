@@ -1,16 +1,20 @@
 <?php
+/*** This file processes the user input after registering for a course,
+it then sends a confirmation message to the user and send an excel csv
+file to the designated administrator that contains a list of all registered
+users along with there related information ***/
+
 session_start();
-$emailFromLogin = $_SESSION['$loginEmail'];
+$emailFromLogin = $_SESSION['$email'];
 
-
-//include 'training.php';
+$onScreenMessage ="";
 
 ob_start();
 
 $isRegistered = false;
 
-
-// This part is for connecting to PHPMailer
+/** This part is for connecting to PHPMailer which is a code library that easily allows
+for the sending of emails that contain attachments **/
 require 'phpmailer/PHPMailerAutoload.php';
 
 $mail = new PHPMailer;
@@ -22,7 +26,7 @@ $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.zoho.com';  // Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
 $mail->Username = 'registrar@wavexpand.com';                 // SMTP username
-$mail->Password = 'Zx3228855';                           // SMTP password
+$mail->Password = 'CiscoTrain';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;                                    // TCP port to connect to
 
@@ -37,50 +41,28 @@ $mailConfirmation->isSMTP();                                      // Set mailer 
 $mailConfirmation->Host = 'smtp.zoho.com';  // Specify main and backup SMTP servers
 $mailConfirmation->SMTPAuth = true;                               // Enable SMTP authentication
 $mailConfirmation->Username = 'registrar@wavexpand.com';                 // SMTP username
-$mailConfirmation->Password = 'Zx3228855';                           // SMTP password
+$mailConfirmation->Password = 'CiscoTrain';                           // SMTP password
 $mailConfirmation->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mailConfirmation->Port = 587;                                    // TCP port to connect to
 
 $mailConfirmation->setFrom('registrar@wavexpand.com', 'Mailer');
     // Add a recipient
 
-
-
-/////////////////////////////////////////////////////////
-$firstname = $_POST['firstName'];
-$course = $_POST['course'];
-$date = $_POST['date'];
-//echo "The date is $date";
-$xplod = explode(',', $date);
-//print_r($xplod);
-$stringDate = "$xplod[2]-$xplod[0]-$xplod[1]";
-//echo "<br /> $stringDate";
-$sqlDate = date("Y-m-d", strtotime($stringDate));
-//echo "<br />$sqlDate <br />";
-
-//echo "Hello $firstname"; ?>
+$course = $_SESSION['$course'];
+$date = $_SESSION['$date'];
+?>
 <?php
-//echo "you have chosen the $course";
 
 $from="registrar@wavexpand.com";
 $email=$emailFromLogin;
-//echo $email;
-$mailConfirmation->addAddress("$email", 'Joe User'); 
 
-//echo $testingVar;
-
+$mailConfirmation->addAddress("$email", 'Joe User');
 
 $subject='Confirmation';
 $message='Congratulations, you have successfully registered in our course';
 
-
 ?>
-
 <?php
-
-
-
-
 
 $user = 'DBMaster';
 $pass = '12341234';
@@ -89,113 +71,113 @@ $db = 'wavexpandDB';
 $db = new mysqli('wavexpanddb.cxxqjl7is3yc.us-west-2.rds.amazonaws.com', $user, $pass, $db) or die("Unable to connect");
 
 $query = mysqli_query($db, "SELECT * From registrationtable WHERE applicantEmail='$email' AND registeredCourse='$course'");
+// Check if user has aleardy registered to the specified course
 if(mysqli_num_rows($query) > 0)
 {
 	$isRegistered = true;
-	echo "You have already registered !!!!!!!!";
+  	$onScreenMessage = "You have already registered !!!!!!!!";
 }
 else
 {
+	$onScreenMessage = "You have successfully registered";
 
-$mailConfirmation->Subject = 'Registration Confirmation';
-$mailConfirmation->Body    = 'You have successfully registered in our course';
-$mailConfirmation->AltBody = 'This is the body in plain text for non-HTML mail clients';
+	$query = mysqli_query($db, "SELECT name From accountstable WHERE email='$email'");
 
-if(!$mailConfirmation->send()) {
-    echo '  Message could not be sent.';
-    echo '  Mailer Error: ' . $mail->ErrorInfo;
-} else {
-    //echo 'Message has been sent';
-}
-	
-mail($email, $subject, $message, "From:".$from);
-//print "A confirmation message has been sent to your email";
+	$name = array();
+	while ($row = mysqli_fetch_array($query))
+		{
+		    array_push($name, $row["name"]);
+		}
 
-$sql = "INSERT INTO registrationtable ( applicantName, applicantEmail, registeredCourse, courseDate ) VALUES ( '{$db->real_escape_string($_POST['firstName'])}', 
-'{$db->real_escape_string($email)}', '{$db->real_escape_string($_POST['course'])}', '{$db->real_escape_string($sqlDate)}'  )";
-
-$insert = $db->query($sql);
-
-//////////This part is for creating the excel file
-
-$fileName = '/var/www/html/excelFile.csv';
-//change permission of the file
-chmod($fileName,0777);
-
-//echo $fileName;
-//echo 'this is after echoing the file name';
-
-$sql = mysqli_query($db,"SELECT * FROM registrationtable") or die(mysqli_error($db));
-$num_rows = mysqli_num_rows($sql);
-
-if($num_rows >= 1)
-{
-
-$row = mysqli_fetch_assoc($sql);
-if(!($fp = fopen($fileName,"w+")))
-{
-	echo "    error, could not open the file";
-}
+	$userName = $name[0];
 
 
-$separator = "";
-$comma = "";
+	$mailConfirmation->Subject = 'Registration Confirmation';
+	$mailConfirmation->Body    = 'You have successfully registered in our course';
+	$mailConfirmation->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-foreach($row as $name => $value)
-{
-	$separator .= $comma . '' .str_replace('','""',$name);
-	$comma = ",";
-}
-$separator .= "\n";
+	if(!$mailConfirmation->send())
+		{
+		    echo '  Message could not be sent.';
+		    echo '  Mailer Error: ' . $mail->ErrorInfo;
+		}
 
-//echo $separator;
+	mail($email, $subject, $message, "From:".$from);
 
-fputs ($fp,$separator);
+	//**Save the course registration information in the database
+	$sql = "INSERT INTO registrationtable ( applicantName, applicantEmail, registeredCourse, courseDate ) VALUES ( '{$db->real_escape_string($userName)}',
+	'{$db->real_escape_string($email)}', '{$db->real_escape_string($course)}', '{$db->real_escape_string($date)}'  )";
 
-// Repeat
+	$insert = $db->query($sql);
 
-//let you use the same query and leave the first row because we already have it at the top
-mysqli_data_seek($sql, 0);
+	//////////This part is for creating the excel file
 
-while($row = mysqli_fetch_assoc($sql))
-{
+	$fileName = 'excelFile.csv';
+	//change permission of the file
+	chmod($fileName,0777);
 
-$separator = "";
-$comma = "";
+	$sql = mysqli_query($db,"SELECT * FROM registrationtable") or die(mysqli_error($db));
+	$num_rows = mysqli_num_rows($sql);
 
-foreach($row as $name => $value)
-{
-	$separator .= $comma . '' .str_replace('','""',$value);
-	$comma = ",";
-}
-$separator .= "\n";
+	if($num_rows >= 1)
+	{
 
-fputs ($fp,$separator);
-}
+		$row = mysqli_fetch_assoc($sql);
+		if(!($fp = fopen($fileName,"w+")))
+		{
+			echo "    error, could not open the file";
+		}
 
-fclose($fp);
-}
 
-else
-{
-	echo '   No records in the database';
-}
+		$separator = "";
+		$comma = "";
 
-///////////////////////////////////////////////////////////////////
-//This part is for sending the excel file
-$mail->addAttachment('excelFile.csv');
-$mail->isHTML(true);                                  // Set email format to HTML
+		foreach($row as $name => $value)
+		{
+			$separator .= $comma . '' .str_replace('','""',$name);
+			$comma = ",";
+		}
+		$separator .= "\n";
 
-$mail->Subject = 'Database Excel File';
-$mail->Body    = 'The table of registered SEs is attached with this email';
-$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+		fputs ($fp,$separator);
 
-if(!$mail->send()) {
-    echo '  Message could not be sent.';
-    echo '  Mailer Error: ' . $mail->ErrorInfo;
-} else {
-    //echo 'Message has been sent';
-}
+		//** let you use the same query and leave the first row because we already have it at the top
+		mysqli_data_seek($sql, 0);
+
+		while($row = mysqli_fetch_assoc($sql))
+		{
+			$separator = "";
+			$comma = "";
+			foreach($row as $name => $value)
+			{
+				$separator .= $comma . '' .str_replace('','""',$value);
+				$comma = ",";
+			}
+			$separator .= "\n";
+			fputs ($fp,$separator);
+		}
+
+		fclose($fp);
+	}
+
+	else
+	{
+		echo '   No records in the database';
+	}
+
+	///////////////////////////////////////////////////////////////////
+	//This part is for sending the excel file
+	$mail->addAttachment('excelFile.csv');
+	$mail->isHTML(true);                                  // Set email format to HTML
+
+	$mail->Subject = 'Database Excel File';
+	$mail->Body    = 'The table of registered SEs is attached with this email';
+	$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+
+	if(!$mail->send()) {
+	    echo '  Message could not be sent.';
+	    echo '  Mailer Error: ' . $mail->ErrorInfo;
+	}
 
 }
 $db->close();
@@ -203,135 +185,114 @@ $db->close();
 
 ?>
 
-<html lang="en-US">
+<!DOCTYPE html>
+<html>
   <head>
-    <!-- Import Google Icon fonts -->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Import Google fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
     <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Exo+2:600' rel='stylesheet' type='text/css'>
-  	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,200,300,500' rel='stylesheet' type='text/css'>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>registration status - waveXpand</title>
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
 
-    <script async type="text/javascript">
-  		function mobileToggle(){
-        if ($(".nav-options--mobile").hasClass("active")) {
-          $(".nav-options--mobile").fadeOut();
-        } else {
-          $(".nav-options--mobile").fadeIn();
-        }
-        $(".nav-options--mobile").toggleClass("active");
-  		}
-  	</script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        Materialize.updateTextFields();
+      });
+    </script>
 
-		
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('select').material_select();
+      });
+    </script>
+
+    <script type="text/javascript">
+      function openModal(btn) {
+          var modal = document.getElementById('login-box');
+          modal.style.display = "block";
+      }
+    </script>
+
+    <script type="text/javascript">
+      function closeModal(btn) {
+          var modal = document = document.getElementById("login-box");
+          modal.style.display = "none";
+      }
+    </script>
 
   </head>
-
   <body>
-
     <header>
+      <a href="index.php">
+        <img class="logo" src="images/logo.png">
+      </a>
 
-        <a href="index.php">
-          <img class="logo" src="images/logo.png">
+      <ul class="nav-options">
+        <a class="nav-option" href="training.php">
+          training
+        </a>
+        <?php
+        //** Check if user is logged in or not
+        if (!(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)):
+        ?>
+
+        <a id="sign-in-nav" class="nav-option" onclick="openModal(this);">
+          sign in
         </a>
 
-        <nav>
+      <?php else: ?>
+        <a id="sign-in-nav" class="nav-option" href="logout.php">
+          sign out
+        </a>
+        <a id="sign-in-nav" class="nav-option" href="myAccount.php">
+          my account
+        </a>
+      <?php endif; ?>
+      </ul>
 
-          <!-- Nav options -->
-          <ul class="nav-options">
-            <div class="tab">
-    					<div class="tab-box">
-                <a href="about.php">
-                  About
-                  <span class="empty-span"></span>
-                </a>
-              </div>
-            </div>
-            <div class="tab">
-    					<div class="tab-box">
-                <a href="login.php">
-                  Training
-                  <span class="empty-span"></span>
-                </a>
-              </div>
-            </div>
-            <div class="tab">
-    					<div class="tab-box--last">
+      <div id="login-box" class="modal">
 
-              </div>
-            </div>
-          </ul>
+        <div class="modal-content">
+          <span class="close" onclick="closeModal(this);"></span><!--Display the sign-in form on click-->
 
-          <!-- Mobile navigation menu -->
-          <img onclick="mobileToggle()" src="images/nav.png" class="mobile-toggle">
-          <ul class="nav-options--mobile">
-              <li class="nav-option--mobile">
-                Home
-                <a href="index.php"><span class="empty-span"></span></a>
-              </li>
-              <li class="nav-option--mobile">
-                About
-                <a href="about.php"><span class="empty-span"></span></a>
-              </li>
-              <li class="nav-option--mobile--last">
-                Training
-                <a href="login.php"><span class="empty-span"></span></a>
-              </li>
-          </ul>
-        </nav>
+          <form name="myForm" method="post" action="register.php" onsubmit="return validateForm();">
+            <div class="input-field">
+              <input id="username" type="text" name="email">
+              <label for="username">Username</label>
+            </div>
+            <div class="input-field">
+              <input id="password" type="password" name="password">
+              <label for="password">Password</label>
+            </div>
+            <div class="register-on-card">
+              <p id="no-account"> Don't have an account? </p>
+              <a id="register-option" href="register.php"> Register </a>
+            </div>
+            <button class="action-button" type="submit" value="Submit" id="sign-in">Sign in</button>
+          </form>
+
+        </div>
+
+      </div>
+
     </header>
 
-    <div id="logout" class="card-panel">
-      
-      
-      <h2 id="regResult"></h2>
-      <h3 id="extraInfo"></h3>
-      <div class="input-field">
-      <form action="logout.php">
-        <input type="submit" class="btn" value="Logout" ><a href="logout.php"></a></input>
-        </form>
-        <script type="text/javascript">
-			
-				
-				var isRegistered = "<?php echo $isRegistered?>";
-				//isRegistered = true;
-				//document.write(isRegistered);
-				var card = document.getElementById("regResult");
-				//var cardHTML = card.innerHTML;
-				
-				
-				console.log(isRegistered);
-				
-				if (isRegistered == true)
-				{
-					//card.innerHTML.replace(/(<br ?\/?>)*/g,"You are already registered to this course");
-					document.getElementById("regResult").innerHTML = "You are already registered to this course";
-				}
-				else
-				{
-					document.getElementById("regResult").innerHTML = "You have successfully completed  your registration";
-					document.getElementById("extraInfo").innerHTML = "A confirmation message has been sent to your email";
-				}
-				//console.log(cardHTML);
-			
-
-		</script>
-		
-      </div>
-    </br>
+    <div class="content--training">
+      <form>
+      <!-- The message states whether the user registered in the course successfully or
+      failed in registration because he/she already has registered for the course-->
+        <p><font color="white" size="6"><?php echo $onScreenMessage; ?></font></p>
+      </form>
     </div>
+
   </body>
 </html>
-
-
-
-
-
-
-

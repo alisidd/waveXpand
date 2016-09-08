@@ -9,11 +9,17 @@ body
 {
     margin: 0;
 
-    background: url(../images/background.jpg) no-repeat center left fixed;
-    -webkit-background-size: cover;
-       -moz-background-size: cover;
-         -o-background-size: cover;
-            background-size: cover;
+    background: -webkit-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -webkit-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), rgba(0,57,84,1);
+    background:    -moz-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), -moz-radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), rgba(0,57,84,1);
+    background:         radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(35,29,24) 25%, rgba(0,0,0,0) 25%), radial-gradient(circle, rgb(63,57,50) 25%, rgba(0,0,0,0) 25%), rgba(0,57,84,1);
+    background-position: 3em 3em, 3em 4em, auto auto, 0 1em;
+    -webkit-background-clip: border-box;
+            background-clip: border-box;
+            background-origin: padding-box;
+    -webkit-background-size: .5em .5em;
+            background-size: .5em .5em;
+
+    -webkit-background-origin: padding-box;
 }
 
 a
@@ -26,6 +32,16 @@ a
 ul
 {
     list-style-type: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active
+{
+    -webkit-box-shadow: 0 0 0 1000px rgb(5, 57, 83) inset;
+
+    -webkit-text-fill-color: white !important;
 }
 
 ::selection
@@ -41,7 +57,9 @@ ul
 {
     width: 13rem;
     height: auto;
-    margin: 2em 3em 1em 4em;
+    margin: 2em 3em 1em 3em;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .nav-options
@@ -51,19 +69,23 @@ ul
 
     float: right;
 
-    margin-top: 1.7em;
-    margin-right: 2.5em;
+    margin-top: 3.4rem;
+    margin-right: 5rem;
 }
 
 .nav-option
 {
-    margin-left: 1.3em;
+    margin-right: 1.3rem;
+    margin-left: 1.3rem;
 
     cursor: pointer;
-    transition: border-bottom 200ms ease-in-out;
+    transition: border-bottom 200ms ease-in-out, font-size 100ms ease;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
-.nav-option:hover
+.nav-option:hover,
+.nav-option:focus
 {
     border-bottom: .10em solid #fff;
 }
@@ -97,8 +119,9 @@ ul
     -webkit-animation-duration: .4s;
             animation-duration: .4s;
 
-    border-radius: 3px;
-    background-color: rgba(63, 79, 119, 1);
+    border: 1px solid rgb(5, 47, 63);
+    border-radius: 5px;
+    background-color: rgba(4, 57, 83, 1);
     box-shadow: 0 16px 28px 0 rgba(0,0,0,.22),0 25px 55px 0 rgba(0,0,0,.21);
 }
 
@@ -142,6 +165,8 @@ ul
 
     border: 1px solid rgba(204, 168, 78, .9);
     border-radius: 50%;
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .close::before,
@@ -161,7 +186,8 @@ ul
     background: rgba(204, 168, 78, .9);
 }
 
-.close:hover
+.close:hover,
+.close:focus
 {
     background: rgba(255, 255, 255, .1);
 }
@@ -211,8 +237,6 @@ ul
 
     color: rgba(204, 168, 78, .9);
 }
-
-/* Index page */
 
 /* Index page */
 
@@ -266,9 +290,12 @@ ul
     border: .0625em solid #fff;
     border-radius: .3rem;
     background-color: rgba(255, 255, 255, .2);
+
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.intro-sub-text:hover
+.intro-sub-text:hover,
+.intro-sub-text:focus
 {
     background-color: rgba(255, 255, 255, .4);
 }
@@ -288,15 +315,20 @@ iframe
 
     width: 100%;
     height: 180%;
+    margin-bottom: 1rem;
 
-    border: .1rem solid rgba(145, 92, 129, 1);
+    border: .1rem solid rgba(5, 47, 63, 1);
 }
 
 /* Training page */
 
 .content--training
 {
-    margin: 40px 30px 0 30px;
+    clear: both;
+    overflow: auto;
+
+    height: auto;
+    margin: 40px 30px 2rem 30px;
 
     border-radius: .3rem;
     background-color: rgba(96, 104, 127, .7);
@@ -305,7 +337,10 @@ iframe
 
 #registration
 {
-    padding-bottom: 92rem;
+    overflow: auto;
+
+    height: auto;
+    padding-bottom: 1rem;
 }
 
 .title
@@ -337,6 +372,8 @@ iframe
     margin-right: 6rem;
 }
 
+/* Track selection step */
+
 .track-step
 {
     display: flex;
@@ -364,14 +401,14 @@ iframe
     width: 10em;
     height: 3em;
     margin-bottom: 2rem;
-    padding: .5rem 0 .5rem 0;
+    padding: .5em 0 .5em 0;
 
     text-align: center;
 
     color: white;
     border: none;
     border-radius: 3px;
-    background-color: rgba(63, 79, 119, .6);
+    background-color: rgba(4, 57, 83, .6);
 }
 
 .track-step--number
@@ -404,22 +441,27 @@ iframe
     cursor: pointer;
     text-transform: capitalize;
 
-    color: rgba(63, 79, 119, 1);
+    color: rgba(4, 57, 83, .8);
     border: none;
     border-bottom: 4px solid rgba(90, 175, 154, 1);
     border-radius: 3px;
     background-color: rgba(204, 168, 78, .9);
-}
 
-.track-option:hover
-{
-    background-color: rgba(204, 168, 78, .7);
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .track-option-last
 {
     border-bottom: none;
 }
+
+.track-option:hover,
+.track-option:focus
+{
+    background-color: rgba(204, 168, 78, .7);
+}
+
+/* Course selection step */
 
 .course-step
 {
@@ -439,21 +481,21 @@ iframe
     width: 34em;
     height: 3em;
     margin-top: .2rem;
-    padding: .5rem 0 .5rem .5em;
+    padding: .5em 0 .5em .5em;
 
     text-align: left;
 
     color: white;
     border: none;
     border-radius: 3px;
-    background-color: rgba(63, 79, 119, .6);
+    background-color: rgba(4, 57, 83, .6);
 }
 
 .course-step--number
 {
     display: inline;
 
-    width: 6%;
+    width: 3rem;
     height: auto;
     margin-right: 1rem;
 
@@ -468,20 +510,24 @@ iframe
 .courses
 {
     display: none;
+    flex-direction: column;
 
-    min-width: 95%;
+    width: 95%;
+    max-width: 823px;
     margin-top: 2rem;
 
     text-align: center;
 
-    border: 1px solid rgba(63, 79, 119, 1);
+    border: 1px solid rgba(4, 57, 83, 1);
     border-radius: 3px;
-    background-color: rgba(63, 79, 119, .1);
+    background-color: rgba(4, 57, 83, .1);
 }
 
 .levels
 {
     display: inline-block;
+
+    margin-top: 1rem;
 
     text-align: center;
 }
@@ -499,7 +545,7 @@ iframe
     cursor: pointer;
 
     color: white;
-    border: .0625rem solid rgba(63, 79, 119, 1);
+    border: .0625rem solid rgba(4, 57, 83, 1);
 }
 
 .levels .level-1
@@ -515,18 +561,20 @@ iframe
 }
 
 .levels li:hover
+.levels li:focus
 {
-    background-color: rgba(63, 79, 119, .6);
+    background-color: rgba(4, 57, 83, .6);
 }
 
 .levels .active
 {
-    background-color: rgba(63, 79, 119, 1);
+    background-color: rgba(4, 57, 83, .8);
 }
 
-#loading
+#loading-1,
+#loading-2
 {
-  margin-top: 2rem;
+    margin-top: 2rem;
 }
 
 .ball
@@ -632,6 +680,19 @@ iframe
 {
     display: flex;
     flex-direction: row;
+
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.no-course
+{
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 1.8rem;
+
+    margin-right: 2rem;
+
+    color: white;
 }
 
 .course
@@ -640,6 +701,7 @@ iframe
 
     position: relative;
 
+    min-width: 85px;
     margin: 0 2rem 1rem 0;
     padding: .3em 4em .3em 4em;
 
@@ -647,12 +709,13 @@ iframe
 
     cursor: pointer;
 
-    color: rgba(63, 79, 119, 1);
+    color: rgba(4, 57, 83, .8);
     border-radius: 3px;
     background-color: rgba(204, 168, 78, .9);
 }
 
-.course:hover
+.course:hover,
+.course:focus
 {
     background-color: rgba(204, 168, 78, .7);
 }
@@ -671,6 +734,8 @@ iframe
     font-size: 1.9rem;
     font-weight: bold;
 }
+
+/* Course registration step */
 
 .sign-up-step
 {
@@ -691,21 +756,21 @@ iframe
 
     width: 34em;
     height: 3em;
-    padding: .5rem 0 .5rem .5em;
+    padding: .5em 0 .5em .5em;
 
     text-align: left;
 
     color: white;
     border: none;
     border-radius: 3px;
-    background-color: rgba(63, 79, 119, .6);
+    background-color: rgba(4, 57, 83, .6);
 }
 
 .sign-up-step--number
 {
     display: inline;
 
-    width: 6%;
+    width: 3rem;
     height: auto;
     margin-right: 1rem;
 
@@ -722,12 +787,13 @@ iframe
     display: none;
 
     width: 90%;
+    max-width: 780px;
     margin-top: 2rem;
     padding-bottom: 1rem;
 
-    border: 1px solid rgba(63, 79, 119, 1);
+    border: 1px solid rgba(4, 57, 83, 1);
     border-radius: 3px;
-    background-color: rgba(63, 79, 119, .2);
+    background-color: rgba(4, 57, 83, .2);
 }
 
 #course-name
@@ -742,7 +808,7 @@ iframe
     color: white;
 }
 
-#course-level
+#courseLevel
 {
     font-family: 'Ubuntu', serif;
     font-size: 2rem;
@@ -761,7 +827,7 @@ iframe
     font-family: 'Titillium Web', sans-serif;
     font-size: 1.2rem;
 
-    margin: 3rem 1rem 0 4rem;
+    margin: 3rem 2rem 0 4rem;
     padding-bottom: 2rem;
 
     list-style-type: square;
@@ -772,6 +838,42 @@ iframe
 #register--course
 {
     margin-right: 2.5rem;
+}
+
+.details-box
+{
+    display: flex;
+    flex-direction: row;
+
+    margin: 1rem 2rem;
+    padding: 0;
+
+    text-transform: lowercase;
+
+    color: white;
+    border: 1px solid rgba(4, 57, 83, .6);
+    border-radius: 7px;
+}
+
+.details-box > p
+{
+    display: flex;
+
+    width: 20%;
+    margin: 0;
+    padding: 0 2rem 0 2rem;
+
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+    background-color: rgba(4, 57, 83, .8);
+
+    justify-content: center;
+    align-items: center;
+}
+
+.details-box > div
+{
+    margin-left: 2rem;
 }
 
 .action-button
@@ -786,15 +888,68 @@ iframe
 
     cursor: pointer;
 
-    color: rgba(63, 79, 119, 1);
+    color: rgba(4, 57, 83, .8);
     border: none;
     border-radius: 3px;
     background-color: rgba(204, 168, 78, .9);
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-appearance: none;
+       -moz-appearance: none;
 }
 
-.action-button:hover
+.action-button:hover,
+.action-button:focus
 {
     background-color: rgba(204, 168, 78, .7);
+}
+
+/* My account page */
+
+.account--title
+{
+    margin-top: 1rem !important;
+}
+
+.account-details
+{
+    margin-top: 0 !important;
+    margin-bottom: 4rem !important;
+    padding-right: 4rem;
+    padding-left: 2rem;
+}
+
+.account-details--box
+{
+    min-height: 4rem;
+}
+
+.account-details--box div
+{
+    line-height: 4rem;
+}
+
+.edit-details
+{
+    position: relative;
+
+    margin-top: 1rem;
+    margin-right: 2rem;
+}
+
+.edit-details a
+{
+    color: rgba(4, 57, 83, .8);
+}
+
+.account-details-edit
+{
+    padding: 2rem 5rem 2rem 5rem;
+}
+
+.update-details
+{
+    margin-top: 1rem;
 }
 
 /* Misc classes for input */
@@ -836,6 +991,8 @@ input[type=password]
     border-radius: 0;
     outline: none;
     background-color: transparent;
+
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 input[type=text]:focus,
@@ -943,10 +1100,27 @@ input[type=password] + label:after
 
 /* Registration page */
 
+.register--title
+{
+    margin-top: -1rem;
+    margin-right: 0 !important;
+    margin-bottom: 3rem;
+    margin-left: 0 !important;
+    padding-top: 0;
+
+    text-align: center;
+}
+
 #registration--profile
 {
+    clear: both;
+    overflow: auto;
+
+    height: auto;
     margin: 4rem 10rem 0 10rem;
-    padding: 3rem 5rem 5rem 5rem;
+    padding: 3rem 5rem 3rem 5rem;
+
+    text-align: center;
 
     border-radius: .3rem;
     background-color: rgba(96, 104, 127, .7);
@@ -1175,39 +1349,35 @@ select.browser-default
 
     .left-pane--training
     {
-        width: 10%;
+        width: 20%;
         margin-left: 8rem;
     }
 
     .right-pane--training
     {
         width: 60%;
-        margin-right: 3rem;
+        margin-right: 3.6rem;
     }
 
     .course-step--box
     {
-        right: -.5rem;
+        width: 77%;
+    }
 
-        width: 95%;
+    .courses
+    {
+        width: 80%;
     }
 
     .sign-up-step--box
     {
-        right: -.5rem;
-
-        width: 90%;
-    }
-
-    #all
-    {
-        display: none;
+        width: 77%;
     }
 
     #intro
     {
-        border-top-left-radius: .5rem;
-        border-bottom-left-radius: .5rem;
+        border-top-left-radius: 7px;
+        border-bottom-left-radius: 7px;
     }
 
     #intro-options,
@@ -1217,7 +1387,7 @@ select.browser-default
         flex-direction: column;
     }
 
-    .sign-up-option--desc
+    .sign-up-step--desc
     {
         font-size: 1.5rem;
 
@@ -1226,9 +1396,14 @@ select.browser-default
         width: 90%;
     }
 
+    .course-signup
+    {
+        width: 80%;
+    }
+
     #course-name
     {
-        font-size: 3rem;
+        font-size: 2.7rem;
     }
 
     #course-level
@@ -1244,8 +1419,48 @@ select.browser-default
     }
 }
 
+@media screen and (max-width: 1331px)
+{
+    .intro-text
+    {
+        font-size: 4rem;
+    }
+    .intro-sub-text
+    {
+        bottom: 2.1em;
+    }
+}
 
-@media screen and (max-width: 955px)
+@media screen and (max-width: 1081px)
+{
+    .nav-option:focus,
+    .nav-option:hover
+    {
+        font-size: 1.8rem;
+    }
+
+    iframe
+    {
+        height: 150%;
+    }
+}
+
+@media screen and (max-width: 997px)
+{
+    .intro-text
+    {
+        font-size: 3rem;
+
+        position: relative;
+        top: 2rem;
+    }
+    .intro-sub-text
+    {
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 987px)
 {
     .title
     {
@@ -1254,8 +1469,7 @@ select.browser-default
 
     #registration
     {
-        margin-bottom: 3rem;
-        padding-bottom: 177rem;
+        padding-bottom: 3rem;
     }
 
     .left-pane--training
@@ -1274,6 +1488,11 @@ select.browser-default
         width: 80%;
     }
 
+    .track-step--desc
+    {
+        font-size: 1.7rem;
+    }
+
     .track-step--buttons
     {
         display: flex;
@@ -1285,17 +1504,23 @@ select.browser-default
         clear: left;
 
         width: 100%;
-        margin-left: 1rem;
+        margin-top: 1rem;
     }
 
     .course-step
     {
-        margin: 2rem 0 0 7rem;
+        position: relative;
+        left: 3.5rem;
     }
 
     .course-step--box
     {
-        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .course-step--desc
+    {
+        font-size: 1.7rem;
     }
 
     .course-step--number
@@ -1304,9 +1529,17 @@ select.browser-default
         height: auto;
     }
 
+    .sign-up-step
+    {
+        position: relative;
+        left: 3.5rem;
+    }
+
     .sign-up-step--box
     {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+
+        text-align: center;
     }
 
     .sign-up-step--number
@@ -1315,9 +1548,29 @@ select.browser-default
         height: auto;
     }
 
+    #course-name
+    {
+        font-size: 2rem;
+
+        margin-right: 1rem;
+        margin-left: 2rem;
+    }
+
+    #courseLevel
+    {
+        font-size: 1.6rem;
+
+        margin-left: 2.5rem;
+    }
+
+    #course-description
+    {
+        font-size: 1.1rem;
+    }
+
     #sign-in
     {
-        bottom: 4rem;
+        bottom: 4.5rem;
     }
 
     #registration--profile
@@ -1328,15 +1581,97 @@ select.browser-default
 
 @media screen and (max-width: 947px)
 {
-    #intro-options-video
+    .intro-video
     {
         font-size: 2.5rem;
+    }
+    .intro-sub-text
+    {
+        font-size: 1.7rem;
+    }
+    iframe
+    {
+        height: 140%;
+    }
+}
+
+@media screen and (max-width: 944px)
+{
+    .logo
+    {
+        width: 8rem;
+        height: auto;
+        margin-right: 0;
+    }
+
+    .nav-options
+    {
+        font-size: 1.5rem;
+        line-height: 80px;
+
+        margin-top: 1em;
+        margin-right: 2.5em;
+    }
+
+    .nav-option:focus,
+    .nav-option:hover
+    {
+        font-size: 1.4rem;
     }
 }
 
 
-@media screen and (max-width: 800px)
+@media screen and (max-width: 816px)
 {
+    header
+    {
+        display: flex;
+        flex-direction: column;
+
+        text-align: center;
+
+        box-shadow: none;
+    }
+
+    header > a
+    {
+        box-shadow: 0 .5625em 1.0625em 0 rgba(0,0,0,0),0 .375em 1.25em 0 rgba(0,0,0,.19);
+    }
+
+    .logo
+    {
+        width: 10rem;
+        margin-right: 3em;
+        margin-bottom: 2em;
+    }
+
+    .nav-options
+    {
+        margin: 0 0 0 0;
+        padding: 1.5rem 0 1.5rem 0;
+
+        text-align: center;
+
+        background-color: rgba(4, 57, 83, .6);
+        box-shadow: 0 0 1.0625em rgba(0,0,0,.5),0 .375em 1.25em 0 rgba(0,0,0,.19);
+    }
+
+    .nav-option
+    {
+        font-size: 1.5rem;
+
+        margin-right: 1.5rem;
+        margin-left: 1.5rem;
+        padding: 0;
+
+        text-align: center;
+    }
+
+    .nav-option:hover
+    {
+        border-bottom: none;
+    }
+
     .left-pane
     {
         display: none;
@@ -1357,40 +1692,6 @@ select.browser-default
 
 @media screen and (max-width: 736px)
 {
-    .logo
-    {
-        width: 10rem;
-    }
-
-    header
-    {
-        display: flex;
-        flex-direction: column;
-
-        box-shadow: none;
-    }
-
-    header > a
-    {
-        box-shadow: 0 .5625em 1.0625em 0 rgba(0,0,0,.2),0 .375em 1.25em 0 rgba(0,0,0,.19);
-    }
-
-    .nav-option
-    {
-        display: block;
-
-        margin-top: 0rem;
-        margin-bottom: 2rem;
-        padding-bottom: 1.4rem;
-
-        text-align: center;
-    }
-
-    .nav-option:hover
-    {
-        border-bottom: none;
-    }
-
     .right-pane
     {
         margin-bottom: 23rem;
@@ -1400,32 +1701,127 @@ select.browser-default
     {
         font-size: 3rem;
     }
+}
 
-    #sign-in-nav
+@media screen and (max-width: 626px)
+{
+    .details-box
     {
-        border-top: none;
-        border-bottom: .10em solid #fff;
-        border-radius: 60%;
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .details-box > p
+    {
+        display: block;
+
+        width: auto;
+
+        border-top-right-radius: 7px;
+        border-bottom-left-radius: 0;
+    }
+
+    .details-box > div
+    {
+        margin-left: 0;
+    }
+
+    .course-signup
+    {
+        text-align: center;
+    }
+
+    #course-name
+    {
+        margin-left: 1rem;
+    }
+
+    .action-button
+    {
+        font-size: 1.1rem;
+    }
+
+    #register--course
+    {
+        display: inline-block;
+        float: none;
+
+        margin: 0 auto;
+        margin-top: -1.5rem;
+    }
+
+    .account-details
+    {
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 
 @media screen and (max-width: 567px)
 {
+    .nav-option
+    {
+        font-size: 1.2rem;
+
+        padding-left: .6rem;
+        padding-left: 0rem;
+    }
+
+    .nav-option:focus,
+    .nav-option:hover
+    {
+        font-size: 1.1rem;
+    }
+
+    .close
+    {
+        width: 40px;
+        height: 40px;
+    }
+
     .modal-content
     {
-        width: 60%;
-        margin: 15% auto;
-        padding: 6em 2em 6em 2em;
+        width: 70%;
+        margin: 35% auto;
+        padding: 4.5em 2em 4.5em 2em;
+    }
+
+    .register--title
+    {
+        font-size: 2.5rem !important;
     }
 
     .title
     {
-        font-size: 2rem;
+        font-size: 2.4rem;
+    }
+
+    .levels
+    {
+        display: block;
+    }
+
+    .levels li
+    {
+        width: 60%;
+    }
+
+    #intro
+    {
+        border-top-right-radius: 7px;
+        border-bottom-left-radius: 0;
+    }
+
+    #expert
+    {
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 7px;
     }
 
     #registration--profile
     {
-        padding: 1rem 2rem 6rem 2rem;
+        padding: 1rem 2rem 2rem 2rem;
     }
 
     .input-field.left
@@ -1441,5 +1837,155 @@ select.browser-default
         float: none;
 
         width: 100%;
+    }
+
+    #course-description
+    {
+        margin-right: .5rem;
+        margin-left: .5rem;
+    }
+}
+
+@media screen and (max-width: 456px)
+{
+    .track-step--box
+    {
+        font-size: 1.3rem;
+    }
+
+    .course-step--box
+    {
+        font-size: 1.3rem;
+    }
+
+    .course
+    {
+        padding: 1.6em 1em 1.6em 1em;
+    }
+
+    .course-part
+    {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 443px)
+{
+    iframe
+    {
+        height: 150%;
+    }
+
+    #register
+    {
+        display: inline-block;
+        float: none;
+    }
+
+    #course-description
+    {
+        text-align: center;
+    }
+
+    .account-details > div
+    {
+        padding-bottom: 0 !important;
+    }
+
+    .edit-details
+    {
+        display: inline-block;
+        float: none;
+
+        margin-right: 0;
+    }
+
+    .account-details-edit
+    {
+        padding: 2rem 2rem 2rem 2rem;
+
+        text-align: center;
+    }
+
+    .update-details
+    {
+        display: inline-block;
+        float: none;
+    }
+}
+
+@media screen and (max-width: 375px)
+{
+    .intro-video
+    {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 350px)
+{
+    .nav-options
+    {
+        padding: 0;
+    }
+
+    .nav-option
+    {
+        display: block;
+    }
+
+    .track-step--desc
+    {
+        font-size: 1.3rem;
+    }
+
+    .track-option
+    {
+        font-size: 1.5rem;
+    }
+
+    .levels li
+    {
+        font-size: 1rem;
+    }
+
+    .course-step--desc
+    {
+        font-size: 1.3rem;
+    }
+
+    .course
+    {
+        padding: 1.2em 1em 1em 1em;
+    }
+
+    .sign-up-step--desc
+    {
+        font-size: 1.3rem;
+    }
+
+    #course-name
+    {
+        font-size: 1.7rem;
+    }
+
+    #courseLevel
+    {
+        font-size: 1.4rem;
+
+        margin-left: 2rem;
+    }
+
+    #course-description
+    {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px)
+{
+    .intro-video
+    {
+        font-size: 1.6rem;
     }
 }
